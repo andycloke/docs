@@ -4,8 +4,8 @@
   "name": "Data Fetcher Help Center",
   "colors": {
     "primary": "#7A6BEB",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "light": "#7A6BEB",
+    "dark": "#4A359E"
   },
   "favicon": "/favicon.svg",
   "navigation": {
