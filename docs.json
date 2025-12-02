@@ -18,10 +18,9 @@
               "quickstart"            ]
           },
           {
-            "group": "Customization",
+            "group": "Create requests",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "create-requests/create-a-request"
             ]
           }
         ]
