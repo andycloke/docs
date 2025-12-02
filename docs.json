@@ -2,6 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
   "name": "Data Fetcher Help Center",
+  "description": "Help center for Data Fetcher, the no-code Airtable extension for importing data from any API. Find guides on API integrations, scheduled syncs, authentication, data transformation, and troubleshooting.",
   "colors": {
     "primary": "#7A6BEB",
     "light": "#7A6BEB",
