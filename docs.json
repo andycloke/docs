@@ -76,8 +76,8 @@
   "footer": {
     "socials": {
       "youtube": "https://www.youtube.com/@datafetcher",
-      "x": "https://x.com/data_fetcher",
-      "linkedin": "https://www.linkedin.com/company/datafetcher/"
+      "linkedin": "https://www.linkedin.com/company/datafetcher/",
+       "x": "https://x.com/data_fetcher"
     }
   }
 }
