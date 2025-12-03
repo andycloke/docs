@@ -1,0 +1,38 @@
+---
+title: "Create a sequence"
+---
+
+## **What is a sequence?**
+
+A sequence is a powerful workflow automation feature that allows you to run multiple API requests in a specific order. When you create a sequence, Data Fetcher executes each request one after the other. You can use Airtable as a bridge between requests - writing data with one request and referencing it in subsequent ones, creating connected workflows. Sequences can be triggered manually, scheduled to run automatically, via triggers or webhook URLs—just like individual requests.
+
+## **Create and run a sequence**
+
+1. First, create all the individual requests you want to include in your sequence.
+2. From the Data Fetcher home screen, click the small arrow to the right of the **Create request** button.
+3. Select **Create sequence** from the dropdown menu.
+4. On the sequence screen, provide a descriptive name for your sequence.
+5. Under the **Requests** section, select all the requests you want to include in your workflow. You can add more requests with the **\+ Add request** button.
+6. Click **Save** to store your sequence.
+7. To run your sequence, click the **Run** button on the sequence screen.
+8. Data Fetcher will save your sequence, navigate to each request in order, run it, and then return to the sequence screen when complete.
+
+## **Handling request failures**
+
+By default, if any request in your sequence fails, Data Fetcher will stop the entire sequence. However, you can customize this behavior:
+
+1. On the sequence screen, locate the **Failure Handling** section.
+2. Enable the option **If one of these requests fails, run the next request anyway**.
+3. With this setting enabled, Data Fetcher will continue executing the remaining requests in your sequence even if one fails.
+
+## **Connecting requests through Airtable**
+
+Since Data Fetcher doesn't directly pass data between sequence steps, you can use Airtable as an intermediary:
+
+1. In your first request, write data to Airtable (like API responses, tokens, or IDs).
+   - Example: GET a list of customer data and write it to an Airtable base.
+2. In your subsequent requests, read from that same Airtable base.
+   - Example: For each customer record, fetch the full customer object from the API.
+   - Example: Enrich customers based on their email address.
+
+This approach creates a workflow where each step builds upon the results of previous steps.
