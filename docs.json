@@ -43,8 +43,15 @@
               "custom-requests/connect-to-a-preset-oauth-api",
               "custom-requests/create-a-custom-oauth-connection"
             ]
+          },
+      {
+            "group": "Advanced options",
+            "pages": [
+              "advanced-options/write-modes",
+              "advanced-options/write-modes"
+            ]
           }
-        ]
+        ],
   },
   "logo": {
     "light": "/logo/df light small icon.svg",
