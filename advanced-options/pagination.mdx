@@ -20,46 +20,46 @@ Check your API documentation for these patterns:
 
 Data Fetcher handles the most common types of pagination. Click any type below to jump to its setup instructions:
 
-#### 1. Page
+1. Page
 
 Uses a page number parameter in the URL. For example:
 
 - Page 1: `http://example.com/?page=1`
 - Page 2: `https://www.example.com/?page=2`
 
-#### **2. Offset**
+2. Offset
 
 Uses offset and limit parameters in the URL to specify data range. For example:
 
 - Page 1: `https://www.example.com/?offset=0&limit=50`
 - Page 2: `https://www.example.com/?offset=50&limit=100`
 
-#### [**3. Cursor**](https://help.datafetcher.com/advanced-options/pagination#set-up-cursor-pagination)
+3. Cursor
 
 Uses an ID from the previous response as a starting point parameter. For example:
 
 - Page 1:  `http://www.example.com`
 - Page 2:  `https://www.example.com/?starting_after=cus_IOCwDqeBZGGsrF`
 
-#### [**4. Next URL**](https://help.datafetcher.com/advanced-options/pagination#set-up-next-url-pagination)
+4. Next URL
 
 The API response includes the complete URL for the next page. Sometimes provided in response headers as a Link header.
 
-#### [**5. Offset Body**](https://help.datafetcher.com/advanced-options/pagination#set-up-offset-body-pagination)
+#### **5. Offset Body**
 
 Uses offset and limit parameters in the request body. For example:
 
 - Page 1 body: `{ "startRow": 0, "rowLimit": 1000 }`
 - Page 2 body: `{ "startRow": 1000, "rowLimit": 1000 }`
 
-#### [**6. Cursor Body**](https://help.datafetcher.com/advanced-options/pagination#set-up-cursor-body-pagination)
+#### **6. Cursor Body**
 
 Uses a cursor value from the previous response in the request body. For example:
 
 - Page 1 body: `{ "pageToken": "" }`
 - Page 2 body: `{ "pageToken": "cus_IOCwDqeBZGGsrF" }`
 
-[**7.  Header**](https://help.datafetcher.com/advanced-options/pagination#set-up-header-pagination)
+**7.  Header**
 
 Uses a header value that increments with each request. For example:
 
