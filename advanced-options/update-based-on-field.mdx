@@ -36,3 +36,31 @@ Your API returns this updated data:
 | 107         | Purple Skirt  | 17             |
 
 ### **Without Update Based on Field(s) (set to None)**
+
+Data Fetcher updates records by position, resulting in:
+
+| **Item Id** | **Item name** | **Units sold** |
+| :---------- | :------------ | :------------- |
+| 692         | Blue T-Shirt  | 7              |
+| 229         | Orange Hat    | 10             |
+| 107         | Purple Skirt  | 17             |
+
+**The problem:** The first record that was originally linked to "Orange Hat" is now associated with "Blue T-Shirt". Any existing relationships, comments, or custom field values are now tied to the wrong item.
+
+### **With Update Based on Field(s) (set to 'Item Id')**
+
+Data Fetcher matches records using the unique Item Id field, resulting in:
+
+| **Item Id** | **Item name** | **Units sold** |
+| :---------- | :------------ | :------------- |
+| 229         | Orange Hat    | 10             |
+| 107         | Purple Skirt  | 17             |
+| 692         | Blue T-Shirt  | 7              |
+
+**The result:** Existing records are properly updated while preserving their identity and relationships. New records are added separately.
+
+### **When to use Update Based on Field(s)**
+
+- **Choose a unique field** when your API response contains records that should update specific existing records based on a common identifier.
+- **Choose multiple fields** when there is no unique identifier, but a combination of field values will always be unique.
+- **Set to "None"** when running on multiple records where the position in the **Run on Multiple Records** table should determine which output record gets updated.
