@@ -1,0 +1,69 @@
+---
+title: "Response data transformations"
+---
+
+When you run a request, the response data gets transformed into a tabular format with fields and records for your output table. You control this process using response field mapping and response data transformation settings.
+
+## **Understanding the two transformation types**
+
+Data Fetcher offers two ways to handle nested arrays in your API responses: **Single Record** and **Expanded**. The key difference is how they treat nested data.
+
+Let's use this sample JSON response to illustrate both approaches:
+
+```json
+[
+  {
+    "id": "company1",
+    "positions": [
+      { "id": "position1" },
+      { "id": "position2" }
+    ]
+  },
+  {
+    "id": "company2",
+    "positions": [
+      { "id": "position3" },
+      { "id": "position4" }
+    ]
+  }
+]
+```
+
+## **Single record transformation**
+
+**Single Record** keeps each parent entity in one row by combining nested values with commas. Each company stays in its own record:
+
+| **Id**   | **Positions id**    |
+| -------- | ------------------- |
+| company1 | position1,position2 |
+| company2 | position3,position4 |
+
+<Info>
+  **Single Record** doesn't mean everything goes into one record. Data Fetcher finds the first array in your response and creates one record for each item in that array.
+</Info>
+
+## **Expanded transformation**
+
+Expanded creates separate records for each nested item, duplicating parent data across multiple rows:
+
+| **Id**   | **Positions id** |
+| -------- | ---------------- |
+| company1 | position1        |
+| company1 | position2        |
+| company2 | position3        |
+| company2 | position4        |
+
+## **How to set the transformation mode**
+
+1. On the create screen, scroll to the bottom and click to open the **Advanced Settings**.
+2. Under **Data Transformation**, select either Single Record or Expanded
+
+**Note:** These settings are also available on the [Response Field Mapping](https://help.datafetcher.com/create-requests/response-field-mapping#access-advanced-settings).
+
+## **Advanced single record options**
+
+#### **Combine nested object keys**
+
+By default, nested object values are combined into comma-separated fields. Using our example above, all `positions.id` values become one single-line text field called "Positions id".
+
+You can disable this to create separate numbered fields instead:
