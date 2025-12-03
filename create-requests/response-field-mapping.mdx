@@ -2,3 +2,36 @@
 title: "Response field mapping"
 description: "Response field mapping is where you control which data from your API response gets imported into Airtable and how it maps to your table's fields."
 ---
+
+## **Set up response field mapping**
+
+### **Initial setup**
+
+When you create a request for the first time:
+
+1. Click **Save & Run** on your request configuration.
+2. The Response Field Mapping modal will open, showing all available fields from the API response along with a preview of the records.
+
+### **Map your fields**
+
+For each response field, you can:
+
+- **Select or deselect fields** - Only data from selected fields will be imported when the request runs.
+- **Map to existing fields** - Select **Existing field** and choose a field from the dropdown to use an existing column in your table.
+- **Map to new fields** - Select **New field**, enter a field name, and choose a field type. Data Fetcher automatically suggests appropriate field types based on the response data.
+- **Search for fields** - Use the **Find field** input to quickly locate specific fields in large responses.
+
+Once you've configured your mappings, click **Save & Run**. Data Fetcher will create any new fields and import your data.
+
+## **Updating field mappings**
+
+### **Reopen field mapping**
+
+After your initial setup, you can modify field mappings anytime by clicking **Open field mapping** on your request.
+
+### **Refresh fields**
+
+When your API response changes (for example, due to parameter updates), you can refresh available fields without using your monthly usage limits:
+
+1. Click **Open field mapping**.
+2. Click **Refresh fields** in the top-right corner.
