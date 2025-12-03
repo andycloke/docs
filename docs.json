@@ -48,7 +48,21 @@
       {
         "group": "Advanced options",
         "pages": [
-          "advanced-options/write-modes"
+          "advanced-options/write-modes",
+          "advanced-options/update-based-on-field",
+          "advanced-options/pagination",
+          "advanced-options/error-handling",
+          "advanced-options/empty-results-handling",
+          "advanced-options/response-data-transformations",
+          "advanced-options/add-fixed-value-to-output",
+          "advanced-options/max-response-records",
+          "advanced-options/run-request-from-button-field",
+          "advanced-options/response-jmespath",
+          "advanced-options/rate-limit",
+          "advanced-options/denormalize",
+          "advanced-options/fixed-ip-address",
+          "advanced-options/xml-array-handling",
+          "advanced-options/no-output-mode"
         ]
       }
     ]
