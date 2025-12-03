@@ -1,0 +1,42 @@
+---
+title: "Error handling"
+---
+
+Data Fetcher's error handling system gives you control over how consecutive errors are managed for both manual and automated runs. This prevents systematic failures from running undetected, while allowing you to handle sporadic errors gracefully.
+
+## **How to configure error handling**
+
+1. On the request or sequence screen, click to open the **Advanced settings**.
+2. Scroll down to find the **Error Handling** section.
+3. Choose your error strategy using the toggle buttons:
+   - **Stop on first error**: Notify immediately when errors occur
+   - **Continue through errors**: Allow multiple errors before taking action
+4. Adjust the specific thresholds using the number inputs:
+   - **Notify and stop after X consecutive errors**: When to alert you and stop the current run
+   - **Pause automated runs after Y consecutive errors**: When to pause schedules, webhook URLs, and triggers.
+
+## **Notify and stop after consecutive errors**
+
+This setting controls when Data Fetcher will notify you of errors and stop the current execution.
+
+**For manual runs:** You'll see the error message and execution will stop.
+
+**For automated runs:** You'll receive an email notification and the current run will stop, but the automation remains active for future runs.
+
+**Example scenarios:**
+
+- Set to **1** for critical data where any error needs immediate attention
+- Set to **5** for resilient imports that should tolerate a few sporadic failures
+
+## **Pause automated runs after consecutive errors**
+
+This setting determines when Data Fetcher will completely pause your automation (schedules, webhooks, and triggers) to prevent runaway failures.
+
+**Important:** This setting only applies to automated runs. Manual runs are not affected.
+
+When this threshold is reached, your automation will be paused and you'll receive an email notification. You'll need to manually re-enable the automation after fixing the underlying issue.
+
+**Example scenarios:**
+
+- Set to **5** for immediate protection against systematic failures
+- Set to **50** for maximum resilience before pausing
