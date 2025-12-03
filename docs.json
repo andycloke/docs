@@ -15,7 +15,8 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart"            ]
+              "quickstart"            
+            ]
           },
           {
             "group": "Create requests",
@@ -47,7 +48,6 @@
       {
             "group": "Advanced options",
             "pages": [
-              "advanced-options/write-modes",
               "advanced-options/write-modes"
             ]
           }
