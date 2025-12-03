@@ -1,0 +1,38 @@
+---
+title: "Import request from cURL command"
+---
+
+Save time by importing cURL commands directly into Data Fetcher. This feature allows you to instantly set up requests without manually configuring headers, parameters, or authentication details.
+
+## **What is cURL?**
+
+cURL (Client URL) is an industry-standard command-line tool for transferring data and making API requests. You'll commonly encounter cURL commands:
+
+- Throughout API documentation
+- In code samples shared by developers
+- When [inspecting network requests in your browser's developer tools](https://www.scrapingbee.com/tutorials/how-to-extract-curl-requests-from-chrome/)
+
+For example, you might want to import the following cURL command from [Stripe's API documentation](https://stripe.com/docs/api/customers/list):
+
+```bash
+curl -G https://api.stripe.com/v1/customers \
+  -u 2430578aslkdfjh43254332: \
+  -d limit=3
+```
+
+## **How to import cURL commands into Data Fetcher**
+
+### **Method 1: Direct paste into URL field**
+
+1. [Create a new custom request](https://help.datafetcher.com/custom-requests/create-a-custom-request) or open an existing one
+2. Find the **URL** input field at the top of the request screen
+3. Paste your entire cURL command into this field
+4. Data Fetcher will instantly parse the command and populate all relevant fields (headers, parameters, authentication)
+
+### **Method 2: Import via home screen**
+
+1. Navigate to the Data Fetcher home screen
+2. Click the ⬆️ button (**Upload requests or import cURL**) in the top menu
+3. Select the **Import from cURL** tab
+4. Enter your cURL command into the text field
+5. Click **Import** to create a new pre-configured request
