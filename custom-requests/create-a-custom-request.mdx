@@ -36,7 +36,7 @@ Set up any additional options your API requires:
 2. Select your **Output Table and View** where the imported data should go. By default, this uses your current table and view.
 3. Click **Save & Run** in the bottom right corner.
 
-## **Configure field mapping**
+## **Configure field mapping and run**
 
 When you first run a request, the Response Field Mapping window opens. This is where you tell Data Fetcher how to match API response fields with your Airtable fields.
 
@@ -52,19 +52,23 @@ When you first run a request, the Response Field Mapping window opens. This is w
 
 Once you're satisfied with the mapping, click **Save & Run** in the bottom right corner.
 
-### **Run and manage your request**
+Your request will execute and import data into your Airtable base according to your configuration. You can click **Run** anytime to import the latest data.
 
-Your request will now execute and import data into your Airtable base. The imported data appears in your selected output table according to your field mapping configuration.
+## Next steps
 
-**Future runs:**
+Now that you have created a request, explore these key features:
 
-- Click **Run** anytime to manually execute the request again
-- The field mapping persists, so subsequent runs import data automatically
-
-**Automation options:** For hands-free data imports, you can set up automatic execution through:
-
-- [**Scheduled runs**](https://help.datafetcher.com/create-requests/schedule-a-request) - Import data at regular intervals
-- [**Triggers**](https://help.datafetcher.com/create-requests/add-a-request-trigger) - Run based on changes in your Airtable base
-- [**Webhook URLs**](https://help.datafetcher.com/create-requests/run-request-using-webhook) - Execute via external systems
-
-**Data handling:** Check out our guides on [Write modes](https://help.datafetcher.com/advanced-options/write-modes) and [Update based on field(s)](https://help.datafetcher.com/advanced-options/update-based-on-field) to understand how new API data merges with existing records in your output table.d ru
+<CardGroup cols={2}>
+  <Card title="Schedule requests" icon="clock" iconType="regular" href="/essentials/markdown">
+    Run automatically at intervals, even where you're not using Airtable
+  </Card>
+  <Card title="Add trigger" icon="zap" href="/essentials/settings">
+    Run requests instantly when your base data changes
+  </Card>
+  <Card title="Write modes" icon="plus" href="/essentials/code">
+    Learn how to update or add to existing records
+  </Card>
+  <Card title="Update based on field(s)" icon="hashtag" href="/api-reference/introduction">
+    Use unique fields to merge with existing records
+  </Card>
+</CardGroup>
