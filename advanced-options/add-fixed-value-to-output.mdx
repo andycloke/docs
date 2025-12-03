@@ -1,0 +1,31 @@
+---
+title: "Add fixed value(s) to output"
+---
+
+You can add fixed (constant) values to every record written to the output table when a request runs.
+
+This feature can help you track which request created or updated the record, making it easy to identify the data source for each entry. Combined with Airtable formula fields, it can also be used to add a timestamp to the output data.
+
+## **When to use fixed values**
+
+Fixed values are particularly useful when you're importing similar data from multiple sources into the same table. For example, if you have an "Orders" table that collects orders from both Shopify and Etsy, you can use fixed values to automatically tag each record with its source platform.
+
+Here's how this works in practice:
+
+1. Create an Airtable field in your output table to store the source information (e.g. a "Single select" field called "Platform" with "Shopify" and "Etsy" as options).
+2. Create a separate requests for each data source.
+3. Configure each request to automatically add the appropriate fixed value ("Shopify" for the Shopify request and "Etsy" for the Etsy request)
+
+When the requests run, every imported record will be automatically tagged with its source, so you'll always know whether an order came from Shopify or Etsy.
+
+## **How to add fixed value(s)**
+
+1. Navigate to the request screen in Data Fetcher.
+2. Scroll down to the bottom and click to open the **Advanced settings**.
+3. Under **Add Fixed Value(s)**, click **\+ Add fixed value**.
+4. Select a field from the output table using the left-hand dropdown.
+5. Enter the value you want to each record in the right-hand input.
+
+You can add more fixed values using the same steps.
+
+The fixed value(s) will be added to all records created / updated by this request.
