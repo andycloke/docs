@@ -69,7 +69,7 @@ Copy
 DATETIME_FORMAT(NOW(), 'YYYY-MM-DD HH:mm:ss.sss')
 ```
 
-1. Create a[ single cell reference](https://help.datafetcher.com/create-requests/use-table-values-in-requests#use-a-single-cell-value) to this formula field in your request.
+1. Create a single cell reference to this formula field in your request.
 
 **Important:** Use a single cell value reference, not a multiple records reference. Since this formula field contains only one value (the current date/time), you must click on a specific record in the modal to select that single cell. Using a multiple records reference here will cause errors because the system expects to iterate through multiple records, but there's only one date value to use.
 
