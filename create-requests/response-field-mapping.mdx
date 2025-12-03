@@ -35,3 +35,65 @@ When your API response changes (for example, due to parameter updates), you can 
 
 1. Click **Open field mapping**.
 2. Click **Refresh fields** in the top-right corner.
+
+The field mappings also refresh automatically when you change [Response data transformations,](https://help.datafetcher.com/advanced-options/response-data-transformations) [Response JMESPath](https://help.datafetcher.com/advanced-options/response-jmespath), or [Max response records](https://help.datafetcher.com/advanced-options/max-response-records).
+
+## **Additional field options**
+
+### **Transform data with formulas**
+
+Apply transformations to field values before they reach your output table using formulas. Reference the original value as `value` in your formula (e.g., `upper(value)`).
+
+1. Click the settings icon next to any field to open field settings.
+2. Enter your formula in the **Formula** input.
+3. Click **Save**.
+
+You can find a full list of [available formulas here](https://formula.github.io/formula/docs/code/src/functions) and test them in our [JavaScript Formula Playground](https://datafetcher.com/javascript-formula-playground).
+
+### **Create linked records**
+
+Data Fetcher can automatically create and update linked records during imports. This is useful when you have related data, such as tasks linked to users.
+
+**Use an existing linked field:**
+
+1. Select **Existing field** and choose a linked field from your output table.
+2. By default, Data Fetcher uses the primary field in the linked table to find records. To change this, click the field settings icon and select a different field under **Linked table field**.
+
+**Create a new linked field:**
+
+1. Select **New field**, enter a field name, and set the field type to **Linked record.**
+2. Click the field settings icon and select a table to link to under **Linked table**.
+
+When the request runs, Data Fetcher will create links by looking for response values in the linked table. If no matching record is found, it will create a new record automatically.
+
+### **Link to multiple records**
+
+Enable comma-separated values to create multiple linked records:
+
+1. Click the field settings icon next to the field name.
+2. Under **Allow multiple links**, select **Allow**.
+
+#### **Create missing linked records**
+
+By default, Data Fetcher creates missing records in linked tables. You can disable this for read-only tables:
+
+1. Click the settings icon next to the field name.
+2. Under **Create missing records**, enable or disable **Create**.
+
+### **Handle attachment fields**
+
+Map remote file URLs (PNG, SVG, PDF, etc.) directly to Airtable attachment fields by selecting **Attachment** as the field type.
+
+**Add to existing attachments** instead of overwriting:
+
+1. Click the settings icon next to the attachment field.
+2. Under **Attachment write mode**, enable **Add to existing**.
+3. Click **Save**.
+
+**Only write if cell is empty:**
+
+1. Click the settings icon next to the attachment field.
+2. Under **Write the attachment only if the cell is empty**, enable **Only if empty**.
+3. Click **Save**.
+
+### 
