@@ -87,15 +87,20 @@
         ]
       },
       {
-        "group": "Organize requests",
+        "group": "Account",
         "pages": [
-          "organise-requests/run-history",
-          "organise-requests/duplicate-a-request",
-          "organise-requests/delete-a-request",
-          "organise-requests/add-request-description",
-          "organise-requests/import-request-from-curl-command",
-          "organise-requests/export-requests-as-json-file",
-          "organise-requests/import-requests-from-json-file"
+          "account/upgrade-account",
+          "account/authorize-data-fetcher-airtable",
+          "account/add-user-to-account",
+          "account/roles-and-permissions",
+          "account/view-monthly-usage",
+          "account/change-personal-details",
+          "account/update-payment-card",
+          "account/update-billing-information",
+          "account/view-invoices",
+          "account/switch-workspace",
+          "account/view-monthly-usage",
+          "get-a-google-maps-api-key"
         ]
       }
     ]
