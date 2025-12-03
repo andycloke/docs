@@ -68,7 +68,9 @@ The examples below show how JMESPath can solve common data transformation challe
 
 Use conditions with a question mark `?` followed by operators to filter your data:
 
-| **Operator** | **Example JMESPath**       | **Example in words**              |
-| ------------ | -------------------------- | --------------------------------- |
-| `==`         | `countries[?code == 'GB']` | Keep objects where code equals GB |
-|              |                            |                                   |
+| **Operator** | **Example JMESPath**       | **Example in words**                         |
+| ------------ | -------------------------- | -------------------------------------------- |
+| `==`         | `countries[?code == 'GB']` | Keep objects where code equals GB            |
+| `>`          | `coins[?price > 100]`      | Keep objects where price is greater than 100 |
+|              |                            |                                              |
+|              |                            |                                              |
