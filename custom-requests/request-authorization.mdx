@@ -1,0 +1,80 @@
+---
+title: "Request authorization"
+---
+
+Many APIs require authentication to verify your identity and authorize access to their services. Data Fetcher makes this easy by automatically handling the necessary headers and parameters when you configure authorization on the **Authorization** tab.
+
+Data Fetcher supports six different authentication methods:
+
+- [Bearer token](https://help.datafetcher.com/custom-requests/request-authorization#bearer-token-authentication)
+- [Basic authentication](https://help.datafetcher.com/custom-requests/request-authorization#basic-authentication)
+- [OAuth](https://help.datafetcher.com/custom-requests/request-authorization#oauth-authentication)
+- [Header](https://help.datafetcher.com/custom-requests/request-authorization#header-authentication)
+- [Parameter](https://help.datafetcher.com/custom-requests/request-authorization#parameter-authentication)
+- [AWS signature V4](https://help.datafetcher.com/custom-requests/request-authorization#aws-signature-v4-authentication)
+
+Check your API's documentation for an "Authentication" section that explains which method to use.
+
+## **How to set up authorization**
+
+All authorization methods follow the same initial steps:
+
+1. On the custom request screen, click the **Authorization** tab.
+2. Use the **Type** dropdown to select your authentication method.
+3. Fill in the required fields for your chosen method (detailed below).
+4. When your request runs, Data Fetcher automatically adds the necessary authentication information.
+
+## **Bearer token authentication**
+
+Bearer tokens are commonly used by modern APIs and services.
+
+1. Select **Bearer Token** from the Type dropdown.
+2. Enter your bearer token in the **Token** input field.
+3. When the request runs, Data Fetcher sends an `Authorization` header with the value `Bearer YOUR_BEARER_TOKEN`.
+
+## **Basic authentication**
+
+Basic authentication uses a username and password combination.
+
+1. Select **Basic** from the Type dropdown.
+2. Enter your username in the **Username** input field.
+3. Optionally, enter your password in the **Password** input field.
+4. When the request runs, Data Fetcher automatically sends an `Authorization` header with the value `Basic username:password` (base64 encoded).
+
+## **OAuth authentication**
+
+OAuth provides secure, token-based authentication for third-party services. Data Fetcher offers two OAuth options:
+
+**Preset OAuth connections** - For popular APIs like Google, Facebook, and other major platforms that Data Fetcher supports out of the box. [See our guide on how to connect to a preset OAuth API](https://help.datafetcher.com/custom-requests/connect-to-a-preset-oauth-api).
+
+**Custom OAuth connections** - For APIs that require OAuth but aren't available as preset options. [See our guide on how to create a custom OAuth connection](https://help.datafetcher.com/custom-requests/create-a-custom-oauth-connection).
+
+## **Header authentication**
+
+Some APIs require custom authentication headers with specific names and values.
+
+1. Select **Header** from the Type dropdown.
+2. Enter the required header name in the **Name** input field.
+3. Enter the corresponding header value in the **Value** input field.
+4. When the request runs, Data Fetcher adds a header with the exact name and value you specified.
+
+## **Parameter authentication**
+
+Parameter authentication adds authentication information directly to the request URL.
+
+1. Select **Parameter** from the Type dropdown.
+2. Enter the parameter name in the **Name** input field.
+3. Enter the parameter value in the **Value** input field.
+4. When the request runs, Data Fetcher adds the parameter to the URL with the name and value you specified.
+
+## **AWS Signature V4 authentication**
+
+AWS Signature V4 is required for authenticating requests to Amazon Web Services.
+
+1. Select **AWS Signature V4** from the Type dropdown.
+2. Enter your AWS Access Key in the **Access key** input field.
+3. Enter your AWS Secret Key in the **Secret key** input field.
+4. Optionally, specify the AWS **Region**. If left blank, Data Fetcher attempts to infer it from the URL.
+5. Optionally, specify the AWS **Service**. If left blank, Data Fetcher attempts to infer it from the URL.
+6. If using temporary security credentials, enter your AWS **Session token**.
+7. When the request runs, Data Fetcher automatically calculates and adds the `X-Amz-Content-Sha256`, `X-Amz-Date`, and `Authorization` headers required for AWS authentication.
