@@ -68,15 +68,14 @@ The examples below show how JMESPath can solve common data transformation challe
 
 Use conditions with a question mark `?` followed by operators to filter your data:
 
-| **Operator** | **Example JMESPath**                  | **Example in words**                                     |                           | |                 |                                     |
-| ------------ | ------------------------------------- | -------------------------------------------------------- | ------------------------- | --- | --------------- | ----------------------------------- |
-| `==`         | `countries[?code == 'GB']`            | Keep objects where code equals GB                        |                           | |                 |                                     |
-| `>`          | `coins[?price > 100]`                 | Keep objects where price is greater than 100             |                           | |                 |                                     |
-| `>=`         | `coins[?price >= 100]`                | Keep objects where price is greater than or equal to 100 |                           | |                 |                                     |
-| `<`          | `coins[?price < 100]`                 | Keep objects where price is less than 100                |                           | |                 |                                     |
-| `<=`         | `coins[?price <= 100]`                | Keep objects where price is less than or equal to 100    |                           | |                 |                                     |
-| \`           |                                       | \`                                                       | \`countries[?code == 'GB' | | code == 'BR']\` | Keep objects where code is GB OR BR |
-| `&&`         | `coins[?price > 100 && price < 1000]` | Keep objects where price is between 100 and 1000         |                           | |                 |                                     |
+| **Operator** | **Example JMESPath**                  | **Example in words**                                     |
+| ------------ | ------------------------------------- | -------------------------------------------------------- |
+| `==`         | `countries[?code == 'GB']`            | Keep objects where code equals GB                        |
+| `>`          | `coins[?price > 100]`                 | Keep objects where price is greater than 100             |
+| `>=`         | `coins[?price >= 100]`                | Keep objects where price is greater than or equal to 100 |
+| `<`          | `coins[?price < 100]`                 | Keep objects where price is less than 100                |
+| `<=`         | `coins[?price <= 100]`                | Keep objects where price is less than or equal to 100    |
+| `&&`         | `coins[?price > 100 && price < 1000]` | Keep objects where price is between 100 and 1000         |
 
 **Example:** To keep only coins worth more than \$100, use: `coins[?current_price > 100]`
 
