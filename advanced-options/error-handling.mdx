@@ -40,3 +40,85 @@ When this threshold is reached, your automation will be paused and you'll receiv
 
 - Set to **5** for immediate protection against systematic failures
 - Set to **50** for maximum resilience before pausing
+
+## **Why this matters: A practical example**
+
+Let's say you have a scheduled request that imports customer data from your CRM every hour.
+
+### **Scenario 1: API key expires**
+
+Your CRM API key expires, causing authentication errors.
+
+**With settings 1 / 5:**
+
+- First error → You get notified immediately via email
+- If you don't fix it, after 5 consecutive failures the schedule pauses
+- **Result:** Quick notification allows fast response, preventing data gaps
+
+**With settings 10 / 50:**
+
+- After 10 consecutive errors → You get notified via email
+- If you don't fix it, after 50 consecutive failures the schedule pauses
+- **Result:** Less immediate notification, but more tolerance for temporary issues
+
+### **Scenario 2: Running on multiple records with some 404s**
+
+You're running a request on 100 customer IDs from your Airtable, calling an API to get order details for each customer.
+
+**The situation:** Some customers may not have any orders, causing the API to return 404 errors for those IDs.
+
+**With settings 1 / 5:**
+
+- First 404 error → Request stops, only processes 1 customer
+- **Result:** You miss data for 99 customers due to one legitimate 404
+
+**With settings 10 / 50:**
+
+- Individual 404s are tolerated, request continues processing all customers
+- Only systematic issues (like API authentication failing) trigger notifications
+- **Result:** You get data for customers who have orders, skip those who don't
+
+Your API occasionally returns rate limit errors during peak hours.
+
+**With settings 1 / 5:**
+
+- Every rate limit → Immediate notification
+- Frequent pausing of your schedule
+- **Result:** Too sensitive for this use case
+
+**With settings 10 / 50:**
+
+- Occasional rate limits don't trigger notifications
+- Only systematic issues (like 10 consecutive rate limits) trigger alerts
+- **Result:** Robust handling of temporary API issues
+
+## **Understanding consecutive errors**
+
+Data Fetcher counts **consecutive** errors, meaning successful runs reset the error counter to zero.
+
+**Example with "Notify after 3 errors" setting:**
+
+- Run 1: Error (count: 1)
+- Run 2: Error (count: 2)
+- Run 3: Success (count: reset to 0)
+- Run 4: Error (count: 1)
+- Run 5: Error (count: 2)
+- Run 6: Error (count: 3) → **Notification sent**
+
+This prevents sporadic, unrelated errors from triggering notifications while still catching systematic problems.
+
+## **Sequences vs individual requests**
+
+**For sequences:** Error handling settings on the sequence take precedence over individual request settings when the sequence runs.
+
+**For individual requests:** Each request uses its own error handling settings when run individually.
+
+This gives you centralized control over sequence behavior while maintaining flexibility for standalone request execution.
+
+**Best practices**
+
+**For critical data:** Use lower thresholds (1-3) for quick notification and close monitoring.
+
+**For resilient syncing:** Use higher thresholds (10-20) to handle API variability while preventing runaway failures.
+
+**For development:** Start with conservative settings (1 / 5) while building requests, then adjust based on observed API behavior.
