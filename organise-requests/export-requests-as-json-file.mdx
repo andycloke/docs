@@ -1,0 +1,31 @@
+---
+title: "Download requests as JSON file"
+---
+
+Downloading requests creates JSON files you can re-use in other bases. Only request configurations and response JSON are exported, not workspace data, base information, or personal settings.
+
+## **How to download requests as JSON files**
+
+1. Sign in to your account and navigate to the Data Fetcher extension home screen.
+2. Hover your mouse over the requests you want to download and click the empty checkbox (☐) next to each one to select them.
+3. Once you've selected all desired requests, click the ⬇️ button (**Download requests)** that appears in the menu bar.
+4. In the download requests modal, click **Download** to save the JSON file to your computer.
+
+The file will be downloaded to your default downloads location with a name based on the current time.
+
+## **Security considerations when exporting requests**
+
+**Important:** Be mindful about sensitive information when exporting requests. Your export may contain:
+
+- API keys and authentication tokens
+- Private endpoint URLs
+- Custom headers with sensitive information
+- Personally identifiable information in request parameters or response JSON
+
+For better security, consider these best practices:
+
+1. [Replace sensitive values with variables](https://help.datafetcher.com/create-requests/use-variables-in-requests) before exporting, so only variable names (not actual values) are included in the export file.
+2. Review the JSON file before sharing it with others to ensure no confidential information is accidentally disclosed.
+3. If sharing exported requests with team members, use secure channels for file transfer.
+
+Your exported requests can be imported into any Data Fetcher installation using the [Import from JSON feature](https://help.datafetcher.com/organise-requests/import-requests-from-json-file).
