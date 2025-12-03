@@ -36,7 +36,7 @@ For example, calling the [exchangerate.host](http://exchangerate.host) API betwe
 }
 ```
 
-When mapping this [response using field mapping](https://help.datafetcher.com/create-requests/response-field-mapping), we get a different field name for each date key under `rates`. For example, `rates.2020-01-01.USD` and `rates.2020-01-02.USD` would be treated as separate fields.
+When mapping this [response using field mapping](/create-requests/response-field-mapping), we get a different field name for each date key under `rates`. For example, `rates.2020-01-01.USD` and `rates.2020-01-02.USD` would be treated as separate fields.
 
 If we change the request parameters to use different dates (like `2021-01-01` to `2021-01-03`), we get completely new keys under `rates` that won't map to any existing fields:
 
