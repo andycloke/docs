@@ -8,6 +8,11 @@
     "light": "#7A6BEB",
     "dark": "#4A359E"
   },
+  "seo": {
+    "metatags": {
+        "canonical": "https://help.datafetcher.com"
+    }
+},
   "favicon": "/favicon.ico",
   "navigation": {
     "groups": [
