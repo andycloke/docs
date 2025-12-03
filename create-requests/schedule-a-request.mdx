@@ -1,0 +1,34 @@
+---
+title: "Schedule a request"
+---
+
+Scheduled requests run automatically at regular intervals, keeping your data fresh without manual intervention. Your requests will execute even when you're not logged into Airtable or don't have the Data Fetcher extension open.
+
+<Info>
+  This feature requires a paid Data Fetcher plan.
+</Info>
+
+## **Set up scheduled requests**
+
+### **Authorize Data Fetcher**
+
+Before scheduling requests, you need to authorize Data Fetcher to access your Airtable account using OAuth. You only need to complete this authorization once.
+
+For detailed authorization instructions, see our [guide to authorization](https://help.datafetcher.com/account/authorize-data-fetcher-airtable).
+
+### **Configure the schedule**
+
+1. Make sure you've completed the authorization steps above.
+2. On the custom request screen, click the **Schedule** tab.
+3. Toggle on **Schedule this request**.
+4. Select your **Interval** from the dropdown (minutes, hours, days, etc.).
+5. Choose the frequency - for example, every 1 hour or every 30 minutes.
+6. If using minutes or hours intervals, select which days of the week the request should run.
+7. Select a different timezone from the dropdown if needed (for intervals other than hours).
+8. Click **Save** to activate your schedule.
+
+## **Monitor scheduled requests**
+
+Once your schedule is active, your request will run automatically according to the timing you configured. You can verify that scheduled runs are working by checking the [Run History](https://help.datafetcher.com/organise-requests/run-history), which shows all automatic executions along with their timestamps and results.
+
+Scheduled requests are perfect for regular data imports, daily reports, or any workflow that benefits from consistent, time-based updates.

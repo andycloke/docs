@@ -1,0 +1,49 @@
+---
+title: "Add a request trigger"
+---
+
+Request triggers automatically run your Data Fetcher requests whenever specific changes occur in your Airtable base. Your requests will execute automatically when records are created, updated, or deleted - even when you're not logged into Airtable or don't have Data Fetcher open.
+
+Unlike scheduled requests that run at fixed intervals, triggers respond to events in near real-time, making them ideal for workflows that need immediate data synchronization or notifications.
+
+## **Set up a request trigger**
+
+### **Authorize Data Fetcher**
+
+Before creating triggers, you need to authorize Data Fetcher to access your Airtable account using OAuth. You only need to complete this authorization once.
+
+[For detailed authorization instructions, see our guide to authorization](https://help.datafetcher.com/account/authorize-data-fetcher-airtable).
+
+### **Configure the trigger**
+
+1. On the custom request screen, click the **Trigger** tab.
+2. Select your trigger type from the available options:
+   - **Record created** - Runs when new records are added
+   - **Record updated** - Runs when existing records are modified
+   - **Record deleted** - Runs when records are removed
+
+   You can select multiple trigger types if needed.
+3. Choose the **Table** you want to monitor for changes.
+4. Optionally, select a specific **View** to limit the trigger scope. If no view is selected, all record changes in the table will trigger the request.
+5. If you selected **Record updated**, choose which specific fields to monitor for changes.
+6. Click **Save** to activate your trigger.
+
+Once your trigger is active, you can verify it's working by making a test change to your table and checking the [Run History](https://help.datafetcher.com/organise-requests/run-history) to see if the request executed automatically.
+
+## **Trigger limitations**
+
+You can add a maximum of two triggers per base (across all Data Fetcher installations in that base and workspace) due to Airtable's webhook API limitations.
+
+## **Advanced trigger options**
+
+### **Run when a record enters a view**
+
+You can trigger requests when records enter a specific view by using the **Record created** trigger type and selecting both a **Table** and **View**. This is useful for workflows where records moving into a view indicates they're ready for processing.
+
+### **Include Airtable API changes**
+
+By default, triggers ignore changes made through the Airtable REST API to prevent conflicts. You can enable the **Run when the base is changed via the Airtable API** setting to include these changes.
+
+<Warning>
+  Enabling API change detection can cause infinite loops. This happens when a trigger-created or trigger-updated record causes the same trigger to run again, potentially consuming your entire monthly usage limit. Only enable this setting if you're certain your workflow won't create feedback loops.
+</Warning>
