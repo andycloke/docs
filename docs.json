@@ -82,8 +82,8 @@
         "pages": [
           "create-sequences/create-a-sequence",
           "create-sequences/schedule-a-sequence",
-          "create-sequences/create-a-sequence",
-          "create-sequences/create-a-sequence"
+          "create-sequences/run-sequence-from-button-field",
+          "create-sequences/run-sequence-using-webhook"
         ]
       },
       {
