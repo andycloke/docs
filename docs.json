@@ -11,47 +11,41 @@
   "favicon": "/favicon.ico",
   "navigation": {
     "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart"            
-            ]
-          },
-          {
-            "group": "Create requests",
-            "pages": [
-              "create-requests/create-a-request",
-              "create-requests/use-table-values-in-requests",
-              "create-requests/use-variables-in-requests",
-              "create-requests/response-field-mapping",
-              "create-requests/schedule-a-request",
-              "create-requests/add-a-request-trigger",
-              "create-requests/errors",
-              "create-requests/run-request-using-webhook",
-              "create-requests/airtable-integrations"
-            ]
-          },
       {
-            "group": "Custom requests",
-            "pages": [
-              "custom-requests/create-a-custom-request",
-              "custom-requests/set-request-method",
-              "custom-requests/set-request-parameters",
-              "custom-requests/request-authorization",
-              "custom-requests/set-request-headers",
-              "custom-requests/add-request-body",
-              "custom-requests/connect-to-a-preset-oauth-api",
-              "custom-requests/create-a-custom-oauth-connection"
-            ]
-          },
+        "group": "Getting started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
       {
-            "group": "Advanced options",
-            "pages": [
-              "advanced-options/write-modes"
-            ]
-          }
-        ],
+        "group": "Create requests",
+        "pages": [
+          "create-requests/create-a-request",
+          "create-requests/use-table-values-in-requests",
+          "create-requests/use-variables-in-requests",
+          "create-requests/response-field-mapping",
+          "create-requests/schedule-a-request",
+          "create-requests/add-a-request-trigger",
+          "create-requests/errors",
+          "create-requests/run-request-using-webhook",
+          "create-requests/airtable-integrations"
+        ]
+      },
+      {
+        "group": "Custom requests",
+        "pages": [
+          "custom-requests/create-a-custom-request",
+          "custom-requests/set-request-method",
+          "custom-requests/set-request-parameters",
+          "custom-requests/request-authorization",
+          "custom-requests/set-request-headers",
+          "custom-requests/add-request-body",
+          "custom-requests/connect-to-a-preset-oauth-api",
+          "custom-requests/create-a-custom-oauth-connection"
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/df light small icon.svg",
@@ -72,14 +66,14 @@
   },
   "contextual": {
     "options": [
-     "copy"
-   ]
+      "copy"
+    ]
   },
   "footer": {
     "socials": {
       "youtube": "https://www.youtube.com/@datafetcher",
       "linkedin": "https://www.linkedin.com/company/datafetcher/",
-       "x": "https://x.com/data_fetcher"
+      "x": "https://x.com/data_fetcher"
     }
   }
 }
