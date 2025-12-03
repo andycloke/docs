@@ -1,0 +1,44 @@
+---
+title: "Use variables in requests"
+---
+
+Variables are fixed values that you save in your Data Fetcher workspace and can reuse across multiple requests. You can use variables in request URLs, headers, parameters, and other input fields throughout your requests.
+
+Variables are especially useful for API keys, base URLs, or other values that you use frequently. If a value changes, you only need to update the variable in one place, instead of editing every request that uses it.
+
+## **How to create and use a variable**
+
+You can create a variable directly from any compatible input field:
+
+1. Look for any input field that displays a **\+** button on the right-hand side.
+2. Click the **\+** button to open the table field / variables modal.
+3. In the modal that opens, click **Variable** to switch to the variables tab.
+4. Enter a **Variable name**, and **Variable value**.
+5. Click **\+ Add**. Your variable is now available to use in any request within this workspace.
+6. Click **Confirm**.
+7. The input field will now display a variable reference that looks like: `-*-currency-*-`
+
+**Note:** You can also manage variables through the main settings screen by clicking the settings icon (⚙️) in the Data Fetcher extension and navigating to your workspace settings.
+
+To re-use an existing variable, follow steps 1-3 above, then select the variable you want to use from the list and click **Confirm**.
+
+When your request runs, Data Fetcher automatically replaces the variable reference with the actual variable value.
+
+## **How to edit and delete variables**
+
+You can edit or delete existing variables through the same modal:
+
+1. Follow steps 1-3 above to open the variables tab.
+2. Find the variable you want to manage.
+3. Click the three horizontal dots (⋯) on the right-hand side of the variable.
+4. Select your desired action from the dropdown menu (edit or delete).
+
+**Note:** Changes to variables will affect all requests that use them within your workspace.
+
+## **Common use cases for variables**
+
+- **API keys and tokens** - Store sensitive authentication information once and use it across multiple requests
+- **Base URLs** - Define common API endpoints that multiple requests share
+- **Configuration values** - Store settings like currency codes, region identifiers, or format preferences
+
+Variables help keep your requests organized, secure, and easy to maintain as your API integrations grow.
