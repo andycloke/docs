@@ -1,0 +1,148 @@
+---
+title: "Denormalize response"
+---
+
+Some API endpoints return JSON data where each value is nested under different keys that change between responses. This creates problems when mapping response fields to an output table.
+
+## **The problem**
+
+For example, calling the [exchangerate.host](http://exchangerate.host) API between `2020-01-01` and `2020-01-03` gives us this JSON:
+
+```
+{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "timeseries": true,
+  "base": "EUR",
+  "start_date": "2020-01-01",
+  "end_date": "2020-01-07",
+  "rates": {
+    "2020-01-01": {
+      "USD": 1.1221,
+      "GBP": 0.8462
+    },
+    "2020-01-02": {
+      "USD": 1.1221,
+      "GBP": 0.8466
+    },
+    "2020-01-03": {
+      "USD": 1.1171,
+      "GBP": 0.8495
+    }
+  }
+}
+```
+
+When mapping this [response using field mapping](https://help.datafetcher.com/create-requests/response-field-mapping), we get a different field name for each date key under `rates`. For example, `rates.2020-01-01.USD` and `rates.2020-01-02.USD` would be treated as separate fields.
+
+If we change the request parameters to use different dates (like `2021-01-01` to `2021-01-03`), we get completely new keys under `rates` that won't map to any existing fields:
+
+```
+{
+   "motd":{
+      "msg":"If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+      "url":"https://exchangerate.host/#/donate"
+   },
+   "success":true,
+   "timeseries":true,
+   "base":"EUR",
+   "start_date":"2021-01-01",
+   "end_date":"2021-01-03",
+   "rates":{
+      "2021-01-01":{
+         "USD":1.217582
+      },
+      "2021-01-02":{
+         "USD":1.2135
+      },
+      "2021-01-03":{
+         "USD":1.223409
+      }
+   }
+}
+```
+
+What we really want is just two fields, a `Date` field and a `Rates USD` field, and the different dates to be added as different records with these two fields.
+
+We can do this by denormalizing the response. When we denormalize the response and run the request, the response will be transformed into:
+
+```
+{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "timeseries": true,
+  "base": "EUR",
+  "start_date": "2020-01-01",
+  "end_date": "2020-01-07",
+  "rates": 
+    [
+      {
+        "Date": "2020-01-01",
+        "USD": 1.1221,
+        "GBP": 0.8462
+      },
+      {
+        "Date": "2020-01-02",
+        "USD": 1.1221,
+        "GBP": 0.8466
+      },
+      {
+        "Date": "2020-01-03",
+        "USD": 1.1171,
+        "GBP": 0.8495
+      }
+    ]
+  }
+}
+```
+
+## **The solution**
+
+What we really want is just two consistent fields: a `Date` field and a `USD` field. We want different dates to appear as separate records with these same two fields.
+
+Denormalizing the response transforms the data structure. After denormalization, the response becomes:
+
+```
+{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "timeseries": true,
+  "base": "EUR",
+  "start_date": "2020-01-01",
+  "end_date": "2020-01-07",
+  "rates": [
+    {
+      "Date": "2020-01-01",
+      "USD": 1.1221,
+      "GBP": 0.8462
+    },
+    {
+      "Date": "2020-01-02",
+      "USD": 1.1221,
+      "GBP": 0.8466
+    },
+    {
+      "Date": "2020-01-03",
+      "USD": 1.1171,
+      "GBP": 0.8495
+    }
+  ]
+}
+```
+
+Now all dates appear under a consistent `rates.Date` field and all USD exchange rates appear under a consistent `rates.USD` field. This gives us stable field names that we can reliably map to our output table.
+
+## **How to denormalize the response**
+
+1. On the create screen, scroll to the bottom and click to open the **Advanced Settings**.
+2. Under **Denormalize Path**, enter the JSONPath to where you want to denormalize the data (for the example above, use `$.rates`).
+3. Enter a **Denormalize Field Name** for the field that will be added to each record (for the example above, use `Date`).
