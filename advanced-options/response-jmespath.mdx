@@ -1,0 +1,61 @@
+---
+title: "Response JMESPath"
+---
+
+Transform your API responses with JMESPath, a powerful query language that helps you extract and reshape JSON data before it reaches Airtable. Use JMESPath to keep only the fields you need, rename confusing field names, filter data based on conditions, and work with nested structures.
+
+## **How to set up Response JMESPath**
+
+1. On the request screen, click the **Advanced Settings** button to expand additional options.
+2. Scroll down to the **Response JMESPath** field and enter your expression.
+3. Run your request again to see the transformed data, then reconfigure your response field mappings to match the new JSON structure.
+
+<Note>
+  You can [copy the response JSON](https://help.datafetcher.com/create-requests/response-field-mapping#working-with-response-data) and test your JMESPath expressions on the [official JMESPath website](https://jmespath.org/) before adding them to Data Fetcher.
+</Note>
+
+## **Common use cases and examples**
+
+The examples below show how JMESPath can solve common data transformation challenges. In each case, the result is JSON that Data Fetcher can easily map to Airtable fields.
+
+### **Keep only specific fields**
+
+**Problem:** Your API returns too much data, and you only need a few fields.
+
+**Sample JSON:**
+
+```
+{
+  "coins": [
+    {
+      "id": "bitcoin",
+      "symbol": "btc", 
+      "name": "Bitcoin",
+      "current_price": 27151
+    },
+    {
+      "id": "ethereum",
+      "symbol": "eth",
+      "name": "Ethereum", 
+      "current_price": 1892
+    }
+  ]
+}
+```
+
+**JMESPath Expression:** `coins[].{id:id, name:name}`
+
+**Result:** Only the `id` and `name` fields are kept, reducing clutter in your Airtable base.
+
+```
+[
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin"
+  },
+  {
+    "id": "ethereum", 
+    "name": "Ethereum"
+  }
+]
+```
