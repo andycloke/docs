@@ -1,0 +1,22 @@
+---
+title: "No output mode"
+---
+
+No output mode prevents Data Fetcher from creating or updating records in your base when a request runs. This is useful when you're working with API endpoints that don't return data or when you want to ignore API responses entirely.
+
+## **When to use no output mode:**
+
+- API endpoints that do not return anything in their response.
+- POST or PATCH requests where you're sending data from Airtable rather than importing data with GET requests.
+
+When no output mode is enabled, the output table / view selection, response field mapping, and data transformation options are hidden since they are not needed.
+
+## **How to enable no output mode**
+
+1. Navigate to the request screen in Data Fetcher.
+2. Scroll down to the bottom and click to open the **Advanced settings**.
+3. Under **No Output Mode**, enable **Do not handle the response or update the base**.
+4. You will see a warning modal, since this option is rarely used. Click **Turn on "No Output Mode"**.
+5. Click **Save** to save the request.
+
+Next time you run the request, the API request will be made, but no data will be written to Airtable.
