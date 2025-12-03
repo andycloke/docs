@@ -48,15 +48,16 @@ Note: Some sites only work in browsers due to JavaScript rendering or cookie req
 
 ## **Cannot create records in linked table "X" for response field "Y"**
 
-You have a [linked field in the response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping#linked-records-in-response-field-mapping) and Data Fetcher needs to create records in the linked table (in order to link to them) but is not able to. This typically happens for two different reasons:
+You have a [linked field in the response field mapping](
+/create-requests/response-field-mapping#linked-records-in-response-field-mapping) and Data Fetcher needs to create records in the linked table (in order to link to them) but is not able to. This typically happens for two different reasons:
 
 1. The linked table is a synced table. Records cannot be created in synced tables.
 
 To fix this, you can turn off creating records in the linked table:
 
-- Open the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and find the response field.
+- Open the [response field mapping](/create-requests/response-field-mapping) and find the response field.
 - Click the field settings icon .
-- Disable the [Create missing records](https://help.datafetcher.com/create-requests/response-field-mapping#create-missing-linked-records) option.
+- Disable the [Create missing records](/create-requests/response-field-mapping#create-missing-linked-records) option.
 - Click "Save" on the field settings.
 - Click "Save" on the response field mapping modal.
 
@@ -68,7 +69,7 @@ To fix this, you can either follow the steps above to turn off creating missing 
 
 ## **"X" variable is missing in workspace**
 
-Your request uses a variable but this variable no longer exists in your Data Fetcher workspace.  You need to [create the variable](https://help.datafetcher.com/create-requests/use-variables-in-requests#create-a-variable) again in your workspace or update the request to not use this variable.
+Your request uses a variable but this variable no longer exists in your Data Fetcher workspace.  You need to [create the variable](/create-requests/use-variables-in-requests#create-a-variable) again in your workspace or update the request to not use this variable.
 
 ## **Output table "X" not found in base**
 
@@ -90,7 +91,7 @@ The output view you selected has been deleted. You need to select a different ou
 
 There is a mismatch between the field's type in the response field mapping and the Airtable field's type. For example, a number field is mapped to a "Single line text" field in Airtable. This can happen if you change the Airtable field's type after setting up the response field mapping.
 
-- [Open the response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping).
+- [Open the response field mapping](/create-requests/response-field-mapping).
 - Find the relevant field.
 - Use the field type dropdown to select a type which matches the field's type in the output table.
 
@@ -109,7 +110,7 @@ You can also turn off record creation in Data Fetcher:
 
 ## **Data Fetcher does not have access to base X. Please re-authenticate via the extension and select "All current and future bases in all current and future workspaces"**
 
-Your Data Fetcher workspace needs to be authorized to access all the bases where you want to use scheduled/ trigger/ webhook URLs runs. You either need to turn off the failing request's scheduled/trigger/webhook URL or [re-authenticate Data Fetcher and Airtable](https://help.datafetcher.com/account/authorize-data-fetcher-airtable).
+Your Data Fetcher workspace needs to be authorized to access all the bases where you want to use scheduled/ trigger/ webhook URLs runs. You either need to turn off the failing request's scheduled/trigger/webhook URL or [re-authenticate Data Fetcher and Airtable](/account/authorize-data-fetcher-airtable).
 
 ## **Your X references table "Y" but it is missing in base. Has it been renamed?**
 
