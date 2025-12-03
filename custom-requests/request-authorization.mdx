@@ -24,7 +24,7 @@ All authorization methods follow the same initial steps:
 3. Fill in the required fields for your chosen method (detailed below).
 4. When your request runs, Data Fetcher automatically adds the necessary authentication information.
 
-## **Bearer token authentication**
+### **Bearer token authentication**
 
 Bearer tokens are commonly used by modern APIs and services.
 
@@ -32,7 +32,7 @@ Bearer tokens are commonly used by modern APIs and services.
 2. Enter your bearer token in the **Token** input field.
 3. When the request runs, Data Fetcher sends an `Authorization` header with the value `Bearer YOUR_BEARER_TOKEN`.
 
-## **Basic authentication**
+### **Basic authentication**
 
 Basic authentication uses a username and password combination.
 
@@ -41,7 +41,7 @@ Basic authentication uses a username and password combination.
 3. Optionally, enter your password in the **Password** input field.
 4. When the request runs, Data Fetcher automatically sends an `Authorization` header with the value `Basic username:password` (base64 encoded).
 
-## **OAuth authentication**
+### **OAuth authentication**
 
 OAuth provides secure, token-based authentication for third-party services. Data Fetcher offers two OAuth options:
 
@@ -49,7 +49,7 @@ OAuth provides secure, token-based authentication for third-party services. Data
 
 **Custom OAuth connections** - For APIs that require OAuth but aren't available as preset options. [See our guide on how to create a custom OAuth connection](https://help.datafetcher.com/custom-requests/create-a-custom-oauth-connection).
 
-## **Header authentication**
+### **Header authentication**
 
 Some APIs require custom authentication headers with specific names and values.
 
@@ -58,7 +58,7 @@ Some APIs require custom authentication headers with specific names and values.
 3. Enter the corresponding header value in the **Value** input field.
 4. When the request runs, Data Fetcher adds a header with the exact name and value you specified.
 
-## **Parameter authentication**
+### **Parameter authentication**
 
 Parameter authentication adds authentication information directly to the request URL.
 
@@ -67,7 +67,7 @@ Parameter authentication adds authentication information directly to the request
 3. Enter the parameter value in the **Value** input field.
 4. When the request runs, Data Fetcher adds the parameter to the URL with the name and value you specified.
 
-## **AWS Signature V4 authentication**
+### **AWS Signature V4 authentication**
 
 AWS Signature V4 is required for authenticating requests to Amazon Web Services.
 
