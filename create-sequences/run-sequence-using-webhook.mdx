@@ -12,10 +12,25 @@ A webhook URL allows you to run a sequence automatically when specific events oc
 
 To make your sequence runnable via webhook URL:
 
-1. On the sequence screen, click the **Webhook URL **tab.
+1. On the sequence screen, click the \*\*Webhook URL \*\*tab.
 2. Toggle on **Turn on webhook for sequence.**
 3. Click the clipboard icon (📋) to copy your unique webhook URL, which looks like:
 
 ```
 https://hook.datafetcher.com/h/sr4X86TTJ747CAPj9gVU9mrKnN33wKqT46CbaaTxnaXqsr
 ```
+
+4. Test your webhook by visiting the URL in your browser - you should see a success message and the sequence will run immediately.
+
+## **Run sequence for a specific record**
+
+To run your sequence for just one particular record:
+
+1. Make sure all requests in your sequence use the same **Run on Multiple Records** table.
+2. Add the `record_id` parameter to your webhook URL like this:
+
+```
+https://hook.datafetcher.com/h/sr4X86TTJ747CAPj9gVU9mrKnN33wKqT46CbaaTxnaXqsr?record_id=reca19WnKiU2L46cj
+```
+
+3. The record ID used must belong to a record in your specified table.
