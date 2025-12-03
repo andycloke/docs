@@ -1,0 +1,37 @@
+---
+title: "Set request parameters"
+---
+
+Query parameters are key-value pairs added to URLs that help modify what data an API returns. They appear after a question mark in the URL, like `?ticker=IBM&includePrices=true`. Many APIs use parameters to filter results, specify data formats, or control response details.
+
+You can add parameters in two ways: manually type them directly into the **URL** input field, or use the **Parameters** tab for easier management and automatic URL formatting.
+
+### **Before you begin**
+
+Make sure you've entered the complete API base URL and endpoint path in the **URL** input field. For example: 
+
+```
+https://api.coingecko.com/api/v3/coins/markets
+```
+
+## **How to manage query parameters**
+
+### **Add a query parameter**
+
+1. On the custom request screen, click the **Parameters** tab.
+2. Click **\+ Add** to create a new parameter.
+3. Enter the parameter name in the left input field and its corresponding value in the right input field.
+4. The parameter will automatically be added to your **URL** with proper formatting.
+5. Use the **\+** icon next to the value field to insert table values from your Airtable base into the parameter.
+6. Repeat steps 2-5 to add additional parameters as needed.
+
+### **Remove a query parameter**
+
+1. On the custom request screen, click the **Parameters** tab.
+2. Find the parameter you want to remove.
+3. Click the **-** button next to that parameter to delete it.
+4. The parameter will automatically be removed from your **URL**.
+
+<Info>
+  Reference Airtable values in parameters by clicking the **\+** icon located right-hand side of an input.
+</Info>
