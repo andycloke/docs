@@ -1,0 +1,70 @@
+---
+title: "Create a custom request"
+---
+
+Custom requests allow you to connect to any REST or GraphQL API directly in Airtable without writing code. You can configure the request URL, method, headers, body, authorization, pagination, and more using an interface similar to popular API clients like Postman or Insomnia.
+
+## **How to create a custom request**
+
+1. On the create request screen, under **Application**, select **Custom**.
+2. Enter the complete request **URL** in the URL input field. You can find this in your target API's documentation - it consists of a base URL plus the specific endpoint path.
+
+**Example:** To fetch cryptocurrency prices from the CoinGecko API, enter:
+
+Copy
+
+```
+https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd
+```
+
+**Pro tip:** You can paste a cURL command directly into the URL input field, and Data Fetcher will automatically import all the settings.
+
+### **Configure request options**
+
+Set up any additional options your API requires:
+
+- [**Method**](https://help.datafetcher.com/custom-requests/set-request-method) - Choose GET, POST, PUT, PATCH, DELETE, or HEAD
+- [**Parameters**](https://help.datafetcher.com/custom-requests/set-request-parameters) - Add query parameters to modify the API response
+- [**Authorization**](https://help.datafetcher.com/custom-requests/request-authorization) - Configure authentication (Bearer token, Basic auth, OAuth, etc.)
+- [**Headers**](https://help.datafetcher.com/custom-requests/set-request-headers) - Add custom headers required by your API
+- [**Body**](https://help.datafetcher.com/custom-requests/add-request-body) - Include request body data for POST, PUT, or PATCH requests
+- [**Pagination**](https://help.datafetcher.com/advanced-options/pagination) - Set up automatic handling of paginated responses
+
+#### **Finalize the request setup**
+
+1. Enter a descriptive name for your request in the input field at the top of the screen.
+2. Select your **Output Table and View** where the imported data should go. By default, this uses your current table and view.
+3. Click **Save & Run** in the bottom right corner.
+
+### **Configure field mapping**
+
+When you first run a request, the Response Field Mapping window opens. This is where you tell Data Fetcher how to match API response fields with your Airtable fields.
+
+**Field selection:**
+
+- Click field names to select or deselect them for import
+- Only selected fields will be imported when the request runs
+
+**Field mapping:**
+
+- Map each selected field to either an **Existing field** in your table or create a **New field**
+- Choose the appropriate field types for new fields
+
+Once you're satisfied with the mapping, click **Save & Run** in the bottom right corner.
+
+### **Run and manage your request**
+
+Your request will now execute and import data into your Airtable base. The imported data appears in your selected output table according to your field mapping configuration.
+
+**Future runs:**
+
+- Click **Run** anytime to manually execute the request again
+- The field mapping persists, so subsequent runs import data automatically
+
+**Automation options:** For hands-free data imports, you can set up automatic execution through:
+
+- [**Scheduled runs**](https://help.datafetcher.com/create-requests/schedule-a-request) - Import data at regular intervals
+- [**Triggers**](https://help.datafetcher.com/create-requests/add-a-request-trigger) - Run based on changes in your Airtable base
+- [**Webhook URLs**](https://help.datafetcher.com/create-requests/run-request-using-webhook) - Execute via external systems
+
+**Data handling:** Check out our guides on [Write modes](https://help.datafetcher.com/advanced-options/write-modes) and [Update based on field(s)](https://help.datafetcher.com/advanced-options/update-based-on-field) to understand how new API data merges with existing records in your output table.d ru
