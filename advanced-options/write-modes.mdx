@@ -47,3 +47,66 @@ After running with Append mode:
 | 107     | Purple Skirt | 17             |
 
 With a "Created time" field in Airtable, you could use this setup to track how units sold changes for each item over time.
+
+### **Update mode**
+
+Update mode refreshes existing records with new data. Any additional records from the API response can be created as new records (this behavior is optional).
+
+Using the same example data from above, after running with Update mode:
+
+#### **Important: Matching Records Correctly**
+
+In the example above, there's a problem. The first record that was originally "Orange Hat" is now "Blue T-Shirt," which could break any links or comments associated with that record.
+
+**Solution:** Set an **Update Based on Field** to match records properly.
+
+To avoid mismatched updates:
+
+1. In **Advanced Settings**, find **Update Based on Field(s)**
+2. Choose a unique identifier like "Item ID"
+
+With "Item ID" as the matching field, records update correctly:
+
+**Item Id**
+
+**Item name**
+
+**Units sold**
+
+229
+
+Orange Hat
+
+10
+
+107
+
+Purple Skirt
+
+17
+
+692
+
+Blue T-Shirt
+
+7
+
+**Pro tip:** Use an output view without Airtable filters to ensure Data Fetcher can find all matching records. Filtered views may cause duplicate records if matches are hidden.
+
+### **Additional update options**
+
+#### **Create leftover records**
+
+By default, any new records in the API response are added to your table. To change this:
+
+1. Open **Advanced Settings**
+2. Toggle **Create records leftover after update** on or off
+
+### **Delete missing records**
+
+Remove records from your table that no longer appear in the API response. This is useful when the source application has deleted data.
+
+1. Open **Advanced Settings**
+2. Toggle **Delete records not found in the API response** on or off
+
+**Important:** This only affects records visible in your output view. Use a view without filters to ensure all records are considered for deletion.
