@@ -1,0 +1,38 @@
+---
+title: " Update based on field(s)"
+---
+
+When using [Update Write Mode](https://help.datafetcher.com/advanced-options/write-modes#update-write-mode), Data Fetcher can use unique fields (like an `ID` field) from your API response to intelligently match and merge data with existing records in your output view. This prevents data from being written to the wrong records and preserves any existing relationships or custom record values.
+
+## **How to set Update Based on Field(s)**
+
+1. Navigate to the request screen in Data Fetcher.
+2. Scroll down to the bottom and click to open the **Advanced settings**.
+3. Under **Write Mode**, ensure **Update** is selected.
+4. Under **Update Based on Field(s)**, select the field from your output table that contains unique values.
+5. You can select multiple fields if needed for matching.
+
+<Warning>
+  \*\*Important: \*\*Data Fetcher only looks at records in the output view, not the entire output table. If Airtable filters on your output view prevent Data Fetcher from finding matching records, duplicate records will be created instead.
+
+  **Recommendation:** Create a dedicated, locked view with no filters to use as your output view.
+</Warning>
+
+## **Why this matters: A practical example**
+
+Let's say your current Airtable output view contains:
+
+| **Item Id** | **Item name** | **Units sold** |
+| ----------- | ------------- | -------------- |
+| 229         | Orange Hat    | 5              |
+| 107         | Purple Skirt  | 10             |
+
+Your API returns this updated data:
+
+| **Item Id** | **Item name** | **Units sold** |
+| :---------- | :------------ | :------------- |
+| 692         | Blue T-Shirt  | 7              |
+| 229         | Orange Hat    | 10             |
+| 107         | Purple Skirt  | 17             |
+
+### **Without Update Based on Field(s) (set to None)**
