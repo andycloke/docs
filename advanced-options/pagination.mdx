@@ -45,14 +45,14 @@ Uses an ID from the previous response as a starting point parameter. For example
 
 The API response includes the complete URL for the next page. Sometimes provided in response headers as a Link header.
 
-#### **5. Offset Body**
+5. Offset body
 
 Uses offset and limit parameters in the request body. For example:
 
 - Page 1 body: `{ "startRow": 0, "rowLimit": 1000 }`
 - Page 2 body: `{ "startRow": 1000, "rowLimit": 1000 }`
 
-#### **6. Cursor Body**
+6. Cursor body
 
 Uses a cursor value from the previous response in the request body. For example:
 
