@@ -1,0 +1,39 @@
+---
+title: "Empty results handling"
+---
+
+Control what happens when your API request successfully completes but returns no records after data transformation.
+
+## **How to configure empty results handling**
+
+1. On the request or sequence screen, click to open the **Advanced settings**.
+2. Find the **Empty Results Handling** section.
+3. Toggle **"Error when no records returned"**:
+   - **On**: Mark empty results as failed
+   - **Off**: Mark empty results as successful
+
+## **Understanding empty results**
+
+Data Fetcher checks for empty results **after** applying your data transformation and mapping rules, not from the raw API response. This means if your API returns data but your filters or transformations remove everything, it's still considered an empty result.
+
+Empty results are different from API errors - your API call succeeded, but the final output contains zero records to import into Airtable.
+
+## **When to use this setting**
+
+**Turn ON when:**
+
+- You expect data to always be present (daily sales, inventory updates, user registrations)
+- Empty results indicate a potential system problem
+- You want immediate alerts when data pipelines stop flowing
+
+**Leave OFF when:**
+
+- Data volume naturally varies (customer reviews, support tickets, social media mentions)
+- Empty periods are normal for your use case
+- You prefer quiet operation without false alarms
+
+## **Manual vs automated runs**
+
+**Manual runs:** You'll see either a success or error message in the interface based on your setting.
+
+**Automated runs:** When enabled, empty results will trigger error notifications and count toward your error handling thresholds, potentially pausing automation if consecutive empty results occur.
