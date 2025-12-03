@@ -64,6 +64,18 @@
           "advanced-options/xml-array-handling",
           "advanced-options/no-output-mode"
         ]
+      },
+      {
+        "group": "Organize requests",
+        "pages": [
+          "organise-requests/run-history",
+          "organise-requests/duplicate-a-request",
+          "organise-requests/delete-a-request",
+          "organise-requests/add-request-description",
+          "organise-requests/import-request-from-curl-command",
+          "organise-requests/export-requests-as-json-file",
+          "organise-requests/import-requests-from-json-file"
+        ]
       }
     ]
   },
