@@ -30,7 +30,7 @@ After completing the setup, you'll receive a **client ID** and **client secret**
 ## **Step 2: Create the custom OAuth connection in Data Fetcher**
 
 1. [Create a custom request](https://help.datafetcher.com/custom-requests/create-a-custom-request) in Data Fetcher.
-2. Click on the **Authorization **tab.
+2. Click on the \*\*Authorization \*\*tab.
 3. For **Type**, select **OAuth**.
 4. Click the **\+ New** button.
 5. At the bottom of the modal that opens, click **create custom OAuth connection**.
@@ -41,7 +41,7 @@ This will open the custom OAuth connection screen, where you'll enter the follow
 
 - **Name**: a descriptive name to help you identify this OAuth connection later.
 - **Auth type**: choose OAuth 1 or OAuth 2 based on what the API documentation specifies (most modern APIs use OAuth 2)
-- **Authorization URL**: the URL used for the authorization request**, **when Data Fetcher opens a new tab and asks for permission to access the API (typically looks like `https://example.com/oauth/v2/auth`).
+- **Authorization URL**: the URL used for the authorization request\*\*, \*\*when Data Fetcher opens a new tab and asks for permission to access the API (typically looks like `https://example.com/oauth/v2/auth`).
 - **Token URL**: the URL used after the authorization request to generate access tokens from the authorization code. This is typically something like `https://example.com/oauth/v2/token`.
 - **Client ID**: the app client ID from step 1.
 - **Client secret**: the app client secret from step 1.
@@ -58,4 +58,15 @@ This will open the custom OAuth connection screen, where you'll enter the follow
 
 After entering all details, click **Create connection**. Data Fetcher will open a new tab to begin the authorization process. If your details are correct, you'll be able to authorize Data Fetcher and start using this custom OAuth connection in your requests.
 
-### 
+## **Example: Connecting to Zoho People API**
+
+Here's how to set up a custom OAuth connection for the Zoho People API:
+
+1. **Register with Zoho:** Go to the Zoho API Console and register a new client to get your client ID and client secret
+
+2. **Configure in Data Fetcher:** Using the Zoho People API OAuth documentation, we enter these values:
+
+| Auth type         | OAuth 2                                 |
+| ----------------- | --------------------------------------- |
+| Authorization URL | https://accounts.zoho.com/oauth/v2/auth |
+|                   |                                         |
