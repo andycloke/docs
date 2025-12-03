@@ -117,7 +117,7 @@ After selecting a pagination type, choose one of these options:
 - Set a maximum **number of pages:** Enter a specific number of pages to fetch. Data Fetcher will stop when it reaches this limit, when no items are returned, or when a page has fewer records than the last one.
   - If you want to force pagination up to this number of pages even when fewer items are returned, click the settings icon (⚙️) next to the number of page input and enable **Keep paginating when no/fewer items returned**.
 
-## **Set up page pagination**
+### **Set up page pagination**
 
 1. Set the pagination type to "Page".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
@@ -126,7 +126,7 @@ After selecting a pagination type, choose one of these options:
    1. Set the name of the **page size parameter.**
    2. Set the **page size.**
 
-## **Set up offset pagination**
+### **Set up offset pagination**
 
 1. Set the pagination type to "Offset".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
@@ -135,7 +135,7 @@ After selecting a pagination type, choose one of these options:
 5. Enter the numerical **Limit value**. This is the number of items that are fetched in each page. The offset value will be increased by this amount for each request.
 6. Optionally, enter a **Starting offset**. If you leave this blank, `0` will be used.
 
-## **Set up cursor pagination**
+### **Set up cursor pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the cursor field in the output table.
 2. Set the pagination type to "Cursor".
@@ -146,7 +146,7 @@ After selecting a pagination type, choose one of these options:
    1. Set the name of the **page size parameter**.
    2. Set the **page size**.
 
-## **Set up next URL pagination**
+### **Set up next URL pagination**
 
 1. Make sure you import the cursor field (usually an id) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the next URL field in the output table.
 2. Set the pagination type to "Next URL".
@@ -156,13 +156,13 @@ After selecting a pagination type, choose one of these options:
    1. Set the name of the page size parameter.
    2. Set the page size.
 
-## **Set up next URL pagination using Link header**
+### **Set up next URL pagination using Link header**
 
 1. Set the pagination type to "Next URL".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
 3. Turn on **Or, use link in response header**.
 
-## **Set up offset body pagination**
+### **Set up offset body pagination**
 
 1. Set the pagination type to "Offset Body".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
@@ -171,7 +171,7 @@ After selecting a pagination type, choose one of these options:
 5. Enter the **Limit value.**
 6. Optionally, enter a **Starting offset**. If you leave this blank, 0 will be used.
 
-## **Set up cursor body pagination**
+### **Set up cursor body pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
 2. Set the pagination type to "Cursor Body".
@@ -179,7 +179,7 @@ After selecting a pagination type, choose one of these options:
 4. Enter the **Cursor path** for the request body. This uses JSONPath syntax (e.g., `$.pagination.cursor`).
 5. Select the **Cursor field** from the output table fields in the dropdown.
 
-## **Set up header pagination**
+### **Set up header pagination**
 
 1. Set the pagination type to "Header".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
@@ -188,7 +188,7 @@ After selecting a pagination type, choose one of these options:
 5. Optionally, enter a **Page size**.
 6. Optionally, enter a **Starting page**. If you leave this blank, 1 will be used.
 
-## **Set up path pagination**
+### **Set up path pagination**
 
 1. In the request screen's main **URL** field, enter the URL with `{}` around the path parameter, e.g. `https://api.example.com/stocks/{page}` .
 2. Back in the pagination settings, set the pagination type to "Path".
@@ -198,7 +198,7 @@ After selecting a pagination type, choose one of these options:
 6. Optionally, enter a **Page size**.
 7. Optionally, enter a **Starting page**. If you leave this blank, 1 will be used.
 
-## **Set up GraphQL Cursor Pagination**
+### **Set up GraphQL Cursor Pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
 2. In the request screen's main **Body → GraphQL → Query** section, enter the GraphQL query, including any pagination arguments.
