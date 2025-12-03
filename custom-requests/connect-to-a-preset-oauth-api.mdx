@@ -1,0 +1,44 @@
+---
+title: "Connect to a preset OAuth API"
+---
+
+## **What is OAuth?**
+
+OAuth is an authorization standard that allows you to use your existing accounts on platforms like Google and Facebook to access third-party websites and apps. When you connect via OAuth, you're authorizing these services to perform actions on your behalf.
+
+Under the hood, OAuth works by obtaining and refreshing access tokens. These tokens are obtained when you first log in to the platform and are automatically refreshed as needed. They're then sent along with API requests to authorize each request to the third-party platform.
+
+## **Create an OAuth connection**
+
+When you create OAuth connections in Data Fetcher, they're saved in your workspace. This means you only need to create them once and can then use them for multiple requests.
+
+1. On the create request screen, click **Authorization**.
+2. Use the **Type** dropdown to select **OAuth**.
+3. Next to **Connection**, click **\+ New**.
+4. Click the button for the application you want to connect to (for example, **Google Ads**). A new window will open asking for permission to connect your account to Data Fetcher.
+5. Configure the rest of your API details like URL as you normally would and run the request.
+
+Authorization headers and parameters will be automatically sent when you run the request.
+
+## **Rename an OAuth Connection**
+
+1. Hover over the extension, then click the Settings icon (⚙️) to open the settings screen.
+2. Under **Workspaces**, click **Manage** next to the workspace you want.
+3. Under **OAuth Connections**, click the pencil icon next to the connection you want to rename.
+4. In the modal, enter the new name in the input field.
+5. Click **Save**.
+
+## **Delete an OAuth Connection**
+
+1. Hover over the extension, then click the Settings icon (⚙️) to open the settings screen.
+2. Under **Workspaces**, click **Manage** next to the workspace you want.
+3. Under **OAuth Connections**, click the trash icon next to the connection you want to delete.
+4. Click **Delete** in the modal that opens.
+
+<Warning>
+  Some platforms like Google will revoke all your OAuth connections when you revoke one connection. For example, deleting Google Analytics would also revoke Google Ads.
+</Warning>
+
+## **Create Custom OAuth Connection**
+
+If you don't see the OAuth API you want to connect to in the list of preset options, you can [create a custom OAuth connection](https://help.datafetcher.com/custom-requests/create-a-custom-oauth-connection).
