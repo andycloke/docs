@@ -1,0 +1,73 @@
+---
+title: "Add request body"
+---
+
+Adding a request body allows you to send data from your Airtable base to other platforms. You can include table values, variables, and even attachment files in your request body.
+
+Data Fetcher supports seven different body types: JSON, x-www-form-urlencoded, form-data, XML, GraphQL, Binary, and Plain Text. You'll typically want to add a request body when using POST, PATCH, or PUT request methods. Check your target API's documentation to determine which body type to use.
+
+## **How to add a request body**
+
+Follow these steps to add any type of request body to your Data Fetcher request:
+
+1. On the create request screen, click the **Body** tab.
+2. Select the tab for your desired body type (JSON, x-www-form-urlencoded, form-data, XML, GraphQL, Binary, or Plain Text).
+3. Follow the specific instructions below for your chosen body type.
+
+### **JSON request body**
+
+JSON is commonly used for REST APIs and web services.
+
+1. Make sure the **JSON** tab is active.
+2. Enter your JSON data into the input field. You can validate your JSON using this tool.
+3. Use the **Beautify** button to format your JSON for better readability.
+
+### **x-www-form-urlencoded request body**
+
+This format sends data as key-value pairs, similar to HTML form submissions.
+
+1. Click the **x-www-form-urlencoded** tab.
+2. Click **\+ Add** to create a new key-value pair.
+3. Enter a key and its corresponding value in the input fields.
+4. Repeat steps 2-3 to add additional key-value pairs as needed.
+
+### **form-data request body**
+
+Form-data is useful for sending files or when the API specifically requires this format.
+
+1. Click the **form-data** tab.
+2. Click **\+ Add** to create a new key-value pair.
+3. Enter a key and its corresponding value in the input fields.
+4. Repeat steps 2-3 to add additional key-value pairs as needed.
+
+### **XML request body**
+
+XML format is often used by older APIs or enterprise systems.
+
+1. Click the **XML** tab.
+2. Enter your XML content in the input field. You can validate your XML using this tool.
+
+### **GraphQL request body**
+
+GraphQL allows you to query specific data fields and is automatically converted to JSON when sent.
+
+1. Click the **GraphQL** tab.
+2. Add your GraphQL query in the **Query** input field.
+3. Add any variables as JSON in the **Variables** input field.
+4. When the request runs, Data Fetcher automatically converts your GraphQL query and variables into a JSON body. You can preview this conversion using our GraphQL to JSON Body Converter.
+
+### **Binary request body**
+
+Binary format sends raw file data, perfect for uploading attachments from Airtable.
+
+1. Click the **Binary** tab.
+2. Use the **\+** button on the right side of the input field to reference an attachment field from your Airtable base.
+3. When the request runs, the raw attachment data will be sent directly in the request body.
+
+### **Plain Text request body**
+
+Plain text format sends simple text content without any special formatting or encoding.
+
+1. Click the **Plain Text** tab.
+2. Enter your text content directly in the input field.
+3. The text will be sent exactly as entered in the request body.
