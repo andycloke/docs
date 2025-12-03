@@ -162,16 +162,16 @@ After selecting a pagination type, choose one of these options:
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
 3. Turn on **Or, use link in response header**.
 
-### **Set up offset body pagination**
+## **Set up offset body pagination**
 
-1. [Set the pagination type](https://help.datafetcher.com/advanced-options/pagination#select-pagination-type) to "Offset Body".
+1. Set the pagination type to "Offset Body".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
-3. Enter the **Offset path **for the request body. This uses JSONPath syntax (e.g., `$.pagination.offset`).
-4. Enter the **Limit path **for the request body. This uses JSONPath syntax (e.g., `$.pagination.limit`).
+3. Enter the **Offset path** for the request body. This uses JSONPath syntax (e.g., `$.pagination.offset`).
+4. Enter the **Limit path** for the request body. This uses JSONPath syntax (e.g., `$.pagination.limit`).
 5. Enter the **Limit value.**
 6. Optionally, enter a **Starting offset**. If you leave this blank, 0 will be used.
 
-### **Set up cursor body pagination**
+## **Set up cursor body pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
 2. Set the pagination type to "Cursor Body".
@@ -179,32 +179,32 @@ After selecting a pagination type, choose one of these options:
 4. Enter the **Cursor path** for the request body. This uses JSONPath syntax (e.g., `$.pagination.cursor`).
 5. Select the **Cursor field** from the output table fields in the dropdown.
 
-### **Set up header pagination**
+## **Set up header pagination**
 
-1. [Set the pagination type](https://help.datafetcher.com/advanced-options/pagination#select-pagination-type) to "Header".
+1. Set the pagination type to "Header".
 2. Set the **number of pages** to fetch or select **Fetch all pages.**
 3. Enter the name of **Page header**, e.g. "page".
 4. Optionally, enter a **Page size header**.
 5. Optionally, enter a **Page size**.
 6. Optionally, enter a **Starting page**. If you leave this blank, 1 will be used.
 
-### **Set up path pagination**
+## **Set up path pagination**
 
 1. In the request screen's main **URL** field, enter the URL with `{}` around the path parameter, e.g. `https://api.example.com/stocks/{page}` .
 2. Back in the pagination settings, set the pagination type to "Path".
 3. Set the **number of pages** to fetch or select **Fetch all pages.**
-4. Enter the **Path parameter **(e.g. "page" in this example).
+4. Enter the **Path parameter** (e.g. "page" in this example).
 5. Optionally, enter a **Page size parameter**.
 6. Optionally, enter a **Page size**.
 7. Optionally, enter a **Starting page**. If you leave this blank, 1 will be used.
 
-### **Set up GraphQL Cursor Pagination**
+## **Set up GraphQL Cursor Pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
 2. In the request screen's main **Body → GraphQL → Query** section, enter the GraphQL query, including any pagination arguments.
    1. There is no need to add them in the **Variables** section, as Data Fetcher will handle this automatically.
-3. [Set the pagination type](https://help.datafetcher.com/advanced-options/pagination#select-pagination-type) to "GraphQL Cursor".
-4. Set the **number of pages** to fetch or select **Fetch all pages.**
-5. Enter the **Cursor variable **name.
-6. Select the **Cursor field** from the dropdown. Typically, this is an ID field or a pagination cursor field in the response.
-   1. You can optionally enter a **Page size variable **or just a **Page size** value. This will help Data Fetcher know when to stop paginating if you have selected the **Fetch all pages** option.
+1. Set the pagination type to "GraphQL Cursor".
+1. Set the **number of pages** to fetch or select **Fetch all pages.**
+3. Enter the **Cursor variable** name.
+4. Select the **Cursor field** from the dropdown. Typically, this is an ID field or a pagination cursor field in the response.
+   1. You can optionally enter a **Page size variable** or just a **Page size** value. This will help Data Fetcher know when to stop paginating if you have selected the **Fetch all pages** option.
