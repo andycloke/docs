@@ -34,3 +34,17 @@ https://hook.datafetcher.com/h/sr4X86TTJ747CAPj9gVU9mrKnN33wKqT46CbaaTxnaXqsr?re
 ```
 
 3. The record ID used must belong to a record in your specified table.
+
+## **Set up an Airtable automation**
+
+You can trigger your sequence from Airtable automations when specific events occur:
+
+1. In Airtable, create a new automation with your desired trigger (e.g., **When a record is updated**).
+2. Add a **Run a script** action.
+3. Paste the following code into the script, replacing `YYOUR_WEBHOOK_URL` with your sequence's webhook URL:
+
+```
+await fetch(`YOUR_WEBHOOK_URL`);
+```
+
+/ima
