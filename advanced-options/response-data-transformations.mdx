@@ -29,7 +29,7 @@ Let's use this sample JSON response to illustrate both approaches:
 ]
 ```
 
-## **Single record transformation**
+### **Single record transformation**
 
 **Single Record** keeps each parent entity in one row by combining nested values with commas. Each company stays in its own record:
 
@@ -42,7 +42,7 @@ Let's use this sample JSON response to illustrate both approaches:
   **Single Record** doesn't mean everything goes into one record. Data Fetcher finds the first array in your response and creates one record for each item in that array.
 </Info>
 
-## **Expanded transformation**
+### **Expanded transformation**
 
 Expanded creates separate records for each nested item, duplicating parent data across multiple rows:
 
