@@ -29,3 +29,27 @@ When the requests run, every imported record will be automatically tagged with i
 You can add more fixed values using the same steps.
 
 The fixed value(s) will be added to all records created / updated by this request.
+
+## **Add fixed values for empty results**
+
+By default, fixed values are only added when your request returns data. Enable **"Add fixed field even when no records returned"** to create a record with your fixed value even when the API returns no results.
+
+This is useful for tracking failed requests, maintaining audit trails, or logging when scheduled requests run but find no new data.
+
+## **Use Airtable values as fixed values**
+
+Instead of using static values, you can reference values from your Airtable tables as fixed values. This is particularly useful for adding dynamic information like timestamps or configuration data that changes over time.
+
+**Common use cases:**
+
+- Add a timestamp showing when Data Fetcher last ran
+- Linking to a source record when running on multiple records
+
+**How to set this up:**
+
+1. In the fixed value input, click the **\+** button to open the table reference modal.
+2. Select the **Table** and **Field** containing the value you want to use.
+3. Choose a specific record with the cell value you need. This is optional but strongly-recommended. You can read about the [two ways of using table values here](https://help.datafetcher.com/create-requests/use-table-values-in-requests).
+4. Click **Confirm**.
+
+For example, to automatically track when your data was last updated, you could create a formula field in an Airtable "Config" table with `DATETIME_FORMAT(NOW(), 'YYYY-MM-DD HH:mm:ss')` and reference that cell. Every time your request runs, it will add the current timestamp to your imported records.
