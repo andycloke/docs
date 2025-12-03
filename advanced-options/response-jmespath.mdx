@@ -47,7 +47,7 @@ The examples below show how JMESPath can solve common data transformation challe
 
 **Result:** Only the `id` and `name` fields are kept, reducing clutter in your Airtable base.
 
-```
+```json
 [
   {
     "id": "bitcoin",
@@ -59,3 +59,11 @@ The examples below show how JMESPath can solve common data transformation challe
   }
 ]
 ```
+
+**How it works:** In JMESPath, use `new_name:old_name` syntax inside curly braces to rename fields.
+
+### **Filter data by conditions**
+
+**Problem:** You only want records that meet specific criteria.
+
+Use conditions with a question mark `?` followed by operators to filter your data:
