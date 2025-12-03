@@ -1,0 +1,45 @@
+---
+title: "Authorize Data Fetcher and Airtable"
+---
+
+Data Fetcher needs to access your Airtable data when you're not using the extension to schedule runs, use triggers, or webhook URLs. You'll need to authorize Data Fetcher in the extension using either OAuth or a personal access token (PAT).
+
+You only need to do this once, as Data Fetcher will securely store your authentication details.
+
+<Info>
+  Your Data Fetcher workspace uses a single authorization (whether through OAuth or PAT) to access all your Airtable bases. So you need to give it access to every base you want to run scheduled / webhook URL / triggers in.
+</Info>
+
+## **Authorize with OAuth**
+
+1. Hover over the extension, then click the **settings icon** (⚙️) to open the settings screen.
+2. Under **Workspaces**, click **Manage workspace** next to the workspace you want.
+3. Under **Airtable OAuth Connection**, click **Authorize**.
+4. On the modal that opens, click **I understand, let's authorize**.
+5. A new tab/window will open, prompting you to let Data Fetcher access Airtable.
+6. Add the bases you want Data Fetcher to have access to.
+   1. Select **All current and future bases in all current and future workspaces** to avoid any unauthorized issues in the future.
+7. Click **Grant access**.
+8. Back in the Data Fetcher extension, you should see **Connected** under **Airtable OAuth Connection**.
+
+## **Authorize with a personal access token (PAT)**
+
+1. Hover over the extension, then click the **settings icon** (⚙️) to open the settings screen.
+2. Under **Workspaces**, click **Manage workspace** next to the workspace you want.
+3. Under **Airtable Personal Access Token (PAT)**, click the **\+ Add** button.
+4. Enter your Airtable personal access token.
+   1. You can create a token here: https://airtable.com/create/tokens/new . Make sure you give it access to all bases, and the following scopes: data.records:read, data.records:write, schema.bases:read, webhook:manage.
+5. Click **Save**.
+
+Your Airtable PAT will be saved in your Data Fetcher workspace.
+
+### **Important: PAT takes precedence**
+
+If both OAuth and PAT are configured for a workspace, Data Fetcher will always use the PAT for authentication. This means:
+
+- If you want to use OAuth, make sure no PAT is configured
+- If you want to switch from PAT to OAuth, you'll need to remove the PAT first
+
+OAuth connections can occasionally be flaky due to token expiration or permission changes, while Personal access tokens tend to be more reliable for consistent long-term access to your Airtable data.
+
+To remove a PAT, go to workspace settings and click the delete icon (🗑️) next to it.
