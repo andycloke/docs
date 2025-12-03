@@ -1,0 +1,32 @@
+---
+title: "Set request headers"
+---
+
+HTTP headers allow you to send additional information with your API requests, such as authentication tokens, API version specifications, or content type declarations. Many APIs require specific headers to function properly.
+
+Check your target API's documentation to see which headers you need to include with your requests. You can also [learn more about HTTP headers in general here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers).
+
+## **How to manage request headers**
+
+### **Add a request header**
+
+1. On the custom request screen, click the **Headers** tab.
+2. Click **\+ Add** to create a new header.
+3. Enter the header name in the left input field and its corresponding value in the right input field.
+4. Use the **\+** icon next to the value field to [use table values from your Airtable base](https://help.datafetcher.com/create-requests/use-table-values-in-requests) into the header.
+5. Repeat steps 2-4 to add additional headers as needed.
+
+### **Remove a request header**
+
+1. On the create request screen, click the **Headers** tab.
+2. Find the header you want to remove.
+3. Click the **-** button next to that header to delete it.
+
+## **Common header examples**
+
+Here are some frequently used headers you might need:
+
+- **Authorization**: Used for API authentication (e.g., `Bearer your-token-here`)
+- **Content-Type**: Specifies the format of your request body (e.g., `application/json`)
+- **Accept**: Tells the API what response format you prefer (e.g., `application/json`)
+- **User-Agent**: Identifies your application to the API server
