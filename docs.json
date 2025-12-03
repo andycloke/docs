@@ -30,6 +30,19 @@
               "create-requests/run-request-using-webhook",
               "create-requests/airtable-integrations"
             ]
+          },
+      {
+            "group": "Custom requests",
+            "pages": [
+              "custom-requests/create-a-custom-request",
+              "custom-requests/set-request-method",
+              "custom-requests/set-request-parameters",
+              "custom-requests/request-authorization",
+              "custom-requests/set-request-headers",
+              "custom-requests/add-request-body",
+              "custom-requests/connect-to-a-preset-oauth-api",
+              "custom-requests/create-a-custom-oauth-connection"
+            ]
           }
         ]
   },
