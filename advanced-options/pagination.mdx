@@ -59,21 +59,21 @@ Uses a cursor value from the previous response in the request body. For example:
 - Page 1 body: `{ "pageToken": "" }`
 - Page 2 body: `{ "pageToken": "cus_IOCwDqeBZGGsrF" }`
 
-**7.  Header**
+7. Header
 
 Uses a header value that increments with each request. For example:
 
 - Page 1 headers:  `page: 1`
 - Page 2 headers: `page: 2`
 
-[**8.  Path**](https://help.datafetcher.com/advanced-options/pagination#set-up-path-pagination)
+8. Path
 
 Uses a path parameter in the URL that increments with each request. For example:
 
 - Page 1: `https://api.example.com/stocks/1`
 - Page 2: `https://api.example.com/stocks/2`
 
-[**9. GraphQL Cursor**](https://help.datafetcher.com/advanced-options/pagination#set-up-graphql-cursor-pagination)
+9. GraphQL Cursor
 
 The GraphQL query takes a cursor argument, set to an ID from the previous response, to tell the API where to start the next page. For example, for this GraphQL query:
 
@@ -207,4 +207,4 @@ After selecting a pagination type, choose one of these options:
 1. Set the **number of pages** to fetch or select **Fetch all pages.**
 1. Enter the **Cursor variable** name.
 1. Select the **Cursor field** from the dropdown. Typically, this is an ID field or a pagination cursor field in the response.
-   1. You can optionally enter a **Page size variable** or just a **Page size** value. This will help Data Fetcher know when to stop paginating if you have selected the **Fetch all pages** option.Pa
+   1. You can optionally enter a **Page size variable** or just a **Page size** value. This will help Data Fetcher know when to stop paginating if you have selected the **Fetch all pages** option.P
