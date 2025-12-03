@@ -62,8 +62,59 @@ Expanded creates separate records for each nested item, duplicating parent data 
 
 ## **Advanced single record options**
 
-#### **Combine nested object keys**
+### **Combine nested object keys**
 
 By default, nested object values are combined into comma-separated fields. Using our example above, all `positions.id` values become one single-line text field called "Positions id".
 
 You can disable this to create separate numbered fields instead:
+
+| **Id**   | **Positions 1 id** | **Positions 2 id** |
+| -------- | ------------------ | ------------------ |
+| company1 | position1          | position2          |
+| company2 | position3          | position4          |
+
+**To disable combining nested object keys:**
+
+1. In advanced settings, ensure transformation is set to **Single Record.**
+2. Turn off **Combine nested object keys**.
+
+### **Combine arrays of text/numbers**
+
+Similarly, arrays containing text or numbers are combined by default. For this response:
+
+```json
+[
+  {
+    "id": "company1",
+    "categories": ["Fintech", "Startup"]
+  },
+  {
+    "id": "company2", 
+    "categories": ["Healthtech", "Public", "Unicorn"]
+  }
+]
+```
+
+The default output combines categories:
+
+| **Id**   | **Categories**            |
+| -------- | ------------------------- |
+| company1 | Fintech,Startup           |
+| company2 | Healthtech,Public,Unicorn |
+
+You can disable this to create separate numbered fields:
+
+**To disable combining arrays:**
+
+1. In advanced settings, ensure transformation is set to **Single Record.**
+2. Turn off **Combine arrays of text/numbers.**
+
+### **Custom separators**
+
+Instead of commas, you can specify a custom separator for combined values. This is useful when your data contains commas and you need a different delimiter like the pipe symbol (|).
+
+Both "Combine nested object keys" and "Combine arrays of text/numbers" use the separator you specify in the Separator input field.
+
+**Need More Control?**
+
+For even more flexible data transformation options, consider using a [response JMESPath](https://help.datafetcher.com/advanced-options/response-jmespath) to customize exactly how your data is processed.
