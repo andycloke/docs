@@ -20,7 +20,13 @@
           {
             "group": "Create requests",
             "pages": [
-              "create-requests/create-a-request"
+              "create-requests/create-a-request",
+              "create-requests/use=table-values-in-requests",
+              "create-requests/use-variables-in-requests",
+              "create-requests/response-field-mapping",
+              "create-requests/schedule-a-request",
+              "create-requests/add-a-request-trigger",
+              "create-requests/errors"
             ]
           }
         ]
