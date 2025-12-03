@@ -114,3 +114,48 @@ Use conditions with a question mark `?` followed by operators to filter your dat
 ```
 
 **How it works:** Use dot notation (`stats.current_price`) to access nested object properties.
+
+### **Choose the right array**
+
+**Problem:** Your JSON has multiple arrays, but Data Fetcher is using the wrong one.
+
+**Sample JSON:**
+
+```
+{
+  "coins": [
+    {"id": "bitcoin", "current_price": 27105}
+  ],
+  "exchanges": [
+    {"id": "ace", "name": "ACE"},
+    {"id": "nominex", "name": "Nominex"}
+  ]
+}
+```
+
+**Solution:** Use `exchanges[]` to tell Data Fetcher to create records from the exchanges array instead of the coins array.
+
+**Result:** The `exchanges` array is kept and becomes a top-level array.
+
+```
+[
+  {
+    "id": "ace",
+    "name": "ACE"
+  },
+  {
+    "id": "nominex",
+    "name": "Nominex"
+  }
+]
+```
+
+### **JMESPath syntax quick reference**
+
+- **Arrays:** Access with `array_name[]`
+- **Objects:** Access with `object_name.field_name`
+- **Conditions:** Use `[?condition]` to filter arrays
+- **Field selection:** Use `{new_name:old_name}` to pick and rename fields
+- **Combine techniques:** Chain operations like `coins[?price > \`10`].{id:id, price:current_price}`
+
+After applying a JMESPath expression, the Response field mapping will automatically refresh next time you run the request.
