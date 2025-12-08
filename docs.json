@@ -103,7 +103,6 @@
           "account/update-billing-information",
           "account/view-invoices",
           "account/switch-workspace",
-          "account/view-monthly-usage",
           "get-a-google-maps-api-key"
         ]
       }
