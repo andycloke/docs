@@ -7,7 +7,9 @@ Data Fetcher needs to access your Airtable data when you're not using the extens
 You only need to do this once, as Data Fetcher will securely store your authentication details.
 
 <Info>
-  Your Data Fetcher workspace uses a single authorization (whether through OAuth or PAT) to access all your Airtable bases. So you need to give it access to every base you want to run scheduled / webhook URL / triggers in.
+  Your Data Fetcher workspace uses a single authorization (whether through OAuth
+  or PAT) to access all your Airtable bases. So you need to give it access to
+  every base you want to run scheduled / webhook URL / triggers in.
 </Info>
 
 ## **Authorize with OAuth**
@@ -22,6 +24,12 @@ You only need to do this once, as Data Fetcher will securely store your authenti
 7. Click **Grant access**.
 8. Back in the Data Fetcher extension, you should see **Connected** under **Airtable OAuth Connection**.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Authorize oauth.mp4"
+></video>
+
 ## **Authorize with a personal access token (PAT)**
 
 1. Hover over the extension, then click the **settings icon** (⚙️) to open the settings screen.
@@ -32,6 +40,12 @@ You only need to do this once, as Data Fetcher will securely store your authenti
 5. Click **Save**.
 
 Your Airtable PAT will be saved in your Data Fetcher workspace.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Authorize pat.mp4"
+></video>
 
 ### **Important: PAT takes precedence**
 
