@@ -32,6 +32,12 @@ Bearer tokens are commonly used by modern APIs and services.
 2. Enter your bearer token in the **Token** input field.
 3. When the request runs, Data Fetcher sends an `Authorization` header with the value `Bearer YOUR_BEARER_TOKEN`.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Bearer auth.mp4"
+></video>
+
 ### **Basic authentication**
 
 Basic authentication uses a username and password combination.
@@ -40,6 +46,12 @@ Basic authentication uses a username and password combination.
 2. Enter your username in the **Username** input field.
 3. Optionally, enter your password in the **Password** input field.
 4. When the request runs, Data Fetcher automatically sends an `Authorization` header with the value `Basic username:password` (base64 encoded).
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Basic authorization.mp4"
+></video>
 
 ### **OAuth authentication**
 
@@ -58,6 +70,12 @@ Some APIs require custom authentication headers with specific names and values.
 3. Enter the corresponding header value in the **Value** input field.
 4. When the request runs, Data Fetcher adds a header with the exact name and value you specified.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Header auth.mp4"
+></video>
+
 ### **Parameter authentication**
 
 Parameter authentication adds authentication information directly to the request URL.
@@ -66,6 +84,12 @@ Parameter authentication adds authentication information directly to the request
 2. Enter the parameter name in the **Name** input field.
 3. Enter the parameter value in the **Value** input field.
 4. When the request runs, Data Fetcher adds the parameter to the URL with the name and value you specified.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Parameter auth.mp4"
+></video>
 
 ### **AWS Signature V4 authentication**
 
@@ -78,3 +102,9 @@ AWS Signature V4 is required for authenticating requests to Amazon Web Services.
 5. Optionally, specify the AWS **Service**. If left blank, Data Fetcher attempts to infer it from the URL.
 6. If using temporary security credentials, enter your AWS **Session token**.
 7. When the request runs, Data Fetcher automatically calculates and adds the `X-Amz-Content-Sha256`, `X-Amz-Date`, and `Authorization` headers required for AWS authentication.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/AWS auth.mp4"
+></video>
