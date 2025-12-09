@@ -38,8 +38,8 @@ Uses offset and limit parameters in the URL to specify data range. For example:
 
 Uses an ID from the previous response as a starting point parameter. For example:
 
-- Page 1:  `http://www.example.com`
-- Page 2:  `https://www.example.com/?starting_after=cus_IOCwDqeBZGGsrF`
+- Page 1: `http://www.example.com`
+- Page 2: `https://www.example.com/?starting_after=cus_IOCwDqeBZGGsrF`
 
 4. Next URL
 
@@ -63,7 +63,7 @@ Uses a cursor value from the previous response in the request body. For example:
 
 Uses a header value that increments with each request. For example:
 
-- Page 1 headers:  `page: 1`
+- Page 1 headers: `page: 1`
 - Page 2 headers: `page: 2`
 
 8. Path
@@ -96,8 +96,8 @@ query($after: String) {
 }
 ```
 
-- Page 1:  `after` would be set to null
-- Page 2:  `after` would be set to the `endCursor` value (or the final `ID` value for some APIs).
+- Page 1: `after` would be set to null
+- Page 2: `after` would be set to the `endCursor` value (or the final `ID` value for some APIs).
 
 ## **Select pagination type**
 
@@ -128,6 +128,12 @@ After selecting a pagination type, choose one of these options:
    1. Set the name of the **page size parameter.**
    2. Set the **page size.**
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Page pagination.mp4"
+></video>
+
 ### **Set up offset pagination**
 
 1. Set the pagination type to "Offset".
@@ -136,6 +142,12 @@ After selecting a pagination type, choose one of these options:
 4. Enter the name of the **Limit parameter**. This is often called "limit" but some endpoints may use a different name.
 5. Enter the numerical **Limit value**. This is the number of items that are fetched in each page. The offset value will be increased by this amount for each request.
 6. Optionally, enter a **Starting offset**. If you leave this blank, `0` will be used.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Offset pagination.mp4"
+></video>
 
 ### **Set up cursor pagination**
 
@@ -148,6 +160,12 @@ After selecting a pagination type, choose one of these options:
    1. Set the name of the **page size parameter**.
    2. Set the **page size**.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Cursor pagination.mp4"
+></video>
+
 ### **Set up next URL pagination**
 
 1. Make sure you import the cursor field (usually an id) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the next URL field in the output table.
@@ -157,6 +175,12 @@ After selecting a pagination type, choose one of these options:
 5. If the API supports it, you can set a page size parameter to help Data Fetcher know when to stop paginating.
    1. Set the name of the page size parameter.
    2. Set the page size.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Next url pagination.mp4"
+></video>
 
 ### **Set up next URL pagination using Link header**
 
@@ -173,6 +197,12 @@ After selecting a pagination type, choose one of these options:
 5. Enter the **Limit value.**
 6. Optionally, enter a **Starting offset**. If you leave this blank, 0 will be used.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Offset body pagination.mp4"
+></video>
+
 ### **Set up cursor body pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
@@ -180,6 +210,12 @@ After selecting a pagination type, choose one of these options:
 3. Set the **number of pages** to fetch or select **Fetch all pages.**
 4. Enter the **Cursor path** for the request body. This uses JSONPath syntax (e.g., `$.pagination.cursor`).
 5. Select the **Cursor field** from the output table fields in the dropdown.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Cursor body pagination.mp4"
+></video>
 
 ### **Set up header pagination**
 
@@ -189,6 +225,12 @@ After selecting a pagination type, choose one of these options:
 4. Optionally, enter a **Page size header**.
 5. Optionally, enter a **Page size**.
 6. Optionally, enter a **Starting page**. If you leave this blank, 1 will be used.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Header pagination.mp4"
+></video>
 
 ### **Set up path pagination**
 
@@ -200,13 +242,25 @@ After selecting a pagination type, choose one of these options:
 6. Optionally, enter a **Page size**.
 7. Optionally, enter a **Starting page**. If you leave this blank, 1 will be used.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Path pagination.mp4"
+></video>
+
 ### **Set up GraphQL Cursor Pagination**
 
 1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
 2. In the request screen's main **Body → GraphQL → Query** section, enter the GraphQL query, including any pagination arguments.
    1. There is no need to add them in the **Variables** section, as Data Fetcher will handle this automatically.
-1. Set the pagination type to "GraphQL Cursor".
-1. Set the **number of pages** to fetch or select **Fetch all pages.**
-1. Enter the **Cursor variable** name.
-1. Select the **Cursor field** from the dropdown. Typically, this is an ID field or a pagination cursor field in the response.
+3. Set the pagination type to "GraphQL Cursor".
+4. Set the **number of pages** to fetch or select **Fetch all pages.**
+5. Enter the **Cursor variable** name.
+6. Select the **Cursor field** from the dropdown. Typically, this is an ID field or a pagination cursor field in the response.
    1. You can optionally enter a **Page size variable** or just a **Page size** value. This will help Data Fetcher know when to stop paginating if you have selected the **Fetch all pages** option.P
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Gql cursor pagination.mp4"
+></video>
