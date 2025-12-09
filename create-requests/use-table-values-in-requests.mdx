@@ -21,6 +21,12 @@ This method processes each record in a table or view individually, making it ide
 3. Under **Run for every record in view**, select the view containing the records you want to process. Do not select an individual record.
 4. Click **Confirm**.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Add table reference.mp4"
+></video>
+
 The input field will now contain a reference to your table and field. When the request runs, Data Fetcher will execute one request per record in the view, replacing the reference with each record's value. Each record processed counts as one run toward your monthly usage.
 
 ### **Configure advanced settings**
@@ -29,6 +35,12 @@ The Run on Multiple Records table and view are automatically set based on your s
 
 1. Click ▶ **Advanced settings** to expand the advanced options.
 2. Under **Run on Multiple Records**, select your desired table and view. The table must match the one referenced in your inputs.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Multiple records advanced settings.mp4"
+></video>
 
 **Important:** When running on multiple records, keep **Update based on field(s)** set to "None". This ensures Data Fetcher uses the record's position in the table to update the correct output record.
 
@@ -46,6 +58,12 @@ This method pulls a value from one specific cell, perfect for dynamic values or 
 2. Select the **Table** and **Field** you want to reference.
 3. Select the specific **record** containing the cell value you need.
 4. Click **Confirm**.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Add single cell reference.mp4"
+></video>
 
 The input field will display a reference to that cell. When the request runs, Data Fetcher replaces the reference with the actual cell value.
 
