@@ -6,16 +6,10 @@ Some API endpoints return JSON data where each value is nested under different k
 
 ## **The problem**
 
-For example, calling the [exchangerate.host](http://exchangerate.host) API between `2020-01-01` and `2020-01-03` gives us this JSON:
+For example, if calling a currency conversion API gives us this JSON:
 
 ```
 {
-  "motd": {
-    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
-    "url": "https://exchangerate.host/#/donate"
-  },
-  "success": true,
-  "timeseries": true,
   "base": "EUR",
   "start_date": "2020-01-01",
   "end_date": "2020-01-07",
@@ -42,12 +36,6 @@ If we change the request parameters to use different dates (like `2021-01-01` to
 
 ```
 {
-   "motd":{
-      "msg":"If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
-      "url":"https://exchangerate.host/#/donate"
-   },
-   "success":true,
-   "timeseries":true,
    "base":"EUR",
    "start_date":"2021-01-01",
    "end_date":"2021-01-03",
@@ -71,12 +59,6 @@ We can do this by denormalizing the response. When we denormalize the response a
 
 ```
 {
-  "motd": {
-    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
-    "url": "https://exchangerate.host/#/donate"
-  },
-  "success": true,
-  "timeseries": true,
   "base": "EUR",
   "start_date": "2020-01-01",
   "end_date": "2020-01-07",
@@ -110,12 +92,6 @@ Denormalizing the response transforms the data structure. After denormalization,
 
 ```
 {
-  "motd": {
-    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
-    "url": "https://exchangerate.host/#/donate"
-  },
-  "success": true,
-  "timeseries": true,
   "base": "EUR",
   "start_date": "2020-01-01",
   "end_date": "2020-01-07",
