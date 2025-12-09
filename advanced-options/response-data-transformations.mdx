@@ -14,17 +14,11 @@ Let's use this sample JSON response to illustrate both approaches:
 [
   {
     "id": "company1",
-    "positions": [
-      { "id": "position1" },
-      { "id": "position2" }
-    ]
+    "positions": [{ "id": "position1" }, { "id": "position2" }]
   },
   {
     "id": "company2",
-    "positions": [
-      { "id": "position3" },
-      { "id": "position4" }
-    ]
+    "positions": [{ "id": "position3" }, { "id": "position4" }]
   }
 ]
 ```
@@ -39,7 +33,9 @@ Let's use this sample JSON response to illustrate both approaches:
 | company2 | position3,position4 |
 
 <Info>
-  **Single Record** doesn't mean everything goes into one record. Data Fetcher finds the first array in your response and creates one record for each item in that array.
+  **Single Record** doesn't mean everything goes into one record. Data Fetcher
+  finds the first array in your response and creates one record for each item in
+  that array.
 </Info>
 
 ### **Expanded transformation**
@@ -58,7 +54,11 @@ Expanded creates separate records for each nested item, duplicating parent data 
 1. On the create screen, scroll to the bottom and click to open the **Advanced Settings**.
 2. Under **Data Transformation**, select either Single Record or Expanded
 
-**Note:** These settings are also available on the [Response Field Mapping](/create-requests/response-field-mapping#access-advanced-settings).
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Response data transformation.mp4"
+></video>
 
 ## **Advanced single record options**
 
@@ -89,7 +89,7 @@ Similarly, arrays containing text or numbers are combined by default. For this r
     "categories": ["Fintech", "Startup"]
   },
   {
-    "id": "company2", 
+    "id": "company2",
     "categories": ["Healthtech", "Public", "Unicorn"]
   }
 ]
