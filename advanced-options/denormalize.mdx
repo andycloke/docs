@@ -62,7 +62,7 @@ We can do this by denormalizing the response. When we denormalize the response a
   "base": "EUR",
   "start_date": "2020-01-01",
   "end_date": "2020-01-07",
-  "rates": 
+  "rates":
     [
       {
         "Date": "2020-01-01",
@@ -127,3 +127,9 @@ Now all dates appear under a consistent `rates.Date` field and all USD exchange 
 1. On the create screen, scroll to the bottom and click to open the **Advanced Settings**.
 2. Under **Denormalize Path**, enter the JSONPath to where you want to denormalize the data (for the example above, use `$.rates`).
 3. Enter a **Denormalize Field Name** for the field that will be added to each record (for the example above, use `Date`).
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Denormalize.mp4"
+></video>

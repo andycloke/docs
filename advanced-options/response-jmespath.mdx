@@ -10,8 +10,17 @@ Transform your API responses with JMESPath, a powerful query language that helps
 2. Scroll down to the **Response JMESPath** field and enter your expression.
 3. Run your request again to see the transformed data, then reconfigure your response field mappings to match the new JSON structure.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Response jmespath.mp4"
+></video>
+
 <Note>
-  You can [copy the response JSON](/create-requests/response-field-mapping#working-with-response-data) and test your JMESPath expressions on the [official JMESPath website](https://jmespath.org/) before adding them to Data Fetcher.
+  You can [copy the response
+  JSON](/create-requests/response-field-mapping#working-with-response-data) and
+  test your JMESPath expressions on the [official JMESPath
+  website](https://jmespath.org/) before adding them to Data Fetcher.
 </Note>
 
 ## **Common use cases and examples**
@@ -29,14 +38,14 @@ The examples below show how JMESPath can solve common data transformation challe
   "coins": [
     {
       "id": "bitcoin",
-      "symbol": "btc", 
+      "symbol": "btc",
       "name": "Bitcoin",
       "current_price": 27151
     },
     {
       "id": "ethereum",
       "symbol": "eth",
-      "name": "Ethereum", 
+      "name": "Ethereum",
       "current_price": 1892
     }
   ]
@@ -54,7 +63,7 @@ The examples below show how JMESPath can solve common data transformation challe
     "name": "Bitcoin"
   },
   {
-    "id": "ethereum", 
+    "id": "ethereum",
     "name": "Ethereum"
   }
 ]
@@ -122,12 +131,10 @@ Use conditions with a question mark `?` followed by operators to filter your dat
 
 ```json
 {
-  "coins": [
-    {"id": "bitcoin", "current_price": 27105}
-  ],
+  "coins": [{ "id": "bitcoin", "current_price": 27105 }],
   "exchanges": [
-    {"id": "ace", "name": "ACE"},
-    {"id": "nominex", "name": "Nominex"}
+    { "id": "ace", "name": "ACE" },
+    { "id": "nominex", "name": "Nominex" }
   ]
 }
 ```
