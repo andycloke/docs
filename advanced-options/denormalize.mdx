@@ -88,7 +88,12 @@ We can do this by denormalizing the response. When we denormalize the response a
 
 What we really want is just two consistent fields: a `Date` field and a `USD` field. We want different dates to appear as separate records with these same two fields.
 
-Denormalizing the response transforms the data structure. After denormalization, the response becomes:
+We can do this by denormalizing the response. We set:
+
+1. **Denormalize Path **to  `$.rates` (the [JSONPath](https://github.com/json-path/JsonPath) expression for the top-level `rates` key)
+2. **Denormalize Field Name** to `Date` 
+
+After denormalization, the response becomes:
 
 ```
 {
