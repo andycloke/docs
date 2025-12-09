@@ -12,10 +12,17 @@ When using [Update Write Mode](/advanced-options/write-modes#update-write-mode),
 4. Under **Update Based on Field(s)**, select the field from your output table that contains unique values.
 5. You can select multiple fields if needed for matching.
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Update based on field.mp4"
+></video>
+
 <Warning>
   **Important**: Data Fetcher only looks at records in the output view, not the entire output table. If Airtable filters on your output view prevent Data Fetcher from finding matching records, duplicate records will be created instead.
 
-  **Recommendation**: Create a dedicated, locked view with no filters to use as your output view.
+**Recommendation**: Create a dedicated, locked view with no filters to use as your output view.
+
 </Warning>
 
 ## **Why this matters: A practical example**
