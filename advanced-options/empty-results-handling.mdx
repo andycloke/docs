@@ -12,6 +12,12 @@ Control what happens when your API request successfully completes but returns no
    - **On**: Mark empty results as failed
    - **Off**: Mark empty results as successful
 
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Empty results.mp4"
+></video>
+
 ## **Understanding empty results**
 
 Data Fetcher checks for empty results **after** applying your data transformation and mapping rules, not from the raw API response. This means if your API returns data but your filters or transformations remove everything, it's still considered an empty result.
