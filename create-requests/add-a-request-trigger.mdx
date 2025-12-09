@@ -18,17 +18,25 @@ Before creating triggers, you need to authorize Data Fetcher to access your Airt
 
 1. On the custom request screen, click the **Trigger** tab.
 2. Select your trigger type from the available options:
+
    - **Record created** - Runs when new records are added
    - **Record updated** - Runs when existing records are modified
    - **Record deleted** - Runs when records are removed
 
    You can select multiple trigger types if needed.
+
 3. Choose the **Table** you want to monitor for changes.
 4. Optionally, select a specific **View** to limit the trigger scope. If no view is selected, all record changes in the table will trigger the request.
 5. If you selected **Record updated**, choose which specific fields to monitor for changes.
 6. Click **Save** to activate your trigger.
 
 Once your trigger is active, you can verify it's working by making a test change to your table and checking the [Run History](/organise-requests/run-history) to see if the request executed automatically.
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="/videos/Request trigger.mp4"
+></video>
 
 ## **Trigger limitations**
 
@@ -45,5 +53,8 @@ You can trigger requests when records enter a specific view by using the **Recor
 By default, triggers ignore changes made through the Airtable REST API to prevent conflicts. You can enable the **Run when the base is changed via the Airtable API** setting to include these changes.
 
 <Warning>
-  Enabling API change detection can cause infinite loops. This happens when a trigger-created or trigger-updated record causes the same trigger to run again, potentially consuming your entire monthly usage limit. Only enable this setting if you're certain your workflow won't create feedback loops.
+  Enabling API change detection can cause infinite loops. This happens when a
+  trigger-created or trigger-updated record causes the same trigger to run
+  again, potentially consuming your entire monthly usage limit. Only enable this
+  setting if you're certain your workflow won't create feedback loops.
 </Warning>
