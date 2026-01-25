@@ -11,6 +11,25 @@ Data Fetcher only searches for existing records in your selected output view, no
 
 **Solution:** Create a dedicated view for Data Fetcher with no filters. Also verify your **Update Based on Field(s)** setting in Advanced settings is using a unique identifier field.
 
+## **Authorization Errors**
+
+Authorization errors usually happen when connecting third-party accounts (for example, Google Ads) to Data Fetcher. This connection uses OAuth, and it can fail or become invalid if the wrong account is used, permissions are missing, or the connection has expired.
+
+Common symptoms include 401 / 403 errors, missing accounts, or requests that previously worked but now fail.
+
+**Solution:** Recreate the authorization connection.
+
+1. Open your request.
+2. Go to the **Authorization** section.
+3. Click **+ New** to create a new connection.
+4. When prompted:
+   - Make sure you're signed into the **correct account**.
+   - Approve **all permissions** that Data Fetcher requests during the authorization flow.
+5. Save the request and run it again.
+
+Re-authorizing ensures Data Fetcher has valid access tokens and the correct permissions for the account you're trying to use.
+
+
 ## **Request works in Postman but not in Data Fetcher**
 
 This is usually caused by different headers being sent, particularly the User-Agent header.
@@ -119,3 +138,7 @@ Your request references a table by name, but that table cannot be found in the b
 - Find the outdated table reference.
 - Clear the reference to the old table name (use the x button on the right-hand side).
 - Create a new reference (use the + button on the right-hand side).
+
+## **Authorization Errors**
+
+When you connect an account, e.g. Google Ads, in order to authorize Data Fetcher to access your data
