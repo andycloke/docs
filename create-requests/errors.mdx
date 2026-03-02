@@ -137,3 +137,28 @@ Your request references a table by name, but that table cannot be found in the b
 - Find the outdated table reference.
 - Clear the reference to the old table name (use the x button on the right-hand side).
 - Create a new reference (use the + button on the right-hand side).
+
+## **Your Airtable OAuth connection has expired or been revoked**
+
+Your Airtable OAuth token has become invalid. This can happen due to Airtable API issues or if the token was revoked. You have two options to fix this:
+
+**Option 1: Re-authenticate with OAuth**
+
+- Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
+- Under **Workspaces**, click **Manage workspace** next to the workspace you want.
+- Under **Airtable OAuth Connection**, click **Authorize**.
+- On the modal that opens, click **I understand, let's authorize**.
+- A new tab/window will open - select **All current and future bases in all current and future workspaces**.
+- Click **Grant access**.
+
+**Option 2: Switch to Personal Access Token (PAT) - Recommended**
+
+Personal Access Tokens are more reliable and don't expire unexpectedly. To switch:
+
+- Go to [Airtable's token creation page](https://airtable.com/create/tokens/new).
+- Create a new token with access to all bases and these scopes: data.records:read, data.records:write, schema.bases:read, webhook:manage.
+- Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
+- Under **Workspaces**, click **Manage workspace**.
+- Under **Airtable Personal Access Token (PAT)**, click **+ Add** and paste your token.
+
+For detailed instructions, see [Authorize with a Personal Access Token (PAT)](https://help.datafetcher.com/account/authorize-data-fetcher-airtable#authorize-with-a-personal-access-token-pat).
