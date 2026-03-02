@@ -53,44 +53,13 @@ If we change the request parameters to use different dates (like `2021-01-01` to
 }
 ```
 
-What we really want is just two fields, a `Date` field and a `Rates USD` field, and the different dates to be added as different records with these two fields.
-
-We can do this by denormalizing the response. When we denormalize the response and run the request, the response will be transformed into:
-
-```
-{
-  "base": "EUR",
-  "start_date": "2020-01-01",
-  "end_date": "2020-01-07",
-  "rates":
-    [
-      {
-        "Date": "2020-01-01",
-        "USD": 1.1221,
-        "GBP": 0.8462
-      },
-      {
-        "Date": "2020-01-02",
-        "USD": 1.1221,
-        "GBP": 0.8466
-      },
-      {
-        "Date": "2020-01-03",
-        "USD": 1.1171,
-        "GBP": 0.8495
-      }
-    ]
-  }
-}
-```
-
 ## **The solution**
 
 What we really want is just two consistent fields: a `Date` field and a `USD` field. We want different dates to appear as separate records with these same two fields.
 
 We can do this by denormalizing the response. We set:
 
-1. **Denormalize Path **to  `$.rates` (the [JSONPath](https://github.com/json-path/JsonPath) expression for the top-level `rates` key)
+1. **Denormalize Path** to `$.rates` (the [JSONPath](https://github.com/json-path/JsonPath) expression for the top-level `rates` key)
 2. **Denormalize Field Name** to `Date` 
 
 After denormalization, the response becomes:

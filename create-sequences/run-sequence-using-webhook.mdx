@@ -10,7 +10,7 @@ A webhook URL allows you to run a sequence automatically when specific events oc
 
 To make your sequence runnable via webhook URL:
 
-1. On the sequence screen, click the **Webhook URL **tab.
+1. On the sequence screen, click the **Webhook URL** tab.
 2. Toggle on **Turn on webhook for sequence.**
 3. Click the clipboard icon (📋) to copy your unique webhook URL, which looks like:
 
@@ -39,10 +39,10 @@ You can trigger your sequence from Airtable automations when specific events occ
 
 1. In Airtable, create a new automation with your desired trigger (e.g., **When a record is updated**).
 2. Add a **Run a script** action.
-3. Paste the following code into the script, replacing `YYOUR_WEBHOOK_URL` with your sequence's webhook URL:
+3. Paste the following code into the script, replacing `YOUR_WEBHOOK_URL` with your sequence's webhook URL:
 
 ```
 await fetch(`YOUR_WEBHOOK_URL`);
 ```
 
-![Webhookurlscriptautomation Jpe](/images/webhookurlscriptautomation.jpeg)
+![Webhook URL script automation](/images/webhookurlscriptautomation.jpeg)

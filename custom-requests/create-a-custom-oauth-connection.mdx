@@ -51,12 +51,12 @@ This will open the custom OAuth connection screen, where you'll enter the follow
 - **Token URL**: the URL used after the authorization request to generate access tokens from the authorization code. This is typically something like `https://example.com/oauth/v2/token`.
 - **Client ID**: the app client ID from step 1.
 - **Client secret**: the app client secret from step 1.
-- **Base URL**: the root URL that all requests to this API use. e.g. `https://example.com/api/` .
+- **Base URL**: the root URL that all requests to this API use. e.g. `https://example.com/api/`.
 - **Scopes (comma separated)**: a comma separated list of the scopes that you want to access for this API. You can find these in the API documentation.
 
 ### **Optional fields**
 
-- **Authorization Parameters**: the parameters that will be added to the Authorization URL when making the authorization request. The API documentation will have a list of these parameters. Data Fetcher will automatically include the standard OAuth parameters `(response_type,client_id,redirect_uri,response_type,state,client_secret)`.
+- **Authorization Parameters**: the parameters that will be added to the Authorization URL when making the authorization request. The API documentation will have a list of these parameters. Data Fetcher will automatically include the standard OAuth parameters `(response_type,client_id,redirect_uri,state,client_secret)`.
 - **Token Parameters**. The parameters that will be added to the Token URL when making the token request. Data Fetcher will automatically add the `grant_type=authorization_code` parameter. If you need to use `grant_type=client_credentials` instead, simply add this as a token parameter.
 - **Request Headers**: any extra headers to be supplied with every request when using this custom OAuth connection.
 
@@ -70,7 +70,7 @@ Here's how to set up a custom OAuth connection for the Zoho People API:
 
 1. **Register with Zoho:** Go to the Zoho API Console and register a new client to get your client ID and client secret
 
-![Zohooauth Jpe](/images/zohooauth.jpeg)
+![Zoho OAuth setup](/images/zohooauth.jpeg)
 
 2. **Configure in Data Fetcher:** Using the Zoho People API OAuth documentation, we enter these values:
 

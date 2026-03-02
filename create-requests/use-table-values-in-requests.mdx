@@ -81,13 +81,11 @@ Let's create a dynamic timestamp in the format `2023-03-22 12:00:00.000`:
 2. Delete all records except one.
 3. Create a formula field called "Date today" with this formula:
 
-Copy
-
 ```
 DATETIME_FORMAT(NOW(), 'YYYY-MM-DD HH:mm:ss.sss')
 ```
 
-1. Create a single cell reference to this formula field in your request.
+4. Create a single cell reference to this formula field in your request.
 
 **Important:** Use a single cell value reference, not a multiple records reference. Since this formula field contains only one value (the current date/time), you must click on a specific record in the modal to select that single cell. Using a multiple records reference here will cause errors because the system expects to iterate through multiple records, but there's only one date value to use.
 
