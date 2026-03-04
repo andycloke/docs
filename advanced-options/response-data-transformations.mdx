@@ -1,12 +1,12 @@
 ---
-title: "Response data transformations"
+title: "Data transformation"
 ---
 
 When you run a request, the response data gets transformed into a tabular format with fields and records for your destination table. You control this process using response field mapping and response data transformation settings.
 
 ## **Understanding the two transformation types**
 
-Data Fetcher offers two ways to handle nested arrays in your API responses: **Single Record** and **Expanded**. The key difference is how they treat nested data.
+Data Fetcher offers two ways to handle nested arrays in your API responses: **Single record per item** and **Expand nested items**. The key difference is how they treat nested data.
 
 Let's use this sample JSON response to illustrate both approaches:
 
@@ -23,9 +23,9 @@ Let's use this sample JSON response to illustrate both approaches:
 ]
 ```
 
-### **Single record transformation**
+### **Single record per item**
 
-**Single Record** keeps each parent entity in one row by combining nested values with commas. Each company stays in its own record:
+**Single record per item** keeps each parent entity in one row by combining nested values with commas. Each company stays in its own record:
 
 | **Id**   | **Positions id**    |
 | -------- | ------------------- |
@@ -33,14 +33,14 @@ Let's use this sample JSON response to illustrate both approaches:
 | company2 | position3,position4 |
 
 <Info>
-  **Single Record** doesn't mean everything goes into one record. Data Fetcher
-  finds the first array in your response and creates one record for each item in
-  that array.
+  **Single record per item** doesn't mean everything goes into one record. Data
+  Fetcher finds the first array in your response and creates one record for each
+  item in that array.
 </Info>
 
-### **Expanded transformation**
+### **Expand nested items**
 
-Expanded creates separate records for each nested item, duplicating parent data across multiple rows:
+Expand nested items creates separate records for each nested item, duplicating parent data across multiple rows:
 
 | **Id**   | **Positions id** |
 | -------- | ---------------- |
@@ -52,7 +52,7 @@ Expanded creates separate records for each nested item, duplicating parent data 
 ## **How to set the transformation mode**
 
 1. On the create screen, scroll to the bottom and click to open the **Advanced Settings**.
-2. Under **Data Transformation**, select either Single Record or Expanded
+2. Under **Data Transformation**, select either Single record per item or Expand nested items
 
 <video
   controls
@@ -60,7 +60,7 @@ Expanded creates separate records for each nested item, duplicating parent data 
   src="/videos/Response data transformation.mp4"
 ></video>
 
-## **Advanced single record options**
+## **Advanced Single record per item options**
 
 ### **Combine nested object keys**
 
@@ -75,7 +75,7 @@ You can disable this to create separate numbered fields instead:
 
 **To disable combining nested object keys:**
 
-1. In advanced settings, ensure transformation is set to **Single Record.**
+1. In advanced settings, ensure transformation is set to **Single record per item.**
 2. Turn off **Combine nested object keys**.
 
 ### **Combine arrays of text/numbers**
@@ -106,7 +106,7 @@ You can disable this to create separate numbered fields:
 
 **To disable combining arrays:**
 
-1. In advanced settings, ensure transformation is set to **Single Record.**
+1. In advanced settings, ensure transformation is set to **Single record per item.**
 2. Turn off **Combine arrays of text/numbers.**
 
 ### **Custom separators**
