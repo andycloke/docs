@@ -64,7 +64,7 @@ If the site has anti-bot protection, you generally cannot access it via Data Fet
 
 Note: Some sites only work in browsers due to JavaScript rendering or cookie requirements that Data Fetcher cannot replicate.
 
-## Cannot create records in linked table "X" for response field "Y"
+## Cannot create records in linked table X for response field Y
 
 You have a linked field in the response field mapping and Data Fetcher needs to create records in the linked table (in order to link to them) but is not able to. This typically happens for two different reasons:
 
@@ -84,11 +84,11 @@ Alternatively, you may want to investigate why Data Fetcher has to create new re
 
 To fix this, you can either follow the steps above to turn off creating missing linked records or consider changing the field type of the linked field to a non-computed type, e.g. Number.
 
-## "X" variable is missing in workspace
+## X variable is missing in workspace
 
 Your request uses a variable but this variable no longer exists in your Data Fetcher workspace. You need to [create the variable](/create-requests/use-variables-in-requests#how-to-create-and-use-a-variable) again in your workspace or update the request to not use this variable.
 
-## Destination table "X" not found in base
+## Destination table X not found in base
 
 The destination table you selected has been deleted. You need to select a different destination table for this request.
 
@@ -96,7 +96,7 @@ The destination table you selected has been deleted. You need to select a differ
 - Under **Destination Table & View**, select a table.
 - Click "Save".
 
-## Destination view "X" not found in base
+## Destination view X not found in base
 
 The destination view you selected has been deleted. You need to select a different destination view for this request.
 
@@ -104,7 +104,7 @@ The destination view you selected has been deleted. You need to select a differe
 - Under **Destination Table & View**, select a view.
 - Click "Save".
 
-## Field "X" cannot accept the provided value
+## Field X cannot accept the provided value
 
 There is a mismatch between the field's type in the response field mapping and the Airtable field's type. For example, a number field is mapped to a "Single line text" field in Airtable. This can happen if you change the Airtable field's type after setting up the response field mapping.
 
@@ -112,7 +112,7 @@ There is a mismatch between the field's type in the response field mapping and t
 - Find the relevant field.
 - Use the field type dropdown to select a type which matches the field's type in the destination table.
 
-## Too many records in table "X"
+## Too many records in table X
 
 The table is at the record limit for your Airtable plan.
 
@@ -128,7 +128,7 @@ You can also turn off record creation in Data Fetcher:
 
 Your Data Fetcher workspace needs to be authorized to access all the bases where you want to use scheduled/ trigger/ webhook URLs runs. You either need to turn off the failing request's scheduled/trigger/webhook URL or [re-authenticate Data Fetcher and Airtable](/account/authorize-data-fetcher-airtable).
 
-## Your X references table "Y" but it is missing in base. Has it been renamed?
+## Your X references table Y but it is missing in base. Has it been renamed?
 
 Your request references a table by name, but that table cannot be found in the base. This most commonly happens after the table is renamed.
 
