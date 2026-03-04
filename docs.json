@@ -49,7 +49,7 @@
         ]
       },
       {
-        "group": "Advanced options",
+        "group": "Advanced settings",
         "pages": [
           "advanced-options/pagination",
           "advanced-options/rate-limit",
@@ -89,7 +89,7 @@
         ]
       },
       {
-        "group": "Account",
+        "group": "Workspace",
         "pages": [
           "account/upgrade-account",
           "account/authorize-data-fetcher-airtable",
