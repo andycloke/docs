@@ -5,9 +5,9 @@ description: "Here are some common errors that might occur during Data Fetcher r
 
 ## **Duplicate records being created**
 
-The most common cause of duplicate records is Airtable filters applied to your output view.
+The most common cause of duplicate records is Airtable filters applied to your destination view.
 
-Data Fetcher only searches for existing records in your selected output view, not the entire table. If filters hide existing records, Data Fetcher can't find them and creates duplicates.
+Data Fetcher only searches for existing records in your selected destination view, not the entire table. If filters hide existing records, Data Fetcher can't find them and creates duplicates.
 
 **Solution:** Create a dedicated view for Data Fetcher with no filters. Also verify your [**Match records using**](/create-requests/write-and-merge-data#choose-a-field-to-match-on) setting is using a unique identifier field.
 
@@ -88,20 +88,20 @@ To fix this, you can either follow the steps above to turn off creating missing 
 
 Your request uses a variable but this variable no longer exists in your Data Fetcher workspace. You need to [create the variable](/create-requests/use-variables-in-requests#how-to-create-and-use-a-variable) again in your workspace or update the request to not use this variable.
 
-## **Output table "X" not found in base**
+## **Destination table "X" not found in base**
 
-The output table you selected has been deleted. You need to select a different output table for this request.
+The destination table you selected has been deleted. You need to select a different destination table for this request.
 
 - Open the request.
-- Under **Output Table & View**, select a table.
+- Under **Destination Table & View**, select a table.
 - Click "Save".
 
-## **Output view "X" not found in base**
+## **Destination view "X" not found in base**
 
-The output view you selected has been deleted. You need to select a different output view for this request.
+The destination view you selected has been deleted. You need to select a different destination view for this request.
 
 - Open the request.
-- Under **Output Table & View**, select a view.
+- Under **Destination Table & View**, select a view.
 - Click "Save".
 
 ## **Field "X" cannot accept the provided value**
@@ -110,7 +110,7 @@ There is a mismatch between the field's type in the response field mapping and t
 
 - [Open the response field mapping](/create-requests/response-field-mapping).
 - Find the relevant field.
-- Use the field type dropdown to select a type which matches the field's type in the output table.
+- Use the field type dropdown to select a type which matches the field's type in the destination table.
 
 ## **Too many records in table "X"**
 

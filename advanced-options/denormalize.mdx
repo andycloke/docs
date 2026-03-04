@@ -2,7 +2,7 @@
 title: "Denormalize response"
 ---
 
-Some API endpoints return JSON data where each value is nested under different keys that change between responses. This creates problems when mapping response fields to an output table.
+Some API endpoints return JSON data where each value is nested under different keys that change between responses. This creates problems when mapping response fields to a destination table.
 
 ## **The problem**
 
@@ -89,7 +89,7 @@ After denormalization, the response becomes:
 }
 ```
 
-Now all dates appear under a consistent `rates.Date` field and all USD exchange rates appear under a consistent `rates.USD` field. This gives us stable field names that we can reliably map to our output table.
+Now all dates appear under a consistent `rates.Date` field and all USD exchange rates appear under a consistent `rates.USD` field. This gives us stable field names that we can reliably map to our destination table.
 
 ## **How to denormalize the response**
 

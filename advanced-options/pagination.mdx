@@ -156,11 +156,11 @@ After selecting a pagination type, choose one of these options:
 
 ### **Set up cursor pagination**
 
-1. Make sure you import the cursor field (usually an ID) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the cursor field in the output table.
+1. Make sure you import the cursor field (usually an ID) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the cursor field in the destination table.
 2. Set the pagination type to "Cursor".
 3. Set the **number of pages** to fetch or select **Fetch all pages.**
 4. Enter the name of the **cursor parameter**.
-5. Select the **Cursor field** from the output table fields using the dropdown.
+5. Select the **Cursor field** from the destination table fields using the dropdown.
 6. If the API supports it, you can set a page size parameter to help Data Fetcher know when to stop paginating.
    1. Set the name of the **page size parameter**.
    2. Set the **page size**.
@@ -173,10 +173,10 @@ After selecting a pagination type, choose one of these options:
 
 ### **Set up next URL pagination**
 
-1. Make sure you import the cursor field (usually an id) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the next URL field in the output table.
+1. Make sure you import the cursor field (usually an id) on the [response field mapping](https://help.datafetcher.com/create-requests/response-field-mapping) and run the request once to create the next URL field in the destination table.
 2. Set the pagination type to "Next URL".
 3. Set the **number of pages** to fetch or select **Fetch all pages.**
-4. Select the **Next URL field** from the output table fields using the dropdown:
+4. Select the **Next URL field** from the destination table fields using the dropdown:
 5. If the API supports it, you can set a page size parameter to help Data Fetcher know when to stop paginating.
    1. Set the name of the page size parameter.
    2. Set the page size.
@@ -210,11 +210,11 @@ After selecting a pagination type, choose one of these options:
 
 ### **Set up cursor body pagination**
 
-1. Make sure you select the cursor field (usually an ID) on the response field mapping and run the request once to create and populate the cursor field in the output table.
+1. Make sure you select the cursor field (usually an ID) on the response field mapping and run the request once to create and populate the cursor field in the destination table.
 2. Set the pagination type to "Cursor Body".
 3. Set the **number of pages** to fetch or select **Fetch all pages.**
 4. Enter the **Cursor path** for the request body. This uses JSONPath syntax (e.g., `$.pagination.cursor`).
-5. Select the **Cursor field** from the output table fields in the dropdown.
+5. Select the **Cursor field** from the destination table fields in the dropdown.
 
 <video
   controls
@@ -262,7 +262,7 @@ After selecting a pagination type, choose one of these options:
 
 ### **Set up GraphQL Cursor Pagination**
 
-1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the output table.
+1. Make sure you import the cursor field (usually an ID) on the response field mapping and run the request once to create the cursor field in the destination table.
 2. In the request screen's main **Body → GraphQL → Query** section, enter the GraphQL query, including any pagination arguments.
    1. There is no need to add them in the **Variables** section, as Data Fetcher will handle this automatically.
 3. Set the pagination type to "GraphQL Cursor".
