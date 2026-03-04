@@ -67,9 +67,9 @@ Your CRM API key expires, causing authentication errors.
 - If you don't fix it, after 50 consecutive failures the schedule pauses
 - **Result:** Less immediate notification, but more tolerance for temporary issues
 
-### **Scenario 2: Running on multiple records with some 404s**
+### **Scenario 2: Running for each record with some 404s**
 
-You're running a request on 100 customer IDs from your Airtable, calling an API to get order details for each customer.
+You're running a request for each of 100 customer IDs from your Airtable, calling an API to get order details for each customer.
 
 **The situation:** Some customers may not have any orders, causing the API to return 404 errors for those IDs.
 

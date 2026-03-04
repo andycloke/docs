@@ -2,24 +2,30 @@
 title: "Use table values in requests"
 ---
 
-You can use values from your Airtable tables directly in your Data Fetcher requests. This creates dynamic requests that automatically pull data from your tables when they run, making your API integrations much more powerful and flexible.
+You can use values from your Airtable tables directly in your Data Fetcher requests. This makes your requests dynamic, automatically pulling data from your base when they run.
 
-Data Fetcher offers two ways to use table values:
+Data Fetcher offers two ways to use table values, depending on whether you want to run one request per record or use a single value from your base.
 
-**Run on multiple records** - Executes a separate request for each record in a table or view. Perfect for bulk operations like looking up stock prices for every ticker symbol in your table or fetching details for every course ID.
+<Tip>
+**When should I use each option?**
 
-**Use a single cell value** - Runs one request using a value from a specific Airtable cell. Useful for dynamic values like current dates or storing API tokens in your base.
+Use **Run for each record** when you have a list of records and want one API call per record — for example, fetching stock prices for every ticker in your table.
 
-## **Run on multiple records**
+Use **Single cell** when you need one dynamic value, like today's date, an API token, or a configuration setting.
 
-This method processes each record in a table or view individually, making it ideal for bulk data operations.
+</Tip>
 
-### **Set up multiple record processing**
+## **Run for each record**
 
-1. Click the **\+** button in any compatible input field to open the table reference modal.
+This mode runs one request per record in a view, making it ideal for bulk operations.
+
+### **Set up "Run for each record"**
+
+1. Click the **\+** button in any compatible input, e.g. **URL** to open the **Add table field or variable** window.
 2. Select the **Table** and **Field** you want to reference from the dropdowns.
-3. Under **Run for every record in view**, select the view containing the records you want to process. Do not select an individual record.
-4. Click **Confirm**.
+3. Under **Use value from**, select **Each record (in a view)**.
+4. Select the **Input view** containing the records you want to process. If one is already set for this request, it will be selected automatically.
+5. Click **Confirm**.
 
 <video
   controls
@@ -27,36 +33,41 @@ This method processes each record in a table or view individually, making it ide
   src="/videos/Add table reference.mp4"
 ></video>
 
-The input field will now contain a reference to your table and field. When the request runs, Data Fetcher will execute one request per record in the view, replacing the reference with each record's value. Each record processed counts as one run toward your monthly usage.
+Once set up, Data Fetcher will run one request for each record in the selected view, using that record’s field value in the request.
 
-### **Configure advanced settings**
+Each record processed counts as one run toward your monthly usage.
 
-The Run on Multiple Records table and view are automatically set based on your selection, but you can modify these settings:
+### **Input table and input view**
 
-1. Click ▶ **Advanced settings** to expand the advanced options.
-2. Under **Run on Multiple Records**, select your desired table and view. The table must match the one referenced in your inputs.
+When using **Run for each record**, Data Fetcher needs to know which records to loop through. This is defined by the **Input table** and **Input view**.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="/videos/Multiple records advanced settings.mp4"
-></video>
+- **Input table** determines which table contains the records to process.
+- **Input view** determines which records in that table will run.
 
-**Important:** When running on multiple records, keep **Update based on field(s)** set to "None". This ensures Data Fetcher uses the record's position in the table to update the correct output record.
+When you select **Each record (in a view)** in the **Add table field or variable** window, these settings are automatically configured for you based on your selection. You can adjust them directly in the main request settings.
+
+The input table must match the table used in your reference. If they don’t match, Data Fetcher won’t know which records to iterate over.
+
+<Warning>
+  When using Run for each record, only use **[Match records
+  using](/create-requests/write-and-merge-data#choose-a-field-to-match-on)** to
+  match records. Do not match by position, as each record's response is written
+  to the destination table individually.
+</Warning>
 
 ### **Continue through errors**
 
-When running on multiple records, you may want the request to continue running through errors. You can enable this by selecting **Continue through errors** under [Error Handling](/advanced-options/error-handling).
+When using Run for each record, you may want the request to continue running through errors. You can enable this by selecting **Continue through errors** under [Error Handling](/advanced-options/error-handling).
 
-## **Use a single cell value**
+## **Single cell**
 
 This method pulls a value from one specific cell, perfect for dynamic values or configuration settings.
 
-### **Set up single cell reference**
+### **Set up a Single cell reference**
 
-1. Click the **\+** button in any compatible input field to open the table reference modal.
+1. Click the **\+** button in any compatible input field to open the **Add table field or variable** window.
 2. Select the **Table** and **Field** you want to reference.
-3. Select the specific **record** containing the cell value you need.
+3. Under **Use value from**, select **Single cell**, then select the specific record containing the cell value you need.
 4. Click **Confirm**.
 
 <video
@@ -65,13 +76,13 @@ This method pulls a value from one specific cell, perfect for dynamic values or 
   src="/videos/Add single cell reference.mp4"
 ></video>
 
-The input field will display a reference to that cell. When the request runs, Data Fetcher replaces the reference with the actual cell value.
+When the request runs, Data Fetcher uses the value from that selected cell.
 
-You can edit any table reference by clicking on it to reopen the table reference modal.
+You can edit any table reference by clicking on it to reopen the **Add table field or variable** window.
 
 ## **Use dynamic values with formula fields**
 
-For values that change over time (like current dates), create Airtable formula fields and reference them using the single cell method.
+For values that change over time (like current dates), create Airtable formula fields and reference them using **Single cell**.
 
 **Example: Using the current date and time**
 
@@ -85,16 +96,16 @@ Let's create a dynamic timestamp in the format `2023-03-22 12:00:00.000`:
 DATETIME_FORMAT(NOW(), 'YYYY-MM-DD HH:mm:ss.sss')
 ```
 
-4. Create a single cell reference to this formula field in your request.
+4. Create a **Single cell** reference to this formula field in your request.
 
-**Important:** Use a single cell value reference, not a multiple records reference. Since this formula field contains only one value (the current date/time), you must click on a specific record in the modal to select that single cell. Using a multiple records reference here will cause errors because the system expects to iterate through multiple records, but there's only one date value to use.
+**Important:** Use a **Single cell** reference here, not **Each record**. Since this field contains only one value, Data Fetcher should read it once. Selecting **Each record** would cause errors because there’s no list of records to iterate through.
 
 When your request runs (manually or automatically), Data Fetcher will use the current date and time value from the formula field.
 
 ## **URL encoding for table references**
 
-When using table values in URLs, you may need to encode special characters. Data Fetcher can handle this automatically:
+When using table values inside URLs (for example, search queries or query parameters), special characters like spaces or `&` must be URL encoded. Data Fetcher can handle this automatically:
 
-In the table reference modal, use the **Encode URL table references** option at the bottom to enable or disable automatic URL encoding for your reference.
+In the **Add table field or variable** window, use the **Encode URL table references** option at the bottom to enable or disable automatic URL encoding for your reference.
 
-This ensures that spaces, special characters, and other URL-incompatible values are properly formatted when used in request URLs.
+This ensures spaces and special characters are properly formatted in your request URL.
