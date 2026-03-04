@@ -2,25 +2,25 @@
 title: "Fixed IP Address"
 ---
 
-Some APIs require you to add specific IP addresses to an allowlist before accepting connections. Data Fetcher's Fixed IP Address feature ensures your requests always come from the same IP address, making it easy to meet this security requirement.
+Some APIs require you to add specific IP addresses to an allowlist before accepting connections. Data Fetcher's **Fixed IP Address** option ensures your requests always come from the same IP address, making it easy to meet this security requirement.
 
 <Info>This feature requires a paid Data Fetcher plan.</Info>
 
-### **How to Turn On Fixed IP Address**
+## **How to enable a fixed IP address**
 
 1. Navigate to the request screen in Data Fetcher.
-2. Scroll down to the bottom and click to open the **Advanced settings**.
-3. Under **Fixed IP Address**, toggle on **Use fixed IP address**.
-4. Your requests will now consistently run from the following IP address:
+2. Open **Advanced settings**.
+3. Scroll down and toggle on **Use fixed IP address**.
+4. Once enabled, your requests will run from the following IP address:
 
 ```
 54.173.229.200
 ```
 
-When configuring your API services, add this IP address to their allowlist settings to ensure successful connections.
+When configuring your API service, add this IP address to its allowlist so it can accept requests from Data Fetcher.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="/videos/Fixed ip address.mp4"
-></video>
+## **When to use a fixed IP address**
+
+Enable this option when the API you’re connecting to requires incoming requests to come from a known or allowlisted IP address. This is common with internal APIs, private services, or systems with strict firewall rules.
+
+If the API does not require IP allowlisting, you can leave this setting turned off.
