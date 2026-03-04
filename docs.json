@@ -62,6 +62,7 @@
           "advanced-options/rate-limit",
           "advanced-options/denormalize",
           "advanced-options/fixed-ip-address",
+          "advanced-options/verify-ssl-certificate",
           "advanced-options/xml-array-handling",
           "advanced-options/run-without-writing-to-airtable"
         ]
