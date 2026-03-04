@@ -1,0 +1,28 @@
+---
+title: "Run without writing to Airtable"
+---
+
+The **Run without writing to Airtable** option lets you run an API request without creating or updating any records in your Airtable base.
+
+When enabled, Data Fetcher will send the API request normally, but the response will not be written to your destination table.
+
+## When to use this
+
+This setting is useful when the API request performs an action rather than returning data.
+
+Common examples include:
+
+- **POST requests** that send data from Airtable to another system
+- **PATCH or PUT requests** that update records in an external API
+- API endpoints that **return no meaningful response data**
+
+In these cases, you may want Data Fetcher to execute the request but ignore the response.
+
+## How to enable it
+
+1. Open your request in Data Fetcher.
+2. Scroll down and open **Advanced settings**.
+3. Enable **Run without writing to Airtable**.
+4. Confirm the warning dialog.
+
+The request will still run and send the API request, but **no records will be created or updated in Airtable**.
