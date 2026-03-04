@@ -1,0 +1,102 @@
+---
+title: "Write and merge data"
+---
+
+When Data Fetcher runs your request, it writes the API response data to your destination table & view. By default, **Merge with existing records** is turned on. This means Data Fetcher updates matching records in your destination view instead of always creating new ones.
+
+## **Merge with existing records**
+
+With **Merge with existing records** enabled, Data Fetcher updates records already in your destination view instead of creating new ones.
+
+If no match field is selected, records are updated by position — the first record in the API response updates the first record in your destination view, and so on.
+
+**Example:** Your current destination view contains:
+
+| ID  | Name         | **Units sold** |
+| --- | ------------ | -------------- |
+| 229 | Orange Hat   | 5              |
+| 107 | Purple Skirt | 10             |
+
+The API response:
+
+| ID  | Name         | **Units sold** |
+| :-- | :----------- | :------------- |
+| 692 | Blue T-Shirt | 7              |
+| 229 | Orange Hat   | 10             |
+| 107 | Purple Skirt | 17             |
+
+After running with merge enabled but no match field, records update by position:
+
+| ID  | Name         | **Units sold** |
+| :-- | :----------- | :------------- |
+| 692 | Blue T-Shirt | 7              |
+| 229 | Orange Hat   | 10             |
+| 107 | Purple Skirt | 17             |
+
+This behavior can lead to records being overwritten incorrectly. The first record that was originally "Orange Hat" is now "Blue T-Shirt." Any existing links, comments, or custom field values tied to that record are now associated with the wrong item.
+
+To avoid this, select a match field.
+
+### **Choose a field to match on**
+
+Select a field under **Match records using** to match incoming records with existing records by value instead of position.
+
+1. Turn on **Merge with existing records** (enabled by default).
+2. Under **Match records using**, choose a field with unique values (e.g. ID or email).
+3. You can choose more than one field if needed. Data Fetcher will use the unique combination of values across the selected fields to match records.
+
+With "ID" selected as the match field, the same API response now updates correctly:
+
+| ID  | Name         | **Units sold** |
+| :-- | :----------- | :------------- |
+| 229 | Orange Hat   | 10             |
+| 107 | Purple Skirt | 17             |
+| 692 | Blue T-Shirt | 7              |
+
+Existing records are updated in place using the ID to match, preserving their identity and relationships. The new "Blue T-Shirt" record is added separately.
+
+<Note>
+  For best results, use a field with unique values. If no single field is
+  unique, select multiple fields whose combination is unique.
+</Note>
+
+### **Create new records if no match**
+
+When enabled (the default), any records in the API response that don't match an existing record in your destination view are created as new records.
+
+Turn this off if you only want to update existing records and ignore new ones.
+
+### **Delete records not in response**
+
+When enabled, Data Fetcher removes records from your destination view that no longer appear in the API response. This is useful when the source has deleted data and you want your table to stay in sync.
+
+This only affects records visible in your destination view.
+
+## **Important: destination view matters**
+
+Data Fetcher only looks at records in your selected destination view, not the entire destination table.
+
+<Warning>
+  If your destination view has Airtable filters, Data Fetcher may not find existing records to match against. This can cause duplicate records to be created or incorrect deletions.
+
+**Recommendation:** Create a dedicated, locked view with no filters to use as your destination view.
+
+</Warning>
+
+## **Append only (create new records)**
+
+Turn off **Merge with existing records** to switch to append behavior. Each run creates new records without modifying existing records.
+
+This is useful for tracking data over time, like daily sales snapshots.
+
+Using the same example data, after running with merge turned off:
+
+| ID  | Name         | **Units sold** |
+| :-- | :----------- | :------------- |
+| 229 | Orange Hat   | 5              |
+| 107 | Purple Skirt | 10             |
+| 692 | Blue T-Shirt | 7              |
+| 229 | Orange Hat   | 10             |
+| 107 | Purple Skirt | 17             |
+
+With a "Created time" field in Airtable, you can use this to track how values change over time.

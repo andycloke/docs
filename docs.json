@@ -27,6 +27,7 @@
         "pages": [
           "create-requests/create-a-request",
           "create-requests/response-field-mapping",
+          "create-requests/write-and-merge-data",
           "create-requests/use-table-values-in-requests",
           "create-requests/use-variables-in-requests",
           "create-requests/schedule-a-request",
@@ -52,8 +53,6 @@
       {
         "group": "Advanced options",
         "pages": [
-          "advanced-options/write-modes",
-          "advanced-options/update-based-on-field",
           "advanced-options/pagination",
           "advanced-options/error-handling",
           "advanced-options/empty-results-handling",

@@ -9,7 +9,7 @@ The most common cause of duplicate records is Airtable filters applied to your o
 
 Data Fetcher only searches for existing records in your selected output view, not the entire table. If filters hide existing records, Data Fetcher can't find them and creates duplicates.
 
-**Solution:** Create a dedicated view for Data Fetcher with no filters. Also verify your **Update Based on Field(s)** setting in Advanced settings is using a unique identifier field.
+**Solution:** Create a dedicated view for Data Fetcher with no filters. Also verify your [**Match records using**](/create-requests/write-and-merge-data#choose-a-field-to-match-on) setting is using a unique identifier field.
 
 ## **Authorization Errors**
 
@@ -121,9 +121,8 @@ You need to delete some records or upgrade to a larger Airtable (not Data Fetche
 You can also turn off record creation in Data Fetcher:
 
 - Open the request.
-- Open the "Advanced settings" and scroll down to **Write mode**.
-- Change the Write mode to **Update**.
-- Disable **Create records leftover after update**.
+- Ensure **Merge with existing records** is turned on.
+- Turn off **Create new records if no match**.
 
 ## **Data Fetcher does not have access to base X. Please re-authenticate via the extension and select "All current and future bases in all current and future workspaces"**
 
