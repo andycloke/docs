@@ -1,0 +1,43 @@
+---
+title: "CSV and XML response handling"
+---
+
+Data Fetcher supports API responses in multiple formats, including **CSV** and **XML**. These options in **Advanced settings** control how Data Fetcher interprets those responses before converting them into Airtable records.
+
+## CSV: includes header row
+
+The **CSV: includes header row** option controls how Data Fetcher interprets CSV responses.
+
+When enabled, Data Fetcher treats the **first row of the CSV file as column headers** and uses them to determine the field names written to Airtable.
+
+### When to enable this option
+
+Enable **CSV: includes header row** if the CSV file includes column names in the first row.
+
+Example CSV:
+```
+name,email,company
+Jane Doe,jane@example.com,Acme
+John Smith,john@example.com,Globex
+```
+
+In this case, the first row (`name,email,company`) will be used as the field names.
+
+### When to disable this option
+
+Disable this option if the CSV file **does not include header rows**. Otherwise, the first row of data may be interpreted as field names.
+
+## XML array handling
+
+When Data Fetcher fetches XML responses, it converts the XML into tabular data (fields and records) in two steps:
+
+1. The [xml2js](https://www.npmjs.com/package/xml2js) package converts the XML into a JavaScript object.
+2. Data Fetcher then transforms this object into tabular data using the standard [response data transformation](/advanced-options/response-data-transformations).
+
+By default, XML child nodes are only treated as arrays when there are multiple nodes. If there is only one child node, it is treated as an individual object.
+
+To treat **all child nodes as arrays**, even when there is only one:
+
+1. Navigate to the request screen in Data Fetcher.
+2. Open **Advanced settings**.
+3. Scroll down and toggle **Always put child nodes in array**.
