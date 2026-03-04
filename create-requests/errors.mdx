@@ -141,23 +141,30 @@ Your request references a table by name, but that table cannot be found in the b
 
 Your Airtable OAuth token has become invalid. This can happen due to Airtable API issues or if the token was revoked. You have two options to fix this:
 
-**Option 1: Re-authenticate with OAuth**
+**Option 1: Re-authorize with OAuth**
 
-- Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
-- Under **Workspaces**, click **Manage workspace** next to the workspace you want.
-- Under **Airtable OAuth Connection**, click **Authorize**.
-- On the modal that opens, click **I understand, let's authorize**.
-- A new tab/window will open - select **All current and future bases in all current and future workspaces**.
-- Click **Grant access**.
+1. Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
+2. Make sure the correct workspace is selected in the top-left dropdown.
+3. Click the "Airtable access" section on the left-hand menu.
+4. Under **OAuth Connection**, click **+ Re-authorize**.
+5. On the modal that opens, click **I understand, let's authorize**.
+6. A new tab/window will open - select **+ Add all resources** to avoid access issues in the future.
+7. Click **Grant access**.
+8. Back in the Data Fetcher extension, you should see **Connected** under **Airtable OAuth Connection**.
 
 **Option 2: Switch to Personal Access Token (PAT) - Recommended**
 
 Personal Access Tokens are more reliable and don't expire unexpectedly. To switch:
 
-- Go to [Airtable's token creation page](https://airtable.com/create/tokens/new).
-- Create a new token with access to all bases and these scopes: data.records:read, data.records:write, schema.bases:read, webhook:manage.
-- Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
-- Under **Workspaces**, click **Manage workspace**.
-- Under **Airtable Personal Access Token (PAT)**, click **+ Add** and paste your token.
-
-For detailed instructions, see [Authorize with a Personal Access Token (PAT)](https://help.datafetcher.com/account/authorize-data-fetcher-airtable#authorize-with-a-personal-access-token-pat).
+1. Go to [Airtable's token creation page](https://airtable.com/create/tokens/new).
+2. Create a new token with access to all bases and these scopes:
+   - `data.records:read`
+   - `data.records:write`
+   - `schema.bases:read`
+   - `webhook:manage`
+3. Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
+4. Make sure the correct workspace is selected in the top-left dropdown.
+5. Click the "Airtable access" section on the left-hand menu.
+6. Under **Personal Access Token (PAT)**, click **+ Add**.
+7. Paste in your Airtable personal access token.
+8. Click **Save**.
