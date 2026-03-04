@@ -15,11 +15,11 @@ Use **Single cell** when you need one dynamic value, like today's date, an API t
 
 </Tip>
 
-## **Run for each record**
+## Run for each record
 
 This mode runs one request per record in a view, making it ideal for bulk operations.
 
-### **Set up "Run for each record"**
+### Set up "Run for each record"
 
 1. Click the **\+** button in any compatible input, e.g. **URL** to open the **Add table field or variable** window.
 2. Select the **Table** and **Field** you want to reference from the dropdowns.
@@ -37,7 +37,7 @@ Once set up, Data Fetcher will run one request for each record in the selected v
 
 Each record processed counts as one run toward your monthly usage.
 
-### **Input table and input view**
+### Input table and input view
 
 When using **Run for each record**, Data Fetcher needs to know which records to loop through. This is defined by the **Input table** and **Input view**.
 
@@ -55,15 +55,15 @@ The input table must match the table used in your reference. If they don’t mat
   to the destination table individually.
 </Warning>
 
-### **Continue through errors**
+### Continue through errors
 
 When using Run for each record, you may want the request to continue running through errors. You can enable this by selecting **Continue through errors** under [Error Handling](/advanced-options/error-handling).
 
-## **Single cell**
+## Single cell
 
 This method pulls a value from one specific cell, perfect for dynamic values or configuration settings.
 
-### **Set up a Single cell reference**
+### Set up a Single cell reference
 
 1. Click the **\+** button in any compatible input field to open the **Add table field or variable** window.
 2. Select the **Table** and **Field** you want to reference.
@@ -80,7 +80,7 @@ When the request runs, Data Fetcher uses the value from that selected cell.
 
 You can edit any table reference by clicking on it to reopen the **Add table field or variable** window.
 
-## **Use dynamic values with formula fields**
+## Use dynamic values with formula fields
 
 For values that change over time (like current dates), create Airtable formula fields and reference them using **Single cell**.
 
@@ -102,7 +102,7 @@ DATETIME_FORMAT(NOW(), 'YYYY-MM-DD HH:mm:ss.sss')
 
 When your request runs (manually or automatically), Data Fetcher will use the current date and time value from the formula field.
 
-## **URL encoding for table references**
+## URL encoding for table references
 
 When using table values inside URLs (for example, search queries or query parameters), special characters like spaces or `&` must be URL encoded. Data Fetcher can handle this automatically:
 

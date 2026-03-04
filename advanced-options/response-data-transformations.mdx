@@ -4,7 +4,7 @@ title: "Data transformation"
 
 When you run a request, Data Fetcher converts the API response into a table of fields and records that can be written to your destination Airtable table. You can control how this data is structured using **response field mapping** and **data transformation** settings.
 
-## **Understanding the two transformation types**
+## Understanding the two transformation types
 
 Data Fetcher offers two ways to handle nested arrays in your API responses: **Single record per item** and **Expand nested items**. The key difference is whether nested arrays stay **combined in one record** or are **expanded into multiple records**.
 
@@ -23,7 +23,7 @@ Let's use this sample JSON response to illustrate both approaches:
 ]
 ```
 
-### **Single record per item**
+### Single record per item
 
 **Single record per item** keeps each parent entity in one row by combining nested values with commas. Each company stays in its own record:
 
@@ -39,7 +39,7 @@ Data Fetcher finds the **first array in the response** and creates **one record 
 
 </Info>
 
-### **Expand nested items**
+### Expand nested items
 
 **Expand nested items** creates a new record for each item in a nested array. Parent fields are duplicated so each nested item has its own row.
 
@@ -50,7 +50,7 @@ Data Fetcher finds the **first array in the response** and creates **one record 
 | company2 | position3        |
 | company2 | position4        |
 
-## **How to set the transformation mode**
+## How to set the transformation mode
 
 1. On the create screen, open **Advanced settings**.
 2. Under **Data Transformation**, select either **Single record per item** or **Expand nested items**.
@@ -61,9 +61,9 @@ Data Fetcher finds the **first array in the response** and creates **one record 
   src="/videos/Response data transformation.mp4"
 ></video>
 
-## **Advanced Single record per item options**
+## Advanced Single record per item options
 
-### **Combine nested object keys**
+### Combine nested object keys
 
 By default, nested object values are combined into a **comma-separated field**. Using our example above, all `positions.id` values become a single-line text field called **Positions id**.
 
@@ -79,7 +79,7 @@ You can disable this to create separate numbered fields instead:
 1. In advanced settings, ensure transformation is set to **Single record per item.**
 2. Turn off **Combine nested object keys**.
 
-### **Combine arrays of text/numbers**
+### Combine arrays of text/numbers
 
 Similarly, arrays of text or numbers are combined into a **comma-separated value** by default. For this response:
 
@@ -110,7 +110,7 @@ You can disable this to create separate numbered fields:
 1. In advanced settings, ensure transformation is set to **Single record per item.**
 2. Turn off **Combine arrays of text/numbers.**
 
-### **Custom separators**
+### Custom separators
 
 Instead of commas, you can specify a custom separator for combined values. This is useful if your data **already contains commas** and you need a different delimiter such as the pipe symbol (`|`).
 

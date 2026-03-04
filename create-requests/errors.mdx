@@ -3,7 +3,7 @@ title: "Troubleshoot errors"
 description: "Here are some common errors that might occur during Data Fetcher runs, with steps describing how to fix them."
 ---
 
-## **Duplicate records being created**
+## Duplicate records being created
 
 The most common cause of duplicate records is Airtable filters applied to your destination view.
 
@@ -11,7 +11,7 @@ Data Fetcher only searches for existing records in your selected destination vie
 
 **Solution:** Create a dedicated view for Data Fetcher with no filters. Also verify your [**Match records using**](/create-requests/write-and-merge-data#choose-a-field-to-match-on) setting is using a unique identifier field.
 
-## **Authorization Errors**
+## Authorization Errors
 
 Authorization errors usually happen when connecting third-party accounts (for example, Google Ads) to Data Fetcher. This connection uses OAuth, and it can fail or become invalid if the wrong account is used, permissions are missing, or the connection has expired.
 
@@ -29,7 +29,7 @@ Common symptoms include 401 / 403 errors, missing accounts, or requests that pre
 
 Re-authorizing ensures Data Fetcher has valid access tokens and the correct permissions for the account you're trying to use.
 
-## **Request works in Postman but not in Data Fetcher**
+## Request works in Postman but not in Data Fetcher
 
 This is usually caused by different headers being sent, particularly the User-Agent header.
 
@@ -46,7 +46,7 @@ This is usually caused by different headers being sent, particularly the User-Ag
 
 The User-Agent header is often the critical one - some APIs block requests without a browser-like User-Agent (Data Fetcher sends `axios/0.22.0` as the User-Agent).
 
-## **Request works in browser but not in Data Fetcher**
+## Request works in browser but not in Data Fetcher
 
 This typically indicates the website has bot protection (like Cloudflare) that blocks programmatic requests.
 
@@ -64,7 +64,7 @@ If the site has anti-bot protection, you generally cannot access it via Data Fet
 
 Note: Some sites only work in browsers due to JavaScript rendering or cookie requirements that Data Fetcher cannot replicate.
 
-## **Cannot create records in linked table "X" for response field "Y"**
+## Cannot create records in linked table "X" for response field "Y"
 
 You have a linked field in the response field mapping and Data Fetcher needs to create records in the linked table (in order to link to them) but is not able to. This typically happens for two different reasons:
 
@@ -84,11 +84,11 @@ Alternatively, you may want to investigate why Data Fetcher has to create new re
 
 To fix this, you can either follow the steps above to turn off creating missing linked records or consider changing the field type of the linked field to a non-computed type, e.g. Number.
 
-## **"X" variable is missing in workspace**
+## "X" variable is missing in workspace
 
 Your request uses a variable but this variable no longer exists in your Data Fetcher workspace. You need to [create the variable](/create-requests/use-variables-in-requests#how-to-create-and-use-a-variable) again in your workspace or update the request to not use this variable.
 
-## **Destination table "X" not found in base**
+## Destination table "X" not found in base
 
 The destination table you selected has been deleted. You need to select a different destination table for this request.
 
@@ -96,7 +96,7 @@ The destination table you selected has been deleted. You need to select a differ
 - Under **Destination Table & View**, select a table.
 - Click "Save".
 
-## **Destination view "X" not found in base**
+## Destination view "X" not found in base
 
 The destination view you selected has been deleted. You need to select a different destination view for this request.
 
@@ -104,7 +104,7 @@ The destination view you selected has been deleted. You need to select a differe
 - Under **Destination Table & View**, select a view.
 - Click "Save".
 
-## **Field "X" cannot accept the provided value**
+## Field "X" cannot accept the provided value
 
 There is a mismatch between the field's type in the response field mapping and the Airtable field's type. For example, a number field is mapped to a "Single line text" field in Airtable. This can happen if you change the Airtable field's type after setting up the response field mapping.
 
@@ -112,7 +112,7 @@ There is a mismatch between the field's type in the response field mapping and t
 - Find the relevant field.
 - Use the field type dropdown to select a type which matches the field's type in the destination table.
 
-## **Too many records in table "X"**
+## Too many records in table "X"
 
 The table is at the record limit for your Airtable plan.
 
@@ -124,11 +124,11 @@ You can also turn off record creation in Data Fetcher:
 - Ensure **Merge with existing records** is turned on.
 - Turn off **Create new records if no match**.
 
-## **Data Fetcher does not have access to base X. Please re-authenticate via the extension and select "All current and future bases in all current and future workspaces"**
+## Data Fetcher does not have access to base X. Please re-authenticate via the extension and select "All current and future bases in all current and future workspaces"
 
 Your Data Fetcher workspace needs to be authorized to access all the bases where you want to use scheduled/ trigger/ webhook URLs runs. You either need to turn off the failing request's scheduled/trigger/webhook URL or [re-authenticate Data Fetcher and Airtable](/account/authorize-data-fetcher-airtable).
 
-## **Your X references table "Y" but it is missing in base. Has it been renamed?**
+## Your X references table "Y" but it is missing in base. Has it been renamed?
 
 Your request references a table by name, but that table cannot be found in the base. This most commonly happens after the table is renamed.
 
@@ -137,7 +137,7 @@ Your request references a table by name, but that table cannot be found in the b
 - Clear the reference to the old table name (use the x button on the right-hand side).
 - Create a new reference (use the + button on the right-hand side).
 
-## **Your Airtable OAuth connection has expired or been revoked**
+## Your Airtable OAuth connection has expired or been revoked
 
 Your Airtable OAuth token has become invalid. This can happen due to Airtable API issues or if the token was revoked. You have two options to fix this:
 

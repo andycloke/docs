@@ -4,7 +4,7 @@ title: "Write and merge data"
 
 When Data Fetcher runs your request, it writes the API response data to your destination table & view. By default, **Merge with existing records** is turned on. This means Data Fetcher updates matching records in your destination view instead of always creating new ones.
 
-## **Merge with existing records**
+## Merge with existing records
 
 With **Merge with existing records** enabled, Data Fetcher updates records already in your destination view instead of creating new ones.
 
@@ -37,7 +37,7 @@ This behavior can lead to records being overwritten incorrectly. The first recor
 
 To avoid this, select a match field.
 
-### **Choose a field to match on**
+### Choose a field to match on
 
 Select a field under **Match records using** to match incoming records with existing records by value instead of position.
 
@@ -60,19 +60,19 @@ Existing records are updated in place using the ID to match, preserving their id
   unique, select multiple fields whose combination is unique.
 </Note>
 
-### **Create new records if no match**
+### Create new records if no match
 
 When enabled (the default), any records in the API response that don't match an existing record in your destination view are created as new records.
 
 Turn this off if you only want to update existing records and ignore new ones.
 
-### **Delete records not in response**
+### Delete records not in response
 
 When enabled, Data Fetcher removes records from your destination view that no longer appear in the API response. This is useful when the source has deleted data and you want your table to stay in sync.
 
 This only affects records visible in your destination view.
 
-## **Important: destination view matters**
+## Important: destination view matters
 
 Data Fetcher only looks at records in your selected destination view, not the entire destination table.
 
@@ -83,7 +83,7 @@ Data Fetcher only looks at records in your selected destination view, not the en
 
 </Warning>
 
-## **Append only (create new records)**
+## Append only (create new records)
 
 Turn off **Merge with existing records** to switch to append behavior. Each run creates new records without modifying existing records.
 

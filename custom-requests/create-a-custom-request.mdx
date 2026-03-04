@@ -4,7 +4,7 @@ title: "Create a custom request"
 
 Custom requests allow you to connect to any REST or GraphQL API directly in Airtable without writing code. You can configure the request URL, method, headers, body, authorization, pagination, and more using an interface similar to popular API clients like Postman or Insomnia.
 
-## **How to create a custom request**
+## How to create a custom request
 
 1. On the create request screen, under **Application**, select **Custom**.
 2. Enter the complete request **URL** in the URL input field. You can find this in your target API's documentation - it consists of a base URL plus the specific endpoint path.
@@ -19,7 +19,7 @@ https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd
   You can paste a cURL command directly into the URL input field, and Data Fetcher will automatically import all the request settings.
 </Note>
 
-### **Configure request options**
+### Configure request options
 
 Set up any additional options your API requires:
 
@@ -30,13 +30,13 @@ Set up any additional options your API requires:
 - [**Body**](/custom-requests/add-request-body) - Include request body data for POST, PUT, or PATCH requests
 - [**Pagination**](/advanced-options/pagination) - Set up automatic handling of paginated responses
 
-### **Complete the setup**
+### Complete the setup
 
 1. Enter a descriptive name for your request in the input field at the top of the screen.
 2. Select your **Destination Table and View** where the imported data should go. By default, this uses your current table and view.
 3. Click **Save & Run** in the bottom right corner.
 
-## **Configure field mapping and run**
+## Configure field mapping and run
 
 When you first run a request, the Response Field Mapping window opens. This is where you tell Data Fetcher how to match API response fields with your Airtable fields.
 

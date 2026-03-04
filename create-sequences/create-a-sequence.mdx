@@ -2,11 +2,11 @@
 title: "Create a sequence"
 ---
 
-## **What is a sequence?**
+## What is a sequence?
 
 A sequence is a powerful workflow automation feature that allows you to run multiple API requests in a specific order. When you create a sequence, Data Fetcher executes each request one after the other. You can use Airtable as a bridge between requests - writing data with one request and referencing it in subsequent ones, creating connected workflows. Sequences can be triggered manually, scheduled to run automatically, via triggers or webhook URLs—just like individual requests.
 
-## **Create and run a sequence**
+## Create and run a sequence
 
 1. First, create all the individual requests you want to include in your sequence.
 2. From the Data Fetcher home screen, click the small arrow to the right of the **Create request** button.
@@ -17,7 +17,7 @@ A sequence is a powerful workflow automation feature that allows you to run mult
 7. To run your sequence, click the **Run** button on the sequence screen.
 8. Data Fetcher will save your sequence, navigate to each request in order, run it, and then return to the sequence screen when complete.
 
-## **Handling request failures**
+## Handling request failures
 
 By default, if any request in your sequence fails, Data Fetcher will stop the entire sequence. However, you can customize this behavior:
 
@@ -25,7 +25,7 @@ By default, if any request in your sequence fails, Data Fetcher will stop the en
 2. Enable the option **If one of these requests fails, run the next request anyway**.
 3. With this setting enabled, Data Fetcher will continue executing the remaining requests in your sequence even if one fails.
 
-## **Connecting requests through Airtable**
+## Connecting requests through Airtable
 
 Since Data Fetcher doesn't directly pass data between sequence steps, you can use Airtable as an intermediary:
 

@@ -4,7 +4,7 @@ title: "Response JMESPath"
 
 Transform your API responses with JMESPath, a powerful query language that helps you extract and reshape JSON data before it reaches Airtable. Use JMESPath to keep only the fields you need, rename confusing field names, filter data based on conditions, and work with nested structures.
 
-## **How to set up Response JMESPath**
+## How to set up Response JMESPath
 
 1. On the request screen, click the **Advanced Settings** button to expand additional options.
 2. Scroll down to the **Response JMESPath** field and enter your expression.
@@ -23,11 +23,11 @@ Transform your API responses with JMESPath, a powerful query language that helps
   website](https://jmespath.org/) before adding them to Data Fetcher.
 </Note>
 
-## **Common use cases and examples**
+## Common use cases and examples
 
 The examples below show how JMESPath can solve common data transformation challenges. In each case, the result is JSON that Data Fetcher can easily map to Airtable fields.
 
-### **Keep only specific fields**
+### Keep only specific fields
 
 **Problem:** Your API returns too much data, and you only need a few fields.
 
@@ -71,7 +71,7 @@ The examples below show how JMESPath can solve common data transformation challe
 
 **How it works:** In JMESPath, use `new_name:old_name` syntax inside curly braces to rename fields.
 
-### **Filter data by conditions**
+### Filter data by conditions
 
 **Problem:** You only want records that meet specific criteria.
 
@@ -88,7 +88,7 @@ Use conditions with a question mark `?` followed by operators to filter your dat
 
 **Example:** To keep only coins worth more than \$100, use: `coins[?current_price > 100]`
 
-### **Work with nested data**
+### Work with nested data
 
 **Problem:** The data you need is buried inside nested objects or arrays.
 
@@ -123,7 +123,7 @@ Use conditions with a question mark `?` followed by operators to filter your dat
 
 **How it works:** Use dot notation (`stats.current_price`) to access nested object properties.
 
-### **Choose the right array**
+### Choose the right array
 
 **Problem:** Your JSON has multiple arrays, but Data Fetcher is using the wrong one.
 
@@ -156,7 +156,7 @@ Use conditions with a question mark `?` followed by operators to filter your dat
 ]
 ```
 
-### **JMESPath syntax quick reference**
+### JMESPath syntax quick reference
 
 - **Arrays:** Access with `array_name[]`
 - **Objects:** Access with `object_name.field_name`

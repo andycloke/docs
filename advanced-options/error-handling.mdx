@@ -16,7 +16,7 @@ Data Fetcher’s error handling lets you control how consecutive errors are hand
    - **Pause automated runs after Y errors**
 5. (Optional) Enable **Treat empty results as an error**
 
-### **Notify and stop after consecutive errors**
+### Notify and stop after consecutive errors
 
 This setting controls when Data Fetcher will notify you of errors and stop the current execution.
 
@@ -29,7 +29,7 @@ This setting controls when Data Fetcher will notify you of errors and stop the c
 - Set to **1** for critical data where any error needs immediate attention
 - Set to **5** for resilient imports that should tolerate a few sporadic failures
 
-### **Pause automated runs after consecutive errors**
+### Pause automated runs after consecutive errors
 
 This setting determines when Data Fetcher pauses your automation (schedules, webhook URLs, and triggers) to prevent runaway failures.
 
@@ -42,7 +42,7 @@ When this threshold is reached, your automation will be paused and you'll receiv
 - Set to **5** for immediate protection against systematic failures
 - Set to **50** for maximum resilience before pausing
 
-### **Treat empty results as an error**
+### Treat empty results as an error
 
 When enabled, a run that returns zero records after transformation and mapping is treated as an error — even if the API call itself succeeded. This is useful when you expect data to always be present (e.g. daily sales, inventory updates) and want to be alerted when it's missing.
 
@@ -50,7 +50,7 @@ Leave this off if data volume naturally varies or empty periods are normal for y
 
 Empty results count toward your consecutive error thresholds.
 
-## **Understanding consecutive errors**
+## Understanding consecutive errors
 
 Data Fetcher counts **consecutive** errors, meaning successful runs reset the error counter to zero.
 
@@ -65,11 +65,11 @@ Data Fetcher counts **consecutive** errors, meaning successful runs reset the er
 
 This prevents sporadic, unrelated errors from triggering notifications while still catching systematic problems.
 
-## **Why this matters: A practical example**
+## Why this matters: A practical example
 
 Let's say you have a scheduled request that imports customer data from your CRM every hour.
 
-### **Scenario 1: API key expires**
+### Scenario 1: API key expires
 
 Your CRM API key expires, causing authentication errors.
 
@@ -83,7 +83,7 @@ Your CRM API key expires, causing authentication errors.
 - After 10 consecutive errors → You get notified via email
 - If you don't fix it, after 50 consecutive failures the schedule pauses
 
-### **Scenario 2: Running for each record with some 404s**
+### Scenario 2: Running for each record with some 404s
 
 You're running a request for each of 100 customer IDs from your Airtable, calling an API to get order details for each customer.
 
@@ -98,7 +98,7 @@ You're running a request for each of 100 customer IDs from your Airtable, callin
 - Individual 404 errors are tolerated, request continues processing all customers
 - Only systematic issues (like API authentication failing) trigger notifications
 
-### **Scenario 3: Intermittent rate limit errors**
+### Scenario 3: Intermittent rate limit errors
 
 Your API occasionally returns rate limit errors during peak hours.
 
@@ -112,7 +112,7 @@ Your API occasionally returns rate limit errors during peak hours.
 - Occasional rate limits don't trigger notifications
 - Only systematic issues (like 10 consecutive rate limits) trigger alerts
 
-## **Sequences vs individual requests**
+## Sequences vs individual requests
 
 **For sequences:** Error handling settings on the sequence take precedence over individual request settings when the sequence runs.
 
