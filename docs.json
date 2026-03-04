@@ -55,7 +55,6 @@
         "pages": [
           "advanced-options/pagination",
           "advanced-options/error-handling",
-          "advanced-options/empty-results-handling",
           "advanced-options/response-data-transformations",
           "advanced-options/add-fixed-value-to-output",
           "advanced-options/max-response-records",
