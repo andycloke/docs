@@ -3,16 +3,16 @@ title: "Response field mapping"
 description: "Response field mapping is where you control which data from your API response gets imported into Airtable and how it maps to your table's fields."
 ---
 
-## **Set up response field mapping**
+## Set up response field mapping
 
-### **Initial setup**
+### Initial setup
 
 When you create a request for the first time:
 
 1. Click **Save & Run** on your request configuration.
 2. The Response Field Mapping modal will open, showing all available fields from the API response along with a preview of the records.
 
-### **Map your fields**
+### Map your fields
 
 For each response field, you can:
 
@@ -25,13 +25,13 @@ Once you've configured your mappings, click **Save & Run**. Data Fetcher will cr
 
 <video controls className="w-full aspect-video rounded-xl" src="/videos/Rfm map fields.mp4" />
 
-## **Updating field mappings**
+## Updating field mappings
 
-### **Reopen field mapping**
+### Reopen field mapping
 
 After your initial setup, you can modify field mappings anytime by clicking **Open field mapping** on your request.
 
-### **Refresh fields**
+### Refresh fields
 
 When your API response changes (for example, due to parameter updates), you can refresh available fields without using your monthly usage limits:
 
@@ -42,11 +42,11 @@ When your API response changes (for example, due to parameter updates), you can 
 
 The field mappings also refresh automatically when you change [Response data transformations](/advanced-options/response-data-transformations), [Response JMESPath](/advanced-options/response-jmespath), or [Max response records](/advanced-options/max-response-records).
 
-## **Additional field options**
+## Additional field options
 
-### **Formula**
+### Formula
 
-Apply transformations to field values before they reach your output table using formulas. Reference the original value as `value` in your formula (e.g., `upper(value)`).
+Apply transformations to field values before they reach your destination table using formulas. Reference the original value as `value` in your formula (e.g., `upper(value)`).
 
 1. Click the settings icon next to any field to open field settings.
 2. Enter your formula in the **Formula** input.
@@ -56,13 +56,13 @@ Apply transformations to field values before they reach your output table using 
 
 You can find a full list of [available formulas here](https://andycloke.github.io/formula/) and test them in our [JavaScript Formula Playground](https://datafetcher.com/javascript-formula-playground).
 
-### **Create linked records**
+### Create linked records
 
 Data Fetcher can automatically create and update linked records during imports. This is useful when you have related data, such as tasks linked to users.
 
 **Use an existing linked field:**
 
-1. Select **Existing field** and choose a linked field from your output table.
+1. Select **Existing field** and choose a linked field from your destination table.
 2. By default, Data Fetcher uses the primary field in the linked table to find records. To change this, click the field settings icon and select a different field under **Linked table field**.
 
 **Create a new linked field:**
@@ -74,21 +74,21 @@ When the request runs, Data Fetcher will create links by looking for response va
 
 <video controls className="w-full aspect-video rounded-xl" src="/videos/Rfm linked.mp4" />
 
-#### **Link to multiple records**
+#### Link to multiple records
 
 Enable comma-separated values to create multiple linked records:
 
 1. Click the field settings icon next to the field name.
 2. Under **Allow multiple links**, select **Allow**.
 
-#### **Create missing linked records**
+#### Create missing linked records
 
 By default, Data Fetcher creates missing records in linked tables. You can disable this for read-only tables:
 
 1. Click the settings icon next to the field name.
 2. Under **Create missing records**, enable or disable **Create**.
 
-### **Handle attachment fields**
+### Handle attachment fields
 
 Map remote file URLs (PNG, SVG, PDF, etc.) directly to Airtable attachment fields by selecting **Attachment** as the field type.
 
@@ -104,9 +104,9 @@ Map remote file URLs (PNG, SVG, PDF, etc.) directly to Airtable attachment field
 2. Under **Write the attachment only if the cell is empty**, enable **Only if empty**.
 3. Click **Save**.
 
-## **Access raw response data**
+## Access raw response data
 
-### **View raw response**
+### View raw response
 
 Data Fetcher converts API responses into tabular format, but you can view the original JSON or XML:
 
@@ -115,9 +115,9 @@ Data Fetcher converts API responses into tabular format, but you can view the or
 
 **For JSON responses:** Click any value to toggle whether it's imported. Click the arrow next to field names to navigate directly to that field in the response.
 
-**Note:** For paginated requests and Run on Multiple Record requests, the response field mapping shows only the first request's response data.
+**Note:** For paginated requests and Run for each record requests, the response field mapping shows only the first request's response data.
 
-### **Copy or download response**
+### Copy or download response
 
 You can copy the JSON response to your clipboard or download it, which is helpful when working with JMESPath expressions:
 
@@ -127,7 +127,7 @@ You can copy the JSON response to your clipboard or download it, which is helpfu
 
 <video controls className="w-full aspect-video rounded-xl" src="/videos/Rfm response data.mp4" />
 
-## **Access advanced settings**
+## Access advanced settings
 
 You can access the Advanced settings in the Response Field Mapping settings sidebar:
 
@@ -135,7 +135,7 @@ You can access the Advanced settings in the Response Field Mapping settings side
 2. Click **Advanced settings**.
 3. Make changes to [Response data transformations](/advanced-options/response-data-transformations), [Response JMESPath](/advanced-options/response-jmespath), or [Max response records](/advanced-options/max-response-records) and see the effects straight away.
 
-## **Troubleshooting tips**
+## Troubleshooting tips
 
 - Data Fetcher suggests field types based on response data, but you can modify these suggestions (for example, changing from Number to Currency)
 - Be cautious when changing suggested data types, as incompatible values can cause import errors (for example, mapping text like "sdlf3421asd" to a Number field will fail)

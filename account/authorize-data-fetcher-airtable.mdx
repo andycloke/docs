@@ -12,48 +12,41 @@ You only need to do this once, as Data Fetcher will securely store your authenti
   every base you want to run scheduled / webhook URL / triggers in.
 </Info>
 
-## **Authorize with OAuth**
+OAuth connections can occasionally be flaky due to token expiration or Airtable API instability, while personal access tokens tend to be more reliable for consistent long-term access to your Airtable data.
 
-1. Hover over the extension, then click the **settings icon** (⚙️) to open the settings screen.
-2. Under **Workspaces**, click **Manage workspace** next to the workspace you want.
-3. Under **Airtable OAuth Connection**, click **Authorize**.
-4. On the modal that opens, click **I understand, let's authorize**.
-5. A new tab/window will open, prompting you to let Data Fetcher access Airtable.
-6. Add the bases you want Data Fetcher to have access to.
-   1. Select **All current and future bases in all current and future workspaces** to avoid any unauthorized issues in the future.
+## Authorize with OAuth
+
+1. Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
+2. Make sure the correct workspace is selected in the top-left dropdown.
+3. Click the "Airtable access" section on the left-hand menu.
+4. Under **OAuth Connection**, click **+ Authorize**.
+5. On the modal that opens, click **I understand, let's authorize**.
+6. A new tab/window will open - select **+ Add all resources** to avoid access issues in the future.
 7. Click **Grant access**.
 8. Back in the Data Fetcher extension, you should see **Connected** under **Airtable OAuth Connection**.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="/videos/Authorize oauth.mp4"
-></video>
+## Authorize with a personal access token (PAT)
 
-## **Authorize with a personal access token (PAT)**
-
-1. Hover over the extension, then click the **settings icon** (⚙️) to open the settings screen.
-2. Under **Workspaces**, click **Manage workspace** next to the workspace you want.
-3. Under **Airtable Personal Access Token (PAT)**, click the **\+ Add** button.
-4. Enter your Airtable personal access token.
-   1. You can create a token here: https://airtable.com/create/tokens/new . Make sure you give it access to all bases, and the following scopes: data.records:read, data.records:write, schema.bases:read, webhook:manage.
-5. Click **Save**.
+1. Go to [Airtable's token creation page](https://airtable.com/create/tokens/new).
+2. Create a new token with access to all bases and these scopes:
+   - `data.records:read`
+   - `data.records:write`
+   - `schema.bases:read`
+   - `webhook:manage`
+3. Hover over the Data Fetcher extension, then click the **settings icon** (⚙️).
+4. Make sure the correct workspace is selected in the top-left dropdown.
+5. Click the "Airtable access" section on the left-hand menu.
+6. Under **Personal Access Token (PAT)**, click **+ Add**.
+7. Paste in your Airtable personal access token.
+8. Click **Save**.
 
 Your Airtable PAT will be saved in your Data Fetcher workspace.
 
-<video
-  controls
-  className="w-full aspect-video rounded-xl"
-  src="/videos/Authorize pat.mp4"
-></video>
+### Important: PAT takes precedence
 
-### **Important: PAT takes precedence**
-
-If both OAuth and PAT are configured for a workspace, Data Fetcher will always use the PAT for authentication. This means:
+If both OAuth and a PAT are configured for a workspace, Data Fetcher will always use the PAT for authentication. This means:
 
 - If you want to use OAuth, make sure no PAT is configured
 - If you want to switch from PAT to OAuth, you'll need to remove the PAT first
-
-OAuth connections can occasionally be flaky due to token expiration or permission changes, while personal access tokens tend to be more reliable for consistent long-term access to your Airtable data.
 
 To remove a PAT, go to workspace settings and click the delete icon (🗑️) next to it.

@@ -2,9 +2,9 @@
 title: "Denormalize response"
 ---
 
-Some API endpoints return JSON data where each value is nested under different keys that change between responses. This creates problems when mapping response fields to an output table.
+Some API endpoints return JSON data where each value is nested under different keys that change between responses. This creates problems when mapping response fields to a destination table.
 
-## **The problem**
+## The problem
 
 For example, if calling a currency conversion API gives us this JSON:
 
@@ -53,7 +53,7 @@ If we change the request parameters to use different dates (like `2021-01-01` to
 }
 ```
 
-## **The solution**
+## The solution
 
 What we really want is just two consistent fields: a `Date` field and a `USD` field. We want different dates to appear as separate records with these same two fields.
 
@@ -89,9 +89,9 @@ After denormalization, the response becomes:
 }
 ```
 
-Now all dates appear under a consistent `rates.Date` field and all USD exchange rates appear under a consistent `rates.USD` field. This gives us stable field names that we can reliably map to our output table.
+Now all dates appear under a consistent `rates.Date` field and all USD exchange rates appear under a consistent `rates.USD` field. This gives us stable field names that we can reliably map to our destination table.
 
-## **How to denormalize the response**
+## How to denormalize the response
 
 1. On the create screen, scroll to the bottom and click to open the **Advanced Settings**.
 2. Under **Denormalize Path**, enter the JSONPath to where you want to denormalize the data (for the example above, use `$.rates`).

@@ -1,0 +1,28 @@
+---
+title: "Verify SSL certificate"
+---
+
+The **Verify SSL certificate** option ensures that Data Fetcher verifies the API's SSL certificate when making a request. This helps confirm that the connection is secure and that the server you are connecting to is trusted.
+
+In most cases, this setting should remain enabled.
+
+## When to disable SSL verification
+
+Disable **Verify SSL certificate** only if the API you are connecting to uses a **self-signed SSL certificate**. Some internal or private APIs use self-signed certificates, which can cause SSL verification to fail.
+
+If SSL verification fails, you may see errors such as:
+
+- `self signed certificate`
+- `unable to verify the first certificate`
+
+Turning this option off allows the request to proceed without validating the certificate.
+
+<Warning>
+Disabling SSL verification reduces connection security. Only disable this option if you trust the API you are connecting to.
+</Warning>
+
+## How to enable or disable it
+
+1. Navigate to the request screen in Data Fetcher.
+2. Open **Advanced settings**.
+3. Scroll down and toggle **Verify SSL certificate** on or off.

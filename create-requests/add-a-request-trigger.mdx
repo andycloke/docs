@@ -6,15 +6,15 @@ Request triggers automatically run your Data Fetcher requests whenever specific 
 
 Unlike scheduled requests that run at fixed intervals, triggers respond to events in near real-time, making them ideal for workflows that need immediate data synchronization or notifications.
 
-## **Set up a request trigger**
+## Set up a request trigger
 
-### **Authorize Data Fetcher**
+### Authorize Data Fetcher
 
 Before creating triggers, you need to authorize Data Fetcher to access your Airtable account using OAuth. You only need to complete this authorization once.
 
 [For detailed authorization instructions, see our guide to authorization](/account/authorize-data-fetcher-airtable).
 
-### **Configure the trigger**
+### Configure the trigger
 
 1. On the custom request screen, click the **Trigger** tab.
 2. Select your trigger type from the available options:
@@ -38,17 +38,17 @@ Once your trigger is active, you can verify it's working by making a test change
   src="/videos/Request trigger.mp4"
 ></video>
 
-## **Trigger limitations**
+## Trigger limitations
 
 You can add a maximum of two triggers per base (across all Data Fetcher installations in that base and workspace) due to Airtable's webhook API limitations.
 
-## **Advanced trigger options**
+## Advanced trigger options
 
-### **Run when a record enters a view**
+### Run when a record enters a view
 
 You can trigger requests when records enter a specific view by using the **Record created** trigger type and selecting both a **Table** and **View**. This is useful for workflows where records moving into a view indicates they're ready for processing.
 
-### **Include Airtable API changes**
+### Include Airtable API changes
 
 By default, triggers ignore changes made through the Airtable REST API to prevent conflicts. You can enable the **Run when the base is changed via the Airtable API** setting to include these changes.
 

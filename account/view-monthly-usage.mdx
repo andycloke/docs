@@ -4,16 +4,16 @@ title: "View monthly usage"
 
 Your Data Fetcher plan includes a monthly allowance of runs and response records. Usage resets on the same day each month that you originally upgraded your workspace - not at the start of each calendar month.
 
-## **What counts as a run?**
+## What counts as a run?
 
 A run is a single API request. Each time you click the **Run** button, you'll use at least one run from your monthly allowance. Here's when you might use multiple runs:
 
-1. [Run on Multiple Records](https://help.datafetcher.com/create-requests/use-table-values-in-requests#run-on-multiple-records): When you apply a request across multiple Airtable records, each record processed counts as one separate run. For example, fetching stock prices for 20 records would use 20 runs.
+1. [Run for each record](https://help.datafetcher.com/create-requests/use-table-values-in-requests#run-for-each-record): When you run a request for each record in a view, each record processed counts as one separate run. For example, fetching stock prices for 20 records would use 20 runs.
 2. [Pagination](https://help.datafetcher.com/advanced-options/pagination): When your request retrieves data across multiple pages, each page fetched counts as one run. For instance, if results span 3 pages, that's 3 runs.
 
 Failed API requests don't count against your usage, and creating or refreshing your response field mapping is also free.
 
-## **What counts as a response record?**
+## What counts as a response record?
 
 When you run a request, Data Fetcher transforms the API response into Airtable records using your configured [response data transformation](https://help.datafetcher.com/advanced-options/response-data-transformations) and [field mapping](https://help.datafetcher.com/create-requests/response-field-mapping). The number of records counted against your usage is based on how many transformed items result from this process, not how many values actually change in Airtable.
 
@@ -22,7 +22,7 @@ For example:
 - A response containing a list of 50 items would count as 50 records (even if sent in a single run).
 - A response containing a single object would count as just 1 record.
 
-## **How do different run types affect my usage?**
+## How do different run types affect my usage?
 
 All types of runs in Data Fetcher consume your monthly allowance in the same way, regardless of how they're triggered:
 
@@ -35,7 +35,7 @@ Each of these methods counts as one or more runs against your monthly allowance,
 
 The same applies to response records - the number of records used depends on the data returned, not how the request was triggered.
 
-## **How to check your current usage**
+## How to check your current usage
 
 To view your run and response record usage for the current billing period:
 
@@ -43,7 +43,7 @@ To view your run and response record usage for the current billing period:
 2. Make sure the correct workspace is selected in the top-left dropdown.
 3. On the workspace **Home** screen, you will see a chart of your usage this billing cycle, and how close to your plan limits you are.
 
-## **How to check your usage reset date**
+## How to check your usage reset date
 
 To find out exactly when your monthly usage allowance will reset:
 

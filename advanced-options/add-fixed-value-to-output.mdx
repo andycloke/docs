@@ -1,34 +1,34 @@
 ---
-title: "Add fixed value(s) to output"
+title: "Add fixed values to output"
 ---
 
-You can add fixed (constant) values to every record written to the output table when a request runs.
+You can add fixed (constant) values to every record written to the destination table when a request runs.
 
 This feature can help you track which request created or updated the record, making it easy to identify the data source for each entry. Combined with Airtable formula fields, it can also be used to add a timestamp to the output data.
 
-## **When to use fixed values**
+## When to use fixed values
 
 Fixed values are particularly useful when you're importing similar data from multiple sources into the same table. For example, if you have an "Orders" table that collects orders from both Shopify and Etsy, you can use fixed values to automatically tag each record with its source platform.
 
 Here's how this works in practice:
 
-1. Create an Airtable field in your output table to store the source information (e.g. a "Single select" field called "Platform" with "Shopify" and "Etsy" as options).
+1. Create an Airtable field in your destination table to store the source information (e.g. a "Single select" field called "Platform" with "Shopify" and "Etsy" as options).
 2. Create a separate request for each data source.
 3. Configure each request to automatically add the appropriate fixed value ("Shopify" for the Shopify request and "Etsy" for the Etsy request)
 
 When the requests run, every imported record will be automatically tagged with its source, so you'll always know whether an order came from Shopify or Etsy.
 
-## **How to add fixed value(s)**
+## How to add fixed values
 
 1. Navigate to the request screen in Data Fetcher.
 2. Scroll down to the bottom and click to open the **Advanced settings**.
-3. Under **Add Fixed Value(s)**, click **\+ Add fixed value**.
-4. Select a field from the output table using the left-hand dropdown.
+3. Under **Add Fixed Values**, click **\+ Add fixed value**.
+4. Select a field from the destination table using the left-hand dropdown.
 5. Enter the value you want to add to each record in the right-hand input.
 
 You can add more fixed values using the same steps.
 
-The fixed value(s) will be added to all records created / updated by this request.
+The fixed values will be added to all records created / updated by this request.
 
 <video
   controls
@@ -36,20 +36,20 @@ The fixed value(s) will be added to all records created / updated by this reques
   src="/videos/Add fixed values.mp4"
 ></video>
 
-## **Add fixed values for empty results**
+## Add fixed values for empty results
 
 By default, fixed values are only added when your request returns data. Enable **"Add fixed field even when no records returned"** to create a record with your fixed value even when the API returns no results.
 
 This is useful for tracking failed requests, maintaining audit trails, or logging when scheduled requests run but find no new data.
 
-## **Use Airtable values as fixed values**
+## Use Airtable values as fixed values
 
 Instead of using static values, you can reference values from your Airtable tables as fixed values. This is particularly useful for adding dynamic information like timestamps or configuration data that changes over time.
 
 **Common use cases:**
 
 - Add a timestamp showing when Data Fetcher last ran
-- Linking to a source record when running on multiple records
+- Linking to a source record when running for each record
 
 **How to set this up:**
 

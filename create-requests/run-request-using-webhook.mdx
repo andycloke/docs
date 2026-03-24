@@ -8,15 +8,15 @@ You can also use webhook URLs within Airtable Automations to run requests based 
 
 <Info>This feature requires a paid Data Fetcher plan.</Info>
 
-## **Set up request webhook URL**
+## Set up request webhook URL
 
-### **Authorize Data Fetcher**
+### Authorize Data Fetcher
 
 Before using webhooks, you need to authorize Data Fetcher to access your Airtable account. You only need to complete this once.
 
 [For detailed authorization instructions, see our guide](/account/authorize-data-fetcher-airtable).
 
-### **Turn on the webhook URL**
+### Turn on the webhook URL
 
 1. On the request screen, click the **Webhook URL** tab.
 2. Toggle on **Turn on webhook for request**.
@@ -34,15 +34,15 @@ https://hook.datafetcher.com/h/rj4X86TTJ747CAPj9gVU9mrKnN33wKqT46CbaaTxnaXqsr
   src="/videos/Request webhook url.mp4"
 ></video>
 
-## **Using webhook URLs**
+## Using webhook URLs
 
-#### **Run for all records**
+#### Run for all records
 
 Once your webhook is active, calling the webhook URL will execute your request with its current configuration. This is useful for triggering data imports or updates from external systems.
 
-#### **Run for a specific record**
+#### Run for a specific record
 
-You can target a specific record by adding a `record_id` parameter to the webhook URL. First, make sure you've selected a **Run on Multiple Records** table and view in your request's advanced settings.
+You can target a specific record by adding a `record_id` parameter to the webhook URL. First, make sure you've selected an **input table** and **input view** in your request settings.
 
 With the record ID parameter, your webhook URL becomes:
 
@@ -50,11 +50,11 @@ With the record ID parameter, your webhook URL becomes:
 https://hook.datafetcher.com/h/rr4X86TTJ747CAPj9gVU9mrKnN33wKqT46CbaaTxnaXqsr?record_id=reca19WnKiU2L46cj
 ```
 
-## **Integrate with Airtable Automations**
+## Integrate with Airtable Automations
 
 You can trigger Data Fetcher requests directly from Airtable Automations, allowing you to run requests when records are updated, forms are submitted, conditions are met, or any other automation trigger fires.
 
-### **Basic automation setup**
+### Basic automation setup
 
 1. Create an Airtable automation with your desired [trigger](https://support.airtable.com/airtable-triggers) (e.g., **When a record updated**).
 2. For the automation action, select **Run a script**.
@@ -66,7 +66,7 @@ await fetch(`YOUR_WEBHOOK_URL`);
 
 ![Webhook URL script automation](/images/webhookurlscriptautomation.jpeg)
 
-### **Target a specific record from automation**
+### Target a specific record from automation
 
 To run the request for only the record that triggered the automation:
 

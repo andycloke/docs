@@ -1,0 +1,66 @@
+---
+title: "Status code overrides"
+---
+
+By default, Data Fetcher treats HTTP error responses from an API (such as **404** or **500**) as errors. These errors count toward your error handling thresholds and may stop a run or pause automated runs.
+
+**Status code overrides** let you specific HTTP status codes so they won't cause a run to fail or pause your automations.
+
+Errors will still appear in the [run history](/organise-requests/run-history), but they won't count toward your consecutive error limits.
+
+## How to configure status code overrides
+
+1. On the request or sequence screen, click to open **Advanced settings**.
+2. Scroll to the **Status Code Overrides** section.
+3. Enter the HTTP status code you want to ignore (e.g. **404**).
+4. Press **Enter** to add it.
+
+You can add multiple status codes if needed.
+
+## When to use status code overrides
+
+Status code overrides are useful when an API returns certain error responses that are expected in your workflow.
+
+### Example: Ignoring 404 responses
+
+Suppose you're running a request **for each record** in your Airtable table to fetch order details for customers.
+
+Some customers may not have any orders yet. In this case, the API may return:
+
+```
+404 Not Found
+```
+
+Without a status code override, each 404 counts as an error and may stop your request or pause your automation.
+
+If you add **404** as a status code override:
+
+- The request continues running
+- Your automation will not pause
+- The 404 responses still appear in run history for reference
+
+### Example: APIs that return 409 for duplicates
+
+Some APIs return:
+
+```
+409 Conflict
+```
+
+when you attempt to create a record that already exists.
+
+If this is expected behavior in your workflow, adding **409** as an override allows the request to continue without triggering your error handling thresholds.
+
+## How this interacts with error handling
+
+Status code overrides affect **what counts as an error**.
+
+If a status code is overridden:
+
+- It will **not count toward your consecutive error thresholds**
+- It will **not stop runs**
+- It will **not pause automations**
+
+However, the response will still appear in **run history** so you can review it if needed.
+
+To configure how errors are handled once they occur, see [Error handling](/advanced-options/error-handling).
